@@ -6,7 +6,6 @@ image:
     alt: Linux Torvalds
 toc: true
 comments: true
-author: bericontraster
 tags: "linus-torvalds"
 categories: ["Influential Figures"]
 ---
