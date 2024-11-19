@@ -1,5 +1,5 @@
 ---
-title: Whiterose TryHackMe Full Walkthrogh
+title: Whiterose Writeup | TryHackMe
 date: 2024-11-18 19:21:00 +0500
 image:
     path: "/assets/img/images/whiterose.webp"
@@ -37,7 +37,7 @@ We have two ports open, SSH and HTTP.
 
 ### HTTP — 80
 
-Going over to port 80 redirects to cyprusbank.thm Let’s add it to the host file.
+Going over to port 80 redirects to `cyprusbank.thm`. Let’s add it to the host file.
 
 ```
 # Pentest Network
@@ -106,7 +106,7 @@ admin                   [Status: 302, Size: 28, Words: 4, Lines: 1, Duration: 29
 ```
 {: .nolineno }
 
-The scan revealed two vhosts `www` and `admin` Let’s add both of them to the host file.
+The scan revealed two vhosts `www` and `admin`. Let’s add both of them to the host file.
 
 ```
 # Pentest Network
@@ -155,7 +155,7 @@ Now we can access the settings tab and change the passwords of users. Let’s tr
 
 ### Server Side Template Injection
 
-The password is reflected which tells me it could be SSTI because I tried XSS and had no luck. I tried to generate an error and it revealed ejs file extension.
+The password is reflected which tells me it could be `SSTI` because I tried `XSS` and had no luck. I tried to generate an error and it revealed ejs file extension.
 
 > Server-side template injection is when an attacker is able to use native template syntax to inject a malicious payload into a template, which is then executed server-side.
 {: .prompt-tip }
