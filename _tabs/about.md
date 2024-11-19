@@ -6,7 +6,7 @@ author: bericontraster
 tags: about
 ---
 
-Hi, I'm Muhammad Zubair, a Cyber Security Professional. I use writing to share insights and help others navigate the evolving world of cybersecurity.
+Hi, I'm Muhammad Zubair, an Offensive Security Professional. I use writing to share insights and help others navigate the evolving world of cybersecurity.
 
 ## Certifications
 [Offsec Certified Professional (OSCP)](https://www.credential.net/677f4c26-3f2b-4a12-9b14-dbb45565d6a8) <span style="margin-left: 40px;">  <span style="margin-left: 20px;"> OffSec <span style="margin-left: 10px;"> --- <span style="margin-left: 10px;"> Oct 2024  
@@ -19,10 +19,12 @@ Hi, I'm Muhammad Zubair, a Cyber Security Professional. I use writing to share i
 **Practical Cybersecurity Experience in CTFs & Labs** <span style="margin-left: 90px;"> Feb 2022 <span style="margin-left: 10px;"> --- <span style="margin-left: 10px;"> Present  
 - Top 4% on [TryHackMe](https://tryhackme.com/r/p/bericontraster). Hacker rank on [HackTheBox](https://app.hackthebox.com/profile/894352).
 
-**IT Administration** — [ElevenTech Yards (PVT) Limited](https://11ventechyards.com/) <span style="margin-left: 90px;">  Mar 2023 <span style="margin-left: 10px;"> --- <span style="margin-left: 10px;"> Dec 2023
+**Cybersecurity Analyst** — [ElevenTech Yards (PVT) Limited](https://11ventechyards.com/) <span style="margin-left: 55px;">  Mar 2023 <span style="margin-left: 10px;"> --- <span style="margin-left: 10px;"> Aug 2024
 
 
-As the IT Administrator, I ensured every system was up-to-date, fortifying our defenses against threats. I implemented robust password policies, strengthening access controls. With a focus on vigilance, I kept company assets secure, creating a resilient and protected environment.
+Enhanced the organization's security posture by 40%, ensuring zero data or password leaks. Trained team members on best security
+practices to maintain a safe environment. Developed a more secure website, effectively safeguarding external-facing assets from
+potential threats.
 
 ## Skills
 
