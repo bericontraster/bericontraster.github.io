@@ -20,8 +20,9 @@ theme = "hugo-brewm"
 ## Taxonomy register
 [taxonomies]
     category = 'categories'
-    # tag = 'tags'
-    # author = 'author'
+    stage = "stage"
+    tag = 'tags'
+    author = 'author'
     # series = 'series'
     # lenses = 'lenses'
     # cameras = 'cameras'
@@ -33,7 +34,7 @@ theme = "hugo-brewm"
     ## Site description
     description = "An ExampleSite built with Hugo and Hugo-Brewm theme"
     ## Copyright notice on colophon
-    copyright = "Copyright 2025 © Author"
+    copyright = "Copyright 2025 © Arcanix"
     ## Hide "powered by hugo" on colophon
     HideHugoCredit = true
     ## Enable extended metadata (social cards)
@@ -55,7 +56,7 @@ theme = "hugo-brewm"
     ## Author information
     [params.author]
         ## site author's name
-        name = 'bericontraster'
+        name = 'Beri Contraster'
         ## Author's email
         email = 'bericontraster@gmail.com'
         ## Other method to customize author and co-authors information
@@ -65,18 +66,16 @@ theme = "hugo-brewm"
 
     ## Comments configuration
     [params.comments]
-        ## Disable comments (disable fediverse comments)
         disabled = false
-        ## Comment platform selection, pending rule implementation
         # platform = 'giscus'
 
     ## Favicon configuration
     [params.favicon]
-        # png = '/favicon-32x32.png'
-        # svg = '/favicon.svg'
-        # ico = '/favicon.ico'
+        png = '/favicon-32x32.png'
+        svg = '/favicon.svg'
+        ico = '/favicon.ico'
         # apple = '/apple-touch-icon.png'
-        # appTitle = 'Arcanix'
+        appTitle = 'Arcanix'
         # webmanifest = '/site.webmanifest'
 
     ## Fediverse integration settings for verification
@@ -145,11 +144,8 @@ theme = "hugo-brewm"
 
     ## Search configuration
     [params.search]
-        ## Enable search functionality, please index your site first
         enable = true
-        ## Use pagefind search when enabled, currently only 'pagefind' is supported, further options to be determined
         pagefind = true
-        ## fallback searchbox when javascript disabled, currently the options limited to 'mojeek', otherwise duckduckgo will be used
         # fallback = 'mojeek'
 
     ## Extended Metadata and Social card configuration
@@ -161,9 +157,9 @@ theme = "hugo-brewm"
         ## Enable Twitter cards
         # twitter = true
         ## Twitter creator handle
-        # twitterCreator = "@username"
+        # twitterCreator = "@bericontraster"
         ## Twitter site handle
-        # twitterSite = "@username"
+        # twitterSite = "@bericontraster"
 
         ## Enable OpenGraph
         # opengraph = true
@@ -189,6 +185,7 @@ theme = "hugo-brewm"
 
 [[menu.main]]
     identifier = "about"
+    # weight = 1
     name = "About"
     pageRef = "/about"
 
@@ -202,18 +199,25 @@ theme = "hugo-brewm"
 [[menu.main]]
     identifier = "github"
     name = ""
-    url = "https://github.com/"
+    url = "https://github.com/bericontraster"
     pre = "github"
 
 [[menu.main]]
     identifier = "linkedin"
     name = ""
-    url = "https://linkedin.com/"
+    url = "https://www.linkedin.com/in/mhamd-zubair/"
     pre = "linkedin"
 
 [[menu.main]]
     identifier = "email"
     name = ""
-    url = "https://linkedin.com/"
+    url = "mailto:bericontraster@gmail.com"
     pre = "email"
 
+[[menu.main]]
+  name       = 'Github'
+  identifier = 'fork'
+  weight     = 2
+  url        = 'https://github.com/foxihd/hugo-brewm'
+  [[main.params]]
+    class = 'lfill textssc'
