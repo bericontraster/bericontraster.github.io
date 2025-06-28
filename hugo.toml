@@ -96,10 +96,10 @@ theme = "hugo-brewm"
     ## Giscus configuration
     [params.giscus]
         repo = "bericontraster/bericontraster.github.io"
-        repoID = "R_kgDONNGhmA"
+        repoID = "R_kgDOPDA0ig"
         category = "General"
-        categoryID = "DIC_kwDONNGhmM4CkJGS"
-        mapping = "og:title"
+        categoryID = "DIC_kwDOPDA0is4CsKJh"
+        #mapping = "og:title"
         reactionsEnabled = "1"
         emitMetadata = "0"
         inputPosition = "bottom"
