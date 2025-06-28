@@ -1,0 +1,112 @@
+/* Load fonts from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Roboto&family=Fira+Code&display=swap');
+
+/* Code blocks */
+/* Paragraph text */
+article p, 
+article li, 
+article blockquote {
+  font-family: 'Lora', sans-serif;
+}
+
+
+/* Headings */
+article h1, 
+article h2, 
+article h3, 
+article h4, 
+article h5, 
+article h6 {
+  font-family: 'Inter', sans-serif;
+}
+
+
+:root {
+    /* default contrast */
+    /* --ac-light: #36c;
+    --fg-light: #111;
+    --bg-light: #f9f9fb; 
+    --midtone: gray;
+    --fg-dark: #f9f9fb;
+    --bg-dark: #111;
+    --ac-dark: #fa0; */
+    --ac-light: #00ffe7;           /* Neon Cyan Accent */
+    --fg-light: #e0e0e0;           /* Light gray text */
+    --bg-light: #0e0e12;           /* Dark navy/graphite background */
+    --midtone: #666c72;            /* Midtone gray for borders */
+    --fg-dark: #ffffff;            /* Pure white for dark mode */
+    --bg-dark: #121212;            /* Slightly deeper dark */
+    --ac-dark: #00ff9c;            /* Neon Green Accent for dark mode */
+    
+    /* less contrast */
+    --ac-light-less: var(--ac-light);
+    --fg-light-less: #13253d;
+    --bg-light-less: #e7e2e2; 
+    --midtone-less: #7d8490;
+    --fg-dark-less: #e7e2e2;
+    --bg-dark-less: #13253d;
+    --ac-dark-less: var(--ac-dark);
+
+    /* more contrast */
+    --ac-light-more: var(--ac-light);
+    --fg-light-more: #000;
+    --bg-light-more: #fff;
+    --midtone-more: gray;
+    --fg-dark-more: #fff;
+    --bg-dark-more: #000;
+    --ac-dark-more: var(--ac-dark);
+}
+
+
+/* Custom Code Block */
+Darken code blocks
+.highlight, pre, code {
+  background-color: #000000 !important;
+  /* color: #c9d1d9; */
+  font-family: 'Fira Code', monospace;
+  border-radius: 6px;
+  padding: 1em;
+  overflow-x: auto;
+}
+
+/* Make inline code look cleaner */
+code {
+  background-color: #161b22;
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+}
+
+/* Prevent theme from overriding your colors */
+pre code {
+  background: none;
+}
+
+/* Optional: Add a glow effect or border */
+.highlight {
+  box-shadow: 0 0 0px #00000055;
+}
+
+
+/* Custom Button CSS */
+.copy-button {
+  position: absolute;
+  top: 0.5em;
+  right: 0.5em;
+  padding: 0.2em 0.6em;
+  font-size: 0.8em;
+  font-weight: bold;
+  background-color: #21262d;
+  color: #c9d1d9;
+  border: 1px solid #30363d;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 10;
+  transition: background 0.3s ease;
+}
+.copy-button:hover {
+  background-color: #2c313a;
+}
+.highlight {
+  position: relative; /* Required for absolute button positioning */
+}
+

@@ -1,0 +1,219 @@
+baseURL = 'https://bericontraster.github.io/'
+languageCode = 'en-us'
+title = 'Arcanix'
+theme = "hugo-brewm"
+
+## markup configuration
+[markup]
+
+    [markup.highlight]
+        ## Enable code fence highlighting
+        codeFences = true
+        ## Use hugo-brewm classes for verbatim styling
+        noClasses = false
+
+## Sitemap configuration
+[sitemap]
+    ## Change frequency setting (will affect posts listings layout): 'always', 'hourly', 'daily', 'weekly', 'monthly', 'yearly', 'never'
+    changeFreq = 'monthly'
+
+## Taxonomy register
+[taxonomies]
+    category = 'categories'
+    # tag = 'tags'
+    # author = 'author'
+    # series = 'series'
+    # lenses = 'lenses'
+    # cameras = 'cameras'
+
+## Site parameters
+[params]
+    ## Site title
+    title = "Arcanix"
+    ## Site description
+    description = "An ExampleSite built with Hugo and Hugo-Brewm theme"
+    ## Copyright notice on colophon
+    copyright = "Copyright 2025 © Author"
+    ## Hide "powered by hugo" on colophon
+    HideHugoCredit = true
+    ## Enable extended metadata (social cards)
+    extMeta = true
+    ## Enable coffee metric
+    coffeeStat = true
+    ## Default social card image, recommended resolution: 1200 x 630px
+    # images = "example.com/img/social-share.jpg" 
+    ## Do not block AI user agent for robot.txt
+    AllowAIRobots = false
+    ## or BearMode--Minimize clutter for small site; Disable breadcrumbs menu, share button, related posts, colophon and redaction history.
+    ZenMode = false
+
+    ## At the moment, analytics can be added manually by creating a custom template at `mysite/layouts/partials/analytics.html`
+    [params.analytics]
+        ## Choose where to append analytics script: use 'head' to place within <head> tags, or 'body' to place before closing </body> tag.    
+        append = 'body'
+
+    ## Author information
+    [params.author]
+        ## site author's name
+        name = 'bericontraster'
+        ## Author's email
+        email = 'bericontraster@gmail.com'
+        ## Other method to customize author and co-authors information
+        coauthor = [
+            {name = "A.N. Other", bio = "Lorem ipsum dolor sit amet."}
+        ]
+
+    ## Comments configuration
+    [params.comments]
+        ## Disable comments (disable fediverse comments)
+        disabled = false
+        ## Comment platform selection, pending rule implementation
+        # platform = 'giscus'
+
+    ## Favicon configuration
+    [params.favicon]
+        # png = '/favicon-32x32.png'
+        # svg = '/favicon.svg'
+        # ico = '/favicon.ico'
+        # apple = '/apple-touch-icon.png'
+        # appTitle = 'Arcanix'
+        # webmanifest = '/site.webmanifest'
+
+    ## Fediverse integration settings for verification
+    [params.fediverse]
+        ## Fediverse instance URL
+        instance = 'example.com'
+        ## Fediverse username
+        username = 'username'
+
+    ## Feed display settings
+    [params.feed]
+        ## Enable flowlines
+        flowlines = true
+        ## Limit number of flowlines with maximum 42
+        flowlinesLimit = 21
+
+    ## Giscus configuration
+    [params.giscus]
+        repo = "bericontraster/bericontraster.github.io"
+        repoID = "R_kgDONNGhmA"
+        category = "General"
+        categoryID = "DIC_kwDONNGhmM4CkJGS"
+        mapping = "og:title"
+        reactionsEnabled = "1"
+        emitMetadata = "0"
+        inputPosition = "bottom"
+        theme = "dark"
+        loading = "lazy"
+
+    ## Home page display settings
+    [params.home]
+        ## Disable slide carousel
+        disableSlide = false
+        ## Disable taxonomy listing carousel
+        disableListing = false
+        ## Select taxonomy listing to be featured
+        # featuredListing = ['categories', 'series', 'author', 'cameras', 'lenses']
+        ## include section nodes in json
+        includeSectionInJson = false
+
+    ## Logo configuration
+    [params.logo]
+        ## Light mode logo mark
+        logoMark = 'https://example.com/logoMark.svg'
+        ## Dark mode logo mark
+        logoMarkDark = 'https://example.com/logoMarkDark.svg'
+        ## Enable logo type
+        logoType = true
+
+    ## Post display settings
+    [params.posts]
+        ## Enable text justification
+        justifying = false
+        ## Disable paragraph indentation
+        noIndent = false
+        ## Use sans-serif fonts as default
+        sfdefault = false
+        ## Show colophon section (including QR code)
+        colophon = true
+        ## disable redaction history
+        disableHistory = false
+        ## SHow related content
+        related = true
+        ## Show share buttons
+        share = true
+
+    ## Search configuration
+    [params.search]
+        ## Enable search functionality, please index your site first
+        enable = true
+        ## Use pagefind search when enabled, currently only 'pagefind' is supported, further options to be determined
+        pagefind = true
+        ## fallback searchbox when javascript disabled, currently the options limited to 'mojeek', otherwise duckduckgo will be used
+        # fallback = 'mojeek'
+
+    ## Extended Metadata and Social card configuration
+    [params.socialCard]
+        ## Enable twitter and opengraph social cards (same as .params.extMeta)
+        enable = true
+        ## Default social card image, same as .Params.images
+        # images = "img/social-share.jpg" 
+        ## Enable Twitter cards
+        # twitter = true
+        ## Twitter creator handle
+        # twitterCreator = "@username"
+        ## Twitter site handle
+        # twitterSite = "@username"
+
+        ## Enable OpenGraph
+        # opengraph = true
+        ## Facebook App ID
+        # facebookAppID = "123456789"
+        ## Facebook Admin ID
+        # facebookAdmin = "USER_ID"
+
+        ## Schema.org (EXPERIMENTAL, not fully supported body tags)
+        # schema = true
+        ## JsonLD (EXPERIMENTAL, cannot validate permalink)
+        # jsonLD = true
+
+    ## Typography settings
+    [params.typeface]
+        ## Use web safe fonts (will overide font selection below)
+        webSafe = false
+        ## Serif font selection: 'Cormorant' 'EB Garamond' and 'crimson' (default)
+        roman = 'crimson' 
+        ## Sans-serif font selection: 'Inter' 'Montserrat' 'Rorasio' and 'Lexica Ultralegible' (default)
+        sans = 'inter'
+
+
+[[menu.main]]
+    identifier = "about"
+    name = "About"
+    pageRef = "/about"
+
+    [[menu.main]]
+        identifier = "about-author"
+        name = "Author"
+        pageRef = "/about/author"
+        parent = "about"
+
+
+[[menu.main]]
+    identifier = "github"
+    name = ""
+    url = "https://github.com/"
+    pre = "github"
+
+[[menu.main]]
+    identifier = "linkedin"
+    name = ""
+    url = "https://linkedin.com/"
+    pre = "linkedin"
+
+[[menu.main]]
+    identifier = "email"
+    name = ""
+    url = "https://linkedin.com/"
+    pre = "email"
+
