@@ -1,5 +1,5 @@
 ---
 title: 'evergreen'
 translationKey: evergreen
-emoji: '🌳'
+emoji: '⚙️d'
 ---

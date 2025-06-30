@@ -4,13 +4,13 @@ weight: 1
 coffee: 2
 params:
     headless: true
-    target: 'https://github.com/foxihd/hugo-brewm'
+    target: 'https://github.com/bericontraster/bericontraster.github.io'
 ---
 
-**Author <i class="icon">copyleft</i> 2025**
-All right reserved.
+**Arcanix Labs 2025 <i class="icon">©</i> All rights reserved**
+© 2025 Arcanix. Built with passion by <i>bericontraster</i>.
 
 <br>
 
 **Impressum**
-Lorem ipsum dolor sit amet.
+Arcanix is a cybersecurity-focused initiative delivering practical content on ethical hacking, CTF challenges, and secure system configuration. Views expressed are personal. No tracking or clutter.

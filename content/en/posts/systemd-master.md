@@ -4,7 +4,7 @@ date: 2025-06-25
 description: "Linus Torvalds was born in Helsinki, Finland in 1969. His parents were campus radicals at the University of Helsinki in the 1960s."
 draft: false
 author: "bericontraster"
-type: "post"
+type: "draft"
 tags: ["linux", "tools", "linux management"]
 categories: ["tools"]
 cover: 'https://brand.systemd.io/assets/svg/systemd-light.svg'
@@ -25,4 +25,3 @@ Systemd is the default init system and service manager used in most modern Linux
 sudo su
 apt install kali-desktop-gnome
 ```
-

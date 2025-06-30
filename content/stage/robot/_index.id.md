@@ -1,5 +1,5 @@
 ---
 title: 'kembang'
 translationKey: budding
-emoji: '🌼'
+emoji: '🤖'
 ---

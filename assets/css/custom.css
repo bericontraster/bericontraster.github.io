@@ -36,7 +36,7 @@ article h6 {
     --midtone: #666c72;            /* Midtone gray for borders */
     --fg-dark: #ffffff;            /* Pure white for dark mode */
     --bg-dark: #121212;            /* Slightly deeper dark */
-    --ac-dark: #00ff9c;            /* Neon Green Accent for dark mode */
+    --ac-dark: red;            /* Neon Green Accent for dark mode */
     
     /* less contrast */
     --ac-light-less: var(--ac-light);
@@ -110,3 +110,6 @@ pre code {
   position: relative; /* Required for absolute button positioning */
 }
 
+#content p {
+  text-indent: 0 !important;
+}

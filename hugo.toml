@@ -20,9 +20,9 @@ theme = "hugo-brewm"
 ## Taxonomy register
 [taxonomies]
     category = 'categories'
-    stage = "stage"
-    tag = 'tags'
-    author = 'author'
+    # stage = "stage"
+    # tag = 'tags'
+    # author = 'author'
     # series = 'series'
     # lenses = 'lenses'
     # cameras = 'cameras'
@@ -32,17 +32,16 @@ theme = "hugo-brewm"
     ## Site title
     title = "Arcanix"
     ## Site description
-    description = "An ExampleSite built with Hugo and Hugo-Brewm theme"
+    description = "This site is your launchpad for everything cyber — from hardcore pentesting walkthroughs and CTF writeups, to system-hardening guides, exploit development, and hands-on troubleshooting support."
     ## Copyright notice on colophon
     copyright = "Copyright 2025 © Arcanix"
-    ## Hide "powered by hugo" on colophon
     HideHugoCredit = true
     ## Enable extended metadata (social cards)
     extMeta = true
     ## Enable coffee metric
-    coffeeStat = true
+    coffeeStat = false
     ## Default social card image, recommended resolution: 1200 x 630px
-    # images = "example.com/img/social-share.jpg" 
+    images = "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExZWxsem8zZ291dTFiYmlkams0OXRiejl0M2VzdWxzcWtmZmJqcGI1NCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/11zb8pY7ziYZig/giphy.gif" 
     ## Do not block AI user agent for robot.txt
     AllowAIRobots = false
     ## or BearMode--Minimize clutter for small site; Disable breadcrumbs menu, share button, related posts, colophon and redaction history.
@@ -61,7 +60,7 @@ theme = "hugo-brewm"
         email = 'bericontraster@gmail.com'
         ## Other method to customize author and co-authors information
         coauthor = [
-            {name = "A.N. Other", bio = "Lorem ipsum dolor sit amet."}
+            {name = "beri Contraster", bio = "Offsec Certified Professional"}
         ]
 
     ## Comments configuration
@@ -71,10 +70,10 @@ theme = "hugo-brewm"
 
     ## Favicon configuration
     [params.favicon]
-        png = '/favicon-32x32.png'
+        png = '/images/favicon-32x32.png'
         svg = '/favicon.svg'
-        ico = '/favicon.ico'
-        # apple = '/apple-touch-icon.png'
+        ico = '/images/favicon.ico'
+        # apple = '/images/apple-touch-icon.png'
         appTitle = 'Arcanix'
         # webmanifest = '/site.webmanifest'
 
@@ -119,9 +118,9 @@ theme = "hugo-brewm"
     ## Logo configuration
     [params.logo]
         ## Light mode logo mark
-        logoMark = 'https://example.com/logoMark.svg'
+        # logoMark = 'https://example.com/logoMark.svg'
         ## Dark mode logo mark
-        logoMarkDark = 'https://example.com/logoMarkDark.svg'
+        # logoMarkDark = 'https://example.com/logoMarkDark.svg'
         ## Enable logo type
         logoType = true
 
@@ -183,18 +182,6 @@ theme = "hugo-brewm"
         sans = 'inter'
 
 
-[[menu.main]]
-    identifier = "about"
-    # weight = 1
-    name = "About"
-    pageRef = "/about"
-
-    [[menu.main]]
-        identifier = "about-author"
-        name = "Author"
-        pageRef = "/about/author"
-        parent = "about"
-
 
 [[menu.main]]
     identifier = "github"
@@ -213,11 +200,3 @@ theme = "hugo-brewm"
     name = ""
     url = "mailto:bericontraster@gmail.com"
     pre = "email"
-
-[[menu.main]]
-  name       = 'Github'
-  identifier = 'fork'
-  weight     = 2
-  url        = 'https://github.com/foxihd/hugo-brewm'
-  [[main.params]]
-    class = 'lfill textssc'
