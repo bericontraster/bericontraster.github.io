@@ -9,4 +9,4 @@ This slide pulls in the latest updates straight from Arcanix from hacking tutori
 
 The RSS integration keeps your content in motion showcasing fresh posts dynamically as they’re published.
 
-{{< rss url="https://bericontraster.github.io/index.xml" >}}
+{{< rss "https://bericontraster.github.io/index.xml" >}}
