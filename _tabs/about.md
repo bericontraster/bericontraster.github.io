@@ -9,10 +9,9 @@ tags: about
 Hi, I'm Muhammad Zubair, an Offensive Security Professional. I use writing to share insights and help others navigate the evolving world of cybersecurity.
 
 ## Certifications
-[Offsec Certified Professional (OSCP)](https://www.credential.net/677f4c26-3f2b-4a12-9b14-dbb45565d6a8) <span style="margin-left: 40px;">  <span style="margin-left: 20px;"> OffSec <span style="margin-left: 10px;"> --- <span style="margin-left: 10px;"> Oct 2024
-[Certified Penetration Testing Specialist](https://drive.google.com/file/d/1lzzE9Nl5n3X-3bakAo_ObtXl9DG1DILa/view?usp=sharing) <span style="margin-left: 20px;">  <span style="margin-left: 20px;"> HackTheBox <span style="margin-left: 10px;"> --- <span style="margin-left: 10px;"> Feb 2024
-[Dante Pro Labs](https://drive.google.com/file/d/1WkpUahBRtFGHGyF_7J6xBP_G3ODfdUWz/view?usp=sharing) <span style="margin-left: 203px;">  HackTheBox <span style="margin-left: 10px;"> --- <span style="margin-left: 10px;"> Mar 2024
-[IT Essentials: PC Hardware and Software](https://drive.google.com/file/d/1kl398kLZ8yqbKDLChyqGMQsPpTUbET28/view) <span style="margin-left: 30px;"> Cisco <span style="margin-left: 10px;"> --- <span style="margin-left: 10px;"> Feb 2022
+[Offsec Certified Professional (OSCP)](https://www.credential.net/677f4c26-3f2b-4a12-9b14-dbb45565d6a8) <span style="margin-left: 40px;">  <span style="margin-left: 20px;"> OffSec <span style="margin-left: 10px;"> --- <span style="margin-left: 10px;"> Oct 2024  
+[Certified Penetration Testing Specialist](https://drive.google.com/file/d/1lzzE9Nl5n3X-3bakAo_ObtXl9DG1DILa/view?usp=sharing) <span style="margin-left: 20px;">  <span style="margin-left: 20px;"> HackTheBox <span style="margin-left: 10px;"> --- <span style="margin-left: 10px;"> Feb 2024  
+[Malware Development](https://maldevacademy.com/) <span style="margin-left: 151px;">  MalDev Academy <span style="margin-left: 10px;"> --- <span style="margin-left: 10px;"> Jul 2025 - Present  
 
 ## Experience
 

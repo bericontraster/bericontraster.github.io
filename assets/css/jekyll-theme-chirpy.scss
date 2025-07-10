@@ -1,0 +1,52 @@
+---
+---
+
+/* prettier-ignore */
+@use 'main
+{%- if jekyll.environment == 'production' -%}
+  .bundle
+{%- endif -%}
+';
+
+
+#sidebar {
+    background-color: black;
+}
+
+#main-wrapper {
+    background-color: #0a0a0a;
+}
+
+#tail-wrapper > :not(script) {
+    background-color: #0a0a0a;
+}
+
+#topbar-wrapper {
+    background-color: #0a0a0a;
+}
+
+.toc-border-cover {
+    background: black;
+}
+
+#toc-wrapper::after {
+    background: black;
+}
+
+.post-preview {
+    background: #111111
+}
+
+.post-preview::before {
+    background-color: #043927;
+}
+
+#sidebar ul li.nav-item.active .nav-link {
+    background-color: #043927;
+}
+
+@media (hover: hover) {
+  .nav-link {
+    color: white;
+  }
+}

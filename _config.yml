@@ -101,12 +101,12 @@ comments:
   # Giscus options › https://giscus.app
   giscus:
     repo: "bericontraster/bericontraster.github.io"
-    repo_id: "R_kgDONNGhmA"
+    repo_id: "R_kgDOPIBylg"
     category: "General"
-    category_id: "DIC_kwDONNGhmM4CkJGS"
+    category_id: "DIC_kwDOPIByls4Cswtq"
     mapping: # optional, default to 'pathname'
     strict: # optional, default to '0'
-    input_position: # optional, default to 'bottom'
+    input_position: "bottom" # optional, default to 'bottom'
     lang: # optional, default to the value of `site.lang`
     reactions_enabled: # optional, default to the value of `1`
 
