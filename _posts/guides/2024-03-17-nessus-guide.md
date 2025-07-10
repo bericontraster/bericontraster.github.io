@@ -7,7 +7,7 @@ image:
 toc: true
 comments: true
 tags: guide tool
-categories: ["vulnerability-assessment"]
+categories: ["vulnerability-scanner"]
 description: Exploring Nessus for efficient vulnerability assessments, learn how to set up scans, interpret findings, and prioritize security fixes.
 ---
 
