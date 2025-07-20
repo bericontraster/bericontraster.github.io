@@ -146,6 +146,7 @@ git commit -am "message"     # Stage + commit tracked files
 ### Syncing with Remote
 ```shell
 git remote add origin <url>  # Add remote repo
+git remote set-url origin git@github.com:your-username/your-repo.git # Set Origin
 git push -u origin main      # Push to remote (first time)
 git push                     # Push changes
 git pull                     # Pull latest changes

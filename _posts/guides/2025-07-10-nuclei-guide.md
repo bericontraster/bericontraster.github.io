@@ -2,7 +2,7 @@
 title: Nuclei Vulnerability Scanner HandBook
 date: 2025-07-10 14:24:00 +0500
 image:
-    path: "https://www.security.land/storage/2025/04/Nuclei-Open-Source-Vulnerability-Scanner.webp"
+    path: https://www.security.land/wp-content/uploads/2025/04/Nuclei-Open-Source-Vulnerability-Scanner.webp
     alt: Nuclei Cover Image
 toc: true
 comments: true
