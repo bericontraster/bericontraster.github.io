@@ -23,12 +23,12 @@ I'm an Offensive Security Professional with 3+ years of hands-on experience in p
 
 <!-- <h1 style="color: #FF6B35;"> Projects </h1> -->
 # Projects
-<h4 style="color: #00ADB5"><b>Enterprise Compliance & Monitoring Platform (Essential Eight)</b></h4>
-Essentials Project – Led end-to-end development of a cross-platform compliance monitoring solution. Built a Python3 Flask backend with a secure, role-based client dashboard for managing agents. Delivered Windows, macOS, and Linux client agents to assess systems against the Essential Eight framework, with features including reporting, agent blocking, and centralized management.
-<h4 style="color: #00ADB5"><b>Certified Penetration Testing Professional (CPTP)</b></h4>
-Designed and delivered the Certified Penetration Testing Professional (CPTP) course, a 20-module commercial certification with hands-on labs, officially licensed by NCSC, CREST, and MPG International, and now offered by Tranchulas.  
-<h4 style="color: #00ADB5"><b>Certified Web Application Security Professional (CWASP)</b></h4>
-Designed and delivered the Certified Web Application Security Professional (CWASP) course, a 21-module commercial certification with hands-on labs, officially licensed by NCSC, CREST, and MPG International, and now offered by Tranchulas.  
+<h4 style="color: #00ADB5"><b>Advanced Penetration Testing Program</b></h4>
+Created and delivered a comprehensive, hands-on training program covering advanced penetration testing methodologies. The course includes multiple modules, practical lab exercises, and real-world exploitation scenarios used for professional upskilling and certification preparation.
+<h4 style="color: #00ADB5"><b>Web Application Security Course</b></h4>
+Developed and launched a complete, lab-based training course focused on web application security. The program covers reconnaissance, vulnerability discovery, exploitation, and defense strategies aligned with modern web security practices.  
+<h4 style="color: #00ADB5"><b>Enterprise Compliance & Monitoring Platform</b></h4>
+Designed and developed a large-scale enterprise compliance platform that enables organizations to continuously monitor, detect, and report on systems failing to meet critical security controls.
 <h4 style="color: #00ADB5"><b>Virtualized Infrastructure with Proxmox VE</b></h4>
 Designed and deployed a Proxmox-based virtual lab infrastructure of 30+ custom made vulnerable VMs. Hosted all the lab in a private network and created OpenVPN server to let students interact with the private labs.
 
@@ -51,3 +51,8 @@ Designed and deployed a Proxmox-based virtual lab infrastructure of 30+ custom m
 4. Collaborated with technical staff to identify recurring issues, helping prioritize future improvements and technical documentation updates. -->
 
 
+<!-- Enterprise Cybersecurity Training Programs (CPTP & CWASP)
+Global-scale certifications licensed by NCSC, CREST, and APMG, equipping professionals with hands-on offensive security skills.
+
+Enterprise Compliance & Monitoring Platform (Essential Eight)
+Cross-platform compliance solution delivering real-time monitoring, reporting, and agent management for enterprise clients. -->
