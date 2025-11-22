@@ -19,7 +19,7 @@ I'm an Offensive Security Professional with 3+ years of hands-on experience in p
 ## Certifications
 [Offsec Certified Professional (OSCP)](https://www.credential.net/677f4c26-3f2b-4a12-9b14-dbb45565d6a8) <span style="margin-left: 40px;">  <span style="margin-left: 20px;"> OffSec <span style="margin-left: 10px;"> --- <span style="margin-left: 10px;"> Oct 2024  
 [Certified Penetration Testing Specialist](https://drive.google.com/file/d/1lzzE9Nl5n3X-3bakAo_ObtXl9DG1DILa/view?usp=sharing) <span style="margin-left: 20px;">  <span style="margin-left: 20px;"> HackTheBox <span style="margin-left: 10px;"> --- <span style="margin-left: 10px;"> Feb 2024  
-[Malware Development](https://maldevacademy.com/) <span style="margin-left: 151px;">  MalDev Academy <span style="margin-left: 10px;"> --- <span style="margin-left: 10px;"> Jul 2025 - Present  
+<!-- [Malware Development](https://maldevacademy.com/) <span style="margin-left: 151px;">  MalDev Academy <span style="margin-left: 10px;"> --- <span style="margin-left: 10px;"> Jul 2025 - Present   -->
 
 <!-- <h1 style="color: #FF6B35;"> Projects </h1> -->
 # Projects
@@ -31,28 +31,3 @@ Developed and launched a complete, lab-based training course focused on web appl
 Designed and developed a large-scale enterprise compliance platform that enables organizations to continuously monitor, detect, and report on systems failing to meet critical security controls.
 <h4 style="color: #00ADB5"><b>Virtualized Infrastructure with Proxmox VE</b></h4>
 Designed and deployed a Proxmox-based virtual lab infrastructure of 30+ custom made vulnerable VMs. Hosted all the lab in a private network and created OpenVPN server to let students interact with the private labs.
-
-<!-- ## Experience
-**[Information Security Engineer (Tranchulas)](https://tranchulas.com/)** -- London, UK (Remote)       
-`Dec 2024 - PRESENT`
-1. Designed and delivered two industry-grade courses. Certified Penetration Testing Specialist (CPTS) and Certified Web Application Security Professional (CWASP) approved by the National Cyber Security Centre (NCSC), CREST, and MPG International.
-2. Managed cloud infrastructure on AWS, including EC2, S3 buckets, and custom OpenVPN servers, ensuring secure remote access and data flow.
-3. Performed full-scope web application pentests, exploiting and reporting vulnerabilities like: SQL Injection, XSS, CSRF, File Upload, SSRF, IDOR, Broken Authentication, RCE, etc.
-4. Conducted internal and external network penetration testing, including Active Directory environments and privilege escalation.
-5. Migrated infrastructure from AWS to Proxmox, reducing cloud operating costs by over 60% while enhancing performance and control.
-6. Developed 30+ custom vulnerable labs, hosted and managed via Proxmox, supporting full attack/defense workflows.
-7. Took ownership of large-scale projects and course development, significantly reducing team workload while continuously upskilling and mentoring others.
-
-**IT Support Assistant (11ven Tech Yards)** -- Islamabad, PAK (Hybrid)  
-`May 2023 - Aug 2024`
-1. Provided day-to-day remote support to clients, resolving technical issues related to email, cloud storage, and software tools with a 95%+ resolution rate.
-2. Handled sensitive business and client data with confidentiality and secure digital practices, laying the foundation for security-conscious operations.
-3. Developed simple PowerShell and batch scripts to automate routine operations such as file cleanup and folder creation, reducing manual workload by 30%.
-4. Collaborated with technical staff to identify recurring issues, helping prioritize future improvements and technical documentation updates. -->
-
-
-<!-- Enterprise Cybersecurity Training Programs (CPTP & CWASP)
-Global-scale certifications licensed by NCSC, CREST, and APMG, equipping professionals with hands-on offensive security skills.
-
-Enterprise Compliance & Monitoring Platform (Essential Eight)
-Cross-platform compliance solution delivering real-time monitoring, reporting, and agent management for enterprise clients. -->
