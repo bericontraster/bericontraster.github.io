@@ -16,7 +16,7 @@ timezone: Asia/Karachi
 
 title: bericontraster # the main title
 
-tagline: Offesive Security Professional # it will display as the subtitle
+tagline: Cybersecurity Consultant # it will display as the subtitle
 
 description: >- # used by seo meta and the atom feed
   Penetration testing, secure web development, and hands-on cybersecurity blogs. Offering services, labs, and real-world guides.
@@ -79,7 +79,7 @@ theme_mode: dark
 cdn:
 
 # the avatar on sidebar, support local or CORS resources
-avatar: /assets/img/site-images/cover.jpg
+avatar: /assets/img/site-images/bericontraster.jpg
 
 # The URL of the site-wide social preview image used in SEO `og:image` meta tag.
 # It can be overridden by a customized `page.image` in front matter.

@@ -8,6 +8,28 @@
 {%- endif -%}
 ';
 
+.highlight,
+figure.highlight,
+div[class^="language-"],
+pre.highlight,
+pre[class^="language-"] {
+  background-color: #001833 !important;
+}
+
+.code-header {
+  background-color: #001833 !important;
+}
+
+/* Unified rounded border for code blocks */
+div[class^="language-"] {
+  border: 1px solid #1F1F1F;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+img {
+  border-radius: 5px;
+}
 
 #sidebar {
     background-color: black;
@@ -49,4 +71,48 @@
   .nav-link {
     color: white;
   }
+}
+
+// Jetbrains Mono Font
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("{{ '/assets/fonts/jetbrains-mono/JetBrainsMono-Regular.ttf' | relative_url }}") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+// Importing Inter Font
+@font-face {
+  font-family: "Inter";
+  src: url("{{ '/assets/fonts/inter/Inter_24pt-Bold.ttf' | relative_url }}") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+code, pre, kbd, samp {
+  font-family: "JetBrains Mono", SFMono-Regular, Consolas, Menlo, monospace;
+}
+
+body {
+  font-size: 1.07rem;
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.60rem;
+}
+
+h1 + .post-meta + .post-desc,
+header .post-desc {
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.60rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+  font-weight: bold;
 }

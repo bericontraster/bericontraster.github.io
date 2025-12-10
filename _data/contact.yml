@@ -1,11 +1,12 @@
 #  The contact options.
 
-- type: github
-  icon: "fab fa-github"
+- type: medium
+  icon: "fa-brands fa-medium"
+  url: "https://medium.com/@bericontraster"
   noblank: false
 
-- type: twitter
-  icon: "fa-brands fa-x-twitter"
+- type: github
+  icon: "fab fa-github"
   noblank: false
 
 - type: linkedin
