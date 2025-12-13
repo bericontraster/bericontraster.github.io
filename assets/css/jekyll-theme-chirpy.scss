@@ -116,3 +116,32 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
   font-weight: bold;
 }
+
+tr {
+  font-size: 1.10rem;
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+}
+
+/* ===== Fix table horizontal scrolling ===== */
+table {
+  table-layout: fixed;
+}
+
+th,
+td {
+  white-space: normal !important;   /* allow wrapping */
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+/* Optional: improve readability */
+td {
+  vertical-align: top;
+}
+
+/* Prevent code blocks from forcing scroll */
+td code,
+td pre {
+  white-space: pre-wrap !important;
+  word-break: break-word;
+}
