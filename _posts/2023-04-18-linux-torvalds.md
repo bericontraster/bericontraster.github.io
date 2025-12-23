@@ -7,7 +7,7 @@ image:
 toc: true
 comments: true
 tags: "linus-torvalds"
-categories: ["Influential Figures"]
+categories: ["Information Reads"]
 ---
 
 ## Linus Torvalds

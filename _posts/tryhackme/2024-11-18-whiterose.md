@@ -7,7 +7,7 @@ image:
 toc: true
 comments: true
 tags: linux tryhackme
-categories: ["ctf-writeups"]
+categories: ["Capture The Flag"]
 ---
 
 Welcome Reader, today we’ll hack Whiterose from [TryHackMe](https://tryhackme.com/r/room/whiterose). It is a free Mr. Robot-themed challenge created by [tryhackme](https://tryhackme.com/p/tryhackme) and [ngn](https://tryhackme.com/p/ngn).

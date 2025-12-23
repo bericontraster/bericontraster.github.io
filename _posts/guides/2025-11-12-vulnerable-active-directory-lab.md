@@ -7,7 +7,7 @@ image:
 toc: true
 comments: true
 tags: guide pentesting active-directory red-teaming
-categories: ["pentesting"]
+categories: ["Offensive Security"]
 description: Learn how to build a vulnerable Active Directory lab for penetration testing and ethical hacking practice. This step-by-step guide helps you simulate real-world AD attacks, strengthen your red-team skills, and master Windows domain exploitation in a safe environment. 
 ---
 

@@ -7,7 +7,7 @@ image:
 toc: true
 comments: true
 tags: vulnlab windows ctf
-categories: ["ctf-writeups"]
+categories: ["Capture The Flag"]
 description: Welcome Reader, Today we’ll hack Sweep from Vulnlab. It’s a window machine with medium difficulty.
 ---
 
