@@ -33,8 +33,7 @@ go install -v github.com/projectdiscovery/nuclei/v3/cmd/nuclei@latest
 To make nuclei accessible system-wide:
 
 ```shell
-mkdir -p /usr/local/go/bin
-cp /root/go/bin/nuclei /usr/local/go/bin/
+cp /root/go/bin/nuclei /usr/local/bin/
 ```
 {: .nolineno}
 
