@@ -6,8 +6,13 @@ author: bericontraster
 tags: about
 ---
 
-## Hi, I'm Muhammad Zubair
-I'm an Offensive Security Professional with 3+ years of hands-on experience in penetration testing, and red team operations. **OSCP**-certified and currently advancing in malware development to simulate advanced persistent threats.  
+## Hi, I’m Muhammad Zubair
+
+I’m an Offensive Security Professional with 3+ years of hands-on experience in penetration testing and red team operations. I’m **OSCP**-certified and currently deepening my expertise in malware development to better simulate advanced persistent threats.
+
+I help organizations uncover the vulnerabilities attackers would actually exploit before real attackers do. I’ve conducted **60+** real-world penetration tests, built 20+ custom offensive security labs, and **trained** security teams across multiple regions.
+
+My focus is on real impact: exploitability, blast radius, and what genuinely puts a business at risk. If a finding can’t be meaningfully abused, it doesn’t deserve panic.
 
 ## My Journey
 
@@ -47,5 +52,5 @@ Designed and deployed a Proxmox-based virtual lab infrastructure of 30+ custom m
 [![Medium](https://img.shields.io/badge/Medium-12100E?style=for-the-badge&logo=medium&logoColor=white)](https://medium.com/@bericontraster)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/mhamd-zubair)
 [![X (Twitter)](https://img.shields.io/badge/Twitter-000000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/bericontraster)
-[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:bericontraster@gmail.com)
+[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:zubair@arcanixsecurity.com)
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/bericontraster)

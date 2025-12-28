@@ -14,22 +14,22 @@ Our testing goes beyond automated scans every engagement includes hands-on analy
 
 ## Our Penetration Testing Solutions  
 
-1. **Internal & External Network Penetration Testing**  
+##### **Internal & External Network Penetration Testing**  
    - Evaluate exposure to **firewall evasion, privilege escalation, and lateral movement**  
    - Map real-world attack paths across corporate and cloud networks  
    - Enhance resilience with actionable insights from our **network security assessments**  
 
-2. **Web & API Penetration Testing**  
+##### **Web & API Penetration Testing**  
    - Identify risks aligned with the **OWASP Top 10** and emerging attack trends  
    - Detect **business logic flaws, authentication bypass, token abuse, SSRF, and injection flaws**  
    - Strengthen your **web application security** before attackers exploit weaknesses  
 
-3. **Active Directory Security Testing**  
+##### **Active Directory Security Testing**  
    - Identify weaknesses in identity and access controls (Kerberoasting, AS-REP Roasting, DC Sync, delegation abuse)  
    - Expose misconfigurations often missed by automated tools  
    - Safeguard your **enterprise authentication environment** against advanced threats  
 
-4. **Red Team Attack Simulation**
+##### **Red Team Attack Simulation**
    - Evaluate how your organization withstands a realistic, full-scope attack across people, processes, and technology
    - Identify detection gaps, response delays, and the pathways an adversary could exploit to reach critical assets
    - Strengthen your overall resilience by understanding how a sophisticated attacker would target and navigate your environment
@@ -38,19 +38,19 @@ Our testing goes beyond automated scans every engagement includes hands-on analy
 
 ## Why Partner Partner With Us?  
 
-1. **Trusted Security Expertise**  
+##### **Trusted Security Expertise**  
 Work with experienced offensive security professionals who understand real-world threats and deliver assessments you can rely on.
 
-2. **Realistic, Adversary-Driven Testing**  
-Our approach mirrors how modern attackers operate, revealing the risks that truly matter — not just what scanners detect.
+##### **Realistic, Adversary-Driven Testing**  
+Our approach mirrors how modern attackers operate, revealing the risks that truly matter not just what scanners detect.
 
-3. **Purpose-Built for Your Environment**  
+##### **Purpose-Built for Your Environment**  
 Every engagement is tailored to your technology stack, business model, and risk profile for maximum relevance and clarity.
 
-4. **Clear Guidance, Prioritized by Business Impact**  
+##### **Clear Guidance, Prioritized by Business Impact**  
 You receive actionable recommendations ranked by importance, helping your team focus on what protects your organization fastest.
 
-5. **A Partner You Can Count On**  
+##### **A Partner You Can Count On**  
 We communicate transparently, deliver on time, and support you through remediation to ensure lasting improvements in your security posture.
 
 ---
