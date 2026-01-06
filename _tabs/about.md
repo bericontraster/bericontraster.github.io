@@ -8,11 +8,11 @@ tags: about
 
 ## Hi, I’m Muhammad Zubair
 
-I’m an Offensive Security Professional with 3+ years of hands-on experience in penetration testing and red team operations. I’m **OSCP**-certified and currently deepening my expertise in malware development to better simulate advanced persistent threats.
+I’m an Offensive Security Professional focused on identifying the vulnerabilities that actually matter the ones real attackers would exploit to cause meaningful impact.
 
-I help organizations uncover the vulnerabilities attackers would actually exploit before real attackers do. I’ve conducted **60+** real-world penetration tests, built 20+ custom offensive security labs, and **trained** security teams across multiple regions.
+My work centers on real-world attack simulation across web applications, APIs, Active Directory, cloud, and internal environments. Rather than isolated findings, I focus on chaining weaknesses into realistic attack paths and translating them into clear, actionable risk for engineering teams and leadership.
 
-My focus is on real impact: exploitability, blast radius, and what genuinely puts a business at risk. If a finding can’t be meaningfully abused, it doesn’t deserve panic.
+I’m **OSCP-certified**, have hands-on experience delivering penetration tests for high-impact and regulated environments, and design enterprise-grade offensive security labs and training programs to help teams build practical defensive capability.
 
 ## My Journey
 
