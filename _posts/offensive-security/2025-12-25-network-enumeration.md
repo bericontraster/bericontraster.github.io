@@ -8,7 +8,7 @@ toc: true
 comments: true
 published: false
 tags: guide pentesting vulnerability-scanning
-categories: ["pentesting"]
+categories: ["Offensive Security"]
 description: Learn how to harness the power of Nuclei, a fast, customizable vulnerability scanner from ProjectDiscovery. This guide walks you through installation, template usage, and practical examples to help automate security testing across web applications and infrastructure with ease.
 ---
 
