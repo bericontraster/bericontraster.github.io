@@ -1,68 +1,87 @@
 ---
-icon: fas fa-shield-alt
+icon: fas fa-clipboard-check
 order: 0
 draft: false
 ---
 
-# Penetration Testing Services  
+# Compliance-Ready Vulnerability Scan + Letter
 
-Strengthen your security posture with comprehensive, real-world penetration testing. **Arcanix Security** helps organizations identify vulnerabilities, reduce risk, and validate defenses through targeted offensive security assessments tailored to your business environment.
+## Meet the audit deadline without the pentest circus
 
-Our testing goes beyond automated scans every engagement includes hands-on analysis and a clear, prioritized remediation report designed for both technical teams and executive leadership.  
+You need a fast, practical security check and a letter you can hand to an auditor or vendor today. This service gives you a clear vulnerability scan and a compliance-ready letter so you can keep deals moving, without getting dragged into a months-long engagement.
 
----
+## If this sounds familiar...
 
-## Our Penetration Testing Solutions  
+- An auditor or buyer asked for a recent vulnerability scan and you do not have one.
+- Vendor onboarding stalled because you cannot provide a security letter.
+- You have a compliance deadline but no time to manage a full penetration test.
+- You need something credible and defensible, not a 40-page sales pitch.
+- You are the accidental security person and you just need this handled.
 
-##### **Internal & External Network Penetration Testing**  
-   - Evaluate exposure to **firewall evasion, privilege escalation, and lateral movement**  
-   - Map real-world attack paths across corporate and cloud networks  
-   - Enhance resilience with actionable insights from our **network security assessments**  
+## What the Vulnerability Scan includes
 
-##### **Web & API Penetration Testing**  
-   - Identify risks aligned with the **OWASP Top 10** and emerging attack trends  
-   - Detect **business logic flaws, authentication bypass, token abuse, SSRF, and injection flaws**  
-   - Strengthen your **web application security** before attackers exploit weaknesses  
+- External and internal scan coverage based on your environment and scope.
+- Identification of common, high-impact issues that auditors look for.
+- Clear, prioritized findings with business-safe language.
+- A short debrief to confirm what matters and what does not.
 
-##### **Active Directory Security Testing**  
-   - Identify weaknesses in identity and access controls (Kerberoasting, AS-REP Roasting, DC Sync, delegation abuse)  
-   - Expose misconfigurations often missed by automated tools  
-   - Safeguard your **enterprise authentication environment** against advanced threats  
+## What the Compliance Letter is and why it matters
 
-##### **Red Team Attack Simulation**
-   - Evaluate how your organization withstands a realistic, full-scope attack across people, processes, and technology
-   - Identify detection gaps, response delays, and the pathways an adversary could exploit to reach critical assets
-   - Strengthen your overall resilience by understanding how a sophisticated attacker would target and navigate your environment
+The Compliance Letter is a signed summary of the scan scope, timing, and high-level results. It is written for auditors, clients, and vendor security reviewers so they can check the box and move forward. It is not marketing. It is a concise, professional statement you can send with confidence.
 
----
+## What this service is NOT
 
-## Why Partner Partner With Us?  
+- Not a full penetration test.
+- Not red teaming or adversary simulation.
+- Not enterprise consulting.
+- Not a guarantee that you are perfectly secure.
+- Not a replacement for a broader security program.
 
-##### **Trusted Security Expertise**  
-Work with experienced offensive security professionals who understand real-world threats and deliver assessments you can rely on.
+## Who this service is for (and who it is not for)
 
-##### **Realistic, Adversary-Driven Testing**  
-Our approach mirrors how modern attackers operate, revealing the risks that truly matter not just what scanners detect.
+For:
+- SMBs, startups, and SaaS teams facing audit, vendor, or client security requirements.
+- Leaders who need a clear, defensible answer fast.
+- Teams without a dedicated security function.
 
-##### **Purpose-Built for Your Environment**  
-Every engagement is tailored to your technology stack, business model, and risk profile for maximum relevance and clarity.
+Not for:
+- Organizations that need deep exploit testing or full scope penetration testing.
+- Teams looking for a long-term security program buildout right now.
 
-##### **Clear Guidance, Prioritized by Business Impact**  
-You receive actionable recommendations ranked by importance, helping your team focus on what protects your organization fastest.
+## How the process works
 
-##### **A Partner You Can Count On**  
-We communicate transparently, deliver on time, and support you through remediation to ensure lasting improvements in your security posture.
+1) Quick scope call to confirm systems, access, and timeline.
+2) You provide access details and a point of contact.
+3) I run the scan and validate results for accuracy.
+4) You receive the report and Compliance Letter.
+5) Optional Q&A so you feel ready for review.
 
----
+## Timeline and delivery expectations
 
-## Start Your Security Assessment Conversation
+Most engagements complete in a few business days. If you have a hard deadline, say so and we will plan around it. The goal is speed without shortcuts that create audit risk.
 
-Not sure where to begin with your security needs? Start with a risk-free conversation. In this session, we’ll help you understand your current posture, identify potential blind spots, and outline the most effective next steps for strengthening your defenses.  
+## What you receive
+
+- Vulnerability Scan Report with prioritized findings.
+- Compliance Letter you can submit to auditors or vendors.
+- Summary notes you can share internally.
+
+## Why this works for audits and vendor reviews
+
+Auditors and vendor teams need evidence, not a storyline. This package provides the exact artifacts they look for, with clear scope and dates. You get a credible, defensible response that keeps the process moving.
+
+## Why work with an independent cybersecurity consultant
+
+You get focus, speed, and direct accountability. No junior handoffs, no agency delays, no upsell pressure. Just the work you need, delivered by someone who understands the practical reality of SMB security and compliance.
+
+## Ready to get this off your plate?
+
+If you need this done quickly and cleanly, book a short call via Calendly or [**Email Me**](mailto:contact@bericontraster.com). I will confirm scope, timeline, and whether this is the right fit. If it is, we will get it done. If it is not, I will tell you that, too. 
 
 <!-- Calendly inline widget begin -->
 <div style="display: flex; justify-content: center; width: 100%;">
   <div class="calendly-inline-widget"
-       data-url="https://calendly.com/zubair-arcanixsecurity/30min"
+       data-url="https://calendly.com/contact-bericontraster/30min"
        style="min-width:600px; height:700px; width:600px;margin-top:30px;margin-bottom:30px;">
   </div>
 </div>
@@ -73,4 +92,4 @@ Not sure where to begin with your security needs? Start with a risk-free convers
 </script>
 <!-- Calendly inline widget end -->
 
-[**Email Us**](mailto:zubair@arcanixsecurity.com) and let’s secure your business today.
+[**Email Me**](mailto:contact@bericontraster.com) and let’s secure your business today.
