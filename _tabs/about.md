@@ -8,9 +8,9 @@ tags: about
 
 ## Hi, I’m Muhammad Zubair
 
-I’m an Offensive Security Professional focused on identifying the vulnerabilities that actually matter the ones real attackers would exploit to cause meaningful impact.
+I’m an Offensive Security Professional focused on identifying the vulnerabilities that actually matter.  
 
-My work centers on real-world attack simulation across web applications, APIs, Active Directory, cloud, and internal environments. Rather than isolated findings, I focus on chaining weaknesses into realistic attack paths and translating them into clear, actionable risk for engineering teams and leadership.
+My work focuses on simulating real-world attacks across web applications, APIs, Active Directory, cloud environments, and internal systems. I focus on identifying weaknesses and translating them into realistic attack paths, ultimately presenting clear, actionable risks to engineering teams and leadership.  
 
 I’m **OSCP-certified**, have hands-on experience delivering penetration tests for high-impact and regulated environments, and design enterprise-grade offensive security labs and training programs to help teams build practical defensive capability.
 

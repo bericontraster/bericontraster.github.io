@@ -2,136 +2,146 @@
 icon: fas fa-clipboard-check
 order: 0
 draft: false
+toc: true
 ---
 
 <style>
-  .compliance-grid {
-    --card-radius: 18px;
+  .service-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 20px;
-    margin: 28px 0 16px;
+    margin: 24px 0 20px;
   }
 
-  .compliance-card {
-    position: relative;
+  .service-widget {
+    background: #0f1115;
+    border: 1px solid #1f222b;
+    border-radius: 16px;
+    padding: 20px 22px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
     display: flex;
-    align-items: flex-end;
-    min-height: 220px;
-    border-radius: var(--card-radius);
-    overflow: hidden;
-    text-decoration: none;
-    color: #f8f8f8;
-    background-image: var(--bg-image);
-    background-size: cover;
-    background-position: center;
-    border: none;
-    border-bottom: none;
-    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.24);
-    transition: box-shadow 160ms ease, transform 160ms ease;
+    flex-direction: column;
+    gap: 12px;
   }
 
-  .content a.compliance-card,
-  .content a.compliance-card:hover,
-  .content a.compliance-card:focus-visible {
-    color: #f8f8f8 !important;
+  .service-widget__icon {
+    font-size: 1.4rem;
+    color: #8fe0c3;
+  }
+
+  .service-widget__title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  .service-widget__copy {
+    margin: 0;
+    color: #d5d9e0;
+  }
+
+  .service-widget__button {
+    align-self: flex-start;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #043927;
+    color: #ffffff;
+    padding: 8px 14px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border: 1px solid #0b553c;
+  }
+
+  .service-widget__button,
+  .service-widget__button:hover,
+  .service-widget__button:focus-visible {
+    color: #ffffff !important;
     text-decoration: none !important;
     border-bottom: none !important;
   }
 
-  .compliance-card::after {
-    content: none;
+  .content a.service-widget__button,
+  .content a.service-widget__button:hover,
+  .content a.service-widget__button:focus-visible,
+  .content a.service-widget__button:visited {
+    color: #ffffff !important;
+    text-decoration: none !important;
+    border-bottom: none !important;
   }
 
-  .compliance-card::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-color: rgba(0, 0, 0, 0.35);
-    transition: background-color 160ms ease;
-    pointer-events: none;
+  .service-widget__button:hover,
+  .service-widget__button:focus-visible {
+    background: #0b4b34;
   }
 
-  .compliance-card__title {
-    padding: 18px 20px;
-    font-size: clamp(1.1rem, 1.05rem + 0.9vw, 1.5rem);
-    font-weight: 600;
-    line-height: 1.2;
-    text-align: left;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.55);
-    position: relative;
-    z-index: 1;
-  }
-
-  .compliance-card:hover,
-  .compliance-card:focus-visible {
-    color: #f8f8f8;
-    text-decoration: none;
-    transform: translateY(-3px);
-    box-shadow: 0 14px 26px rgba(0, 0, 0, 0.3);
-  }
-
-  .compliance-card:hover::before,
-  .compliance-card:focus-visible::before {
-    background-color: rgba(0, 0, 0, 0.7);
-  }
-
-  .compliance-card:focus-visible {
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.85), 0 14px 26px rgba(0, 0, 0, 0.3);
-  }
-
-  @media (max-width: 720px) {
-    .compliance-grid {
+  @media (max-width: 900px) {
+    .service-grid {
       grid-template-columns: 1fr;
-    }
-
-    .compliance-card {
-      min-height: 190px;
-    }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .compliance-card {
-      transition: none;
     }
   }
 </style>
 
-<div class="compliance-grid">
-  <a
-    class="compliance-card"
-    href="/REPLACE_EXTERNAL_PERIMETER_AUDIT"
-    style="--bg-image: url('https://images.unsplash.com/photo-1752606402425-fa8ed3166a91?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');"
-  >
-    <span class="compliance-card__title">The External Perimeter Audit</span>
-  </a>
-  <!-- LINK: replace /REPLACE_EXTERNAL_PERIMETER_AUDIT -->
+I deliver manual-first penetration testing that mirrors how real attackers probe, pivot, and exploit. You get clear, prioritized risk and evidence-backed findings that stand up to audits and executive scrutiny.
 
-  <a
-    class="compliance-card"
-    href="/REPLACE_INTERNAL_NETWORK_ASSESSMENT"
-    style="--bg-image: url('https://images.unsplash.com/photo-1754516733606-008062751e0f?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');"
-  >
-    <span class="compliance-card__title">Internal Network Assessment</span>
-  </a>
-  <!-- LINK: replace /REPLACE_INTERNAL_NETWORK_ASSESSMENT -->
+<div class="service-grid">
+  <article class="service-widget">
+    <div class="service-widget__icon"><i class="fas fa-satellite-dish"></i></div>
+    <h3 class="service-widget__title">External Perimeter Audit</h3>
+    <p class="service-widget__copy">Map your true internet exposure, including shadow IT, forgotten assets, and leaked access paths. I validate what an attacker can actually reach, not just what a scanner reports.</p>
+    <a class="service-widget__button" href="{{ '/services/external-perimeter-audit/' | relative_url }}">Learn More</a>
+  </article>
 
-  <a
-    class="compliance-card"
-    href="/REPLACE_WEB_APPLICATION_PENTEST"
-    style="--bg-image: url('https://images.unsplash.com/photo-1532190872407-280735d27e08?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDEwfHx8ZW58MHx8fHx8');"
-  >
-    <span class="compliance-card__title">Web Application Pentest</span>
-  </a>
-  <!-- LINK: replace /REPLACE_WEB_APPLICATION_PENTEST -->
+  <article class="service-widget">
+    <div class="service-widget__icon"><i class="fas fa-network-wired"></i></div>
+    <h3 class="service-widget__title">Internal Network Assessment</h3>
+    <p class="service-widget__copy">Assume breach and test how far a threat actor can move inside the network. I focus on Active Directory security, lateral movement, and privilege escalation chains.</p>
+    <a class="service-widget__button" href="{{ '/services/internal-network-assessment/' | relative_url }}">Learn More</a>
+  </article>
 
-  <a
-    class="compliance-card"
-    href="/REPLACE_CASE_STUDIES"
-    style="--bg-image: url('https://images.unsplash.com/photo-1760978632119-5069b6c9fb68?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE5fHx8ZW58MHx8fHx8');"
-  >
-    <span class="compliance-card__title">Case Studies</span>
-  </a>
-  <!-- LINK: replace /REPLACE_CASE_STUDIES -->
+  <article class="service-widget">
+    <div class="service-widget__icon"><i class="fas fa-code"></i></div>
+    <h3 class="service-widget__title">Web Application Pentest</h3>
+    <p class="service-widget__copy">Cover OWASP Top 10 and the business logic flaws that scanners miss. I test real user flows to uncover authorization gaps and exploitability.</p>
+    <a class="service-widget__button" href="{{ '/services/web-application-pentest/' | relative_url }}">Learn More</a>
+  </article>
 </div>
+
+## The Problem
+Attack surfaces are expanding faster than most teams can track. Automated tools flag volume, but they rarely prove exploitability, path to impact, or business risk.
+
+## Our Approach
+1. Recon: Enumerate external and internal exposures using OSINT, configuration review, and targeted discovery.
+2. Enumeration: Validate assets, access paths, and trust relationships with manual verification.
+3. Exploitation: Safely demonstrate real-world impact and chain weaknesses where it matters.
+4. Post-Exploitation: Document pivot paths, privilege escalation opportunities, and blast radius.
+
+## The Deliverables
+- Executive Summary for leadership and risk owners.
+- Technical Breakdown with reproducible evidence and severity context.
+- Remediation Roadmap with prioritized fixes and hardening guidance.
+- 1-year re-test window to verify fixes and measure risk reduction.
+
+## Why Me
+I operate to OSCP and CPTS standards, with 3 years of real-world assessment experience. My work emphasizes manual testing, clear evidence, and practical remediation so engineering teams can act fast.
+
+## Book a Security Call
+If you need a clear, defensible view of your exposure, schedule a short scoping call. We will align on scope, timelines, and the highest-risk areas so testing stays focused on outcomes.
+
+<!-- Calendly inline widget begin -->
+<div style="display: flex; justify-content: center; width: 100%;">
+  <div class="calendly-inline-widget"
+       data-url="https://calendly.com/contact-bericontraster/30min"
+       style="min-width:600px; height:700px; width:600px;margin-top:30px;margin-bottom:30px;">
+  </div>
+</div>
+
+<script type="text/javascript"
+        src="https://assets.calendly.com/assets/external/widget.js"
+        async>
+</script>
+<!-- Calendly inline widget end -->
+
+[**Email Me**](mailto:contact@bericontraster.com) and let's secure your business today.
