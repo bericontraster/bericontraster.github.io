@@ -4,92 +4,134 @@ order: 0
 draft: false
 ---
 
-# Compliance-Ready Vulnerability Scan + Letter
+<style>
+  .compliance-grid {
+    --card-radius: 18px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    margin: 28px 0 16px;
+  }
 
-## Meet the audit deadline without the pentest circus
+  .compliance-card {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    min-height: 220px;
+    border-radius: var(--card-radius);
+    overflow: hidden;
+    text-decoration: none;
+    color: #f8f8f8;
+    background-image: var(--bg-image);
+    background-size: cover;
+    background-position: center;
+    border: none;
+    border-bottom: none;
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.24);
+    transition: box-shadow 160ms ease, transform 160ms ease;
+  }
 
-You need a fast, practical security check and a letter you can hand to an auditor or vendor today. This service gives you a clear vulnerability scan and a compliance-ready letter so you can keep deals moving, without getting dragged into a months-long engagement.
+  .content a.compliance-card,
+  .content a.compliance-card:hover,
+  .content a.compliance-card:focus-visible {
+    color: #f8f8f8 !important;
+    text-decoration: none !important;
+    border-bottom: none !important;
+  }
 
-## If this sounds familiar...
+  .compliance-card::after {
+    content: none;
+  }
 
-- An auditor or buyer asked for a recent vulnerability scan and you do not have one.
-- Vendor onboarding stalled because you cannot provide a security letter.
-- You have a compliance deadline but no time to manage a full penetration test.
-- You need something credible and defensible, not a 40-page sales pitch.
-- You are the accidental security person and you just need this handled.
+  .compliance-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.35);
+    transition: background-color 160ms ease;
+    pointer-events: none;
+  }
 
-## What the Vulnerability Scan includes
+  .compliance-card__title {
+    padding: 18px 20px;
+    font-size: clamp(1.1rem, 1.05rem + 0.9vw, 1.5rem);
+    font-weight: 600;
+    line-height: 1.2;
+    text-align: left;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.55);
+    position: relative;
+    z-index: 1;
+  }
 
-- External and internal scan coverage based on your environment and scope.
-- Identification of common, high-impact issues that auditors look for.
-- Clear, prioritized findings with business-safe language.
-- A short debrief to confirm what matters and what does not.
+  .compliance-card:hover,
+  .compliance-card:focus-visible {
+    color: #f8f8f8;
+    text-decoration: none;
+    transform: translateY(-3px);
+    box-shadow: 0 14px 26px rgba(0, 0, 0, 0.3);
+  }
 
-## What the Compliance Letter is and why it matters
+  .compliance-card:hover::before,
+  .compliance-card:focus-visible::before {
+    background-color: rgba(0, 0, 0, 0.7);
+  }
 
-The Compliance Letter is a signed summary of the scan scope, timing, and high-level results. It is written for auditors, clients, and vendor security reviewers so they can check the box and move forward. It is not marketing. It is a concise, professional statement you can send with confidence.
+  .compliance-card:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.85), 0 14px 26px rgba(0, 0, 0, 0.3);
+  }
 
-## What this service is NOT
+  @media (max-width: 720px) {
+    .compliance-grid {
+      grid-template-columns: 1fr;
+    }
 
-- Not a full penetration test.
-- Not red teaming or adversary simulation.
-- Not enterprise consulting.
-- Not a guarantee that you are perfectly secure.
-- Not a replacement for a broader security program.
+    .compliance-card {
+      min-height: 190px;
+    }
+  }
 
-## Who this service is for (and who it is not for)
+  @media (prefers-reduced-motion: reduce) {
+    .compliance-card {
+      transition: none;
+    }
+  }
+</style>
 
-For:
-- SMBs, startups, and SaaS teams facing audit, vendor, or client security requirements.
-- Leaders who need a clear, defensible answer fast.
-- Teams without a dedicated security function.
+<div class="compliance-grid">
+  <a
+    class="compliance-card"
+    href="/REPLACE_EXTERNAL_PERIMETER_AUDIT"
+    style="--bg-image: url('https://images.unsplash.com/photo-1752606402425-fa8ed3166a91?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');"
+  >
+    <span class="compliance-card__title">The External Perimeter Audit</span>
+  </a>
+  <!-- LINK: replace /REPLACE_EXTERNAL_PERIMETER_AUDIT -->
 
-Not for:
-- Organizations that need deep exploit testing or full scope penetration testing.
-- Teams looking for a long-term security program buildout right now.
+  <a
+    class="compliance-card"
+    href="/REPLACE_INTERNAL_NETWORK_ASSESSMENT"
+    style="--bg-image: url('https://images.unsplash.com/photo-1754516733606-008062751e0f?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');"
+  >
+    <span class="compliance-card__title">Internal Network Assessment</span>
+  </a>
+  <!-- LINK: replace /REPLACE_INTERNAL_NETWORK_ASSESSMENT -->
 
-## How the process works
+  <a
+    class="compliance-card"
+    href="/REPLACE_WEB_APPLICATION_PENTEST"
+    style="--bg-image: url('https://images.unsplash.com/photo-1532190872407-280735d27e08?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDEwfHx8ZW58MHx8fHx8');"
+  >
+    <span class="compliance-card__title">Web Application Pentest</span>
+  </a>
+  <!-- LINK: replace /REPLACE_WEB_APPLICATION_PENTEST -->
 
-1) Quick scope call to confirm systems, access, and timeline.
-2) You provide access details and a point of contact.
-3) I run the scan and validate results for accuracy.
-4) You receive the report and Compliance Letter.
-5) Optional Q&A so you feel ready for review.
-
-## Timeline and delivery expectations
-
-Most engagements complete in a few business days. If you have a hard deadline, say so and we will plan around it. The goal is speed without shortcuts that create audit risk.
-
-## What you receive
-
-- Vulnerability Scan Report with prioritized findings.
-- Compliance Letter you can submit to auditors or vendors.
-- Summary notes you can share internally.
-
-## Why this works for audits and vendor reviews
-
-Auditors and vendor teams need evidence, not a storyline. This package provides the exact artifacts they look for, with clear scope and dates. You get a credible, defensible response that keeps the process moving.
-
-## Why work with an independent cybersecurity consultant
-
-You get focus, speed, and direct accountability. No junior handoffs, no agency delays, no upsell pressure. Just the work you need, delivered by someone who understands the practical reality of SMB security and compliance.
-
-## Ready to get this off your plate?
-
-If you need this done quickly and cleanly, book a short call via Calendly or [**Email Me**](mailto:contact@bericontraster.com). I will confirm scope, timeline, and whether this is the right fit. If it is, we will get it done. If it is not, I will tell you that, too. 
-
-<!-- Calendly inline widget begin -->
-<div style="display: flex; justify-content: center; width: 100%;">
-  <div class="calendly-inline-widget"
-       data-url="https://calendly.com/contact-bericontraster/30min"
-       style="min-width:600px; height:700px; width:600px;margin-top:30px;margin-bottom:30px;">
-  </div>
+  <a
+    class="compliance-card"
+    href="/REPLACE_CASE_STUDIES"
+    style="--bg-image: url('https://images.unsplash.com/photo-1760978632119-5069b6c9fb68?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE5fHx8ZW58MHx8fHx8');"
+  >
+    <span class="compliance-card__title">Case Studies</span>
+  </a>
+  <!-- LINK: replace /REPLACE_CASE_STUDIES -->
 </div>
-
-<script type="text/javascript"
-        src="https://assets.calendly.com/assets/external/widget.js"
-        async>
-</script>
-<!-- Calendly inline widget end -->
-
-[**Email Me**](mailto:contact@bericontraster.com) and let’s secure your business today.
