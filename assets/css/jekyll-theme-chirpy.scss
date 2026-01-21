@@ -13,11 +13,11 @@ figure.highlight,
 div[class^="language-"],
 pre.highlight,
 pre[class^="language-"] {
-  background-color: #001833 !important;
+  background-color: #0b1626 !important;
 }
 
 .code-header {
-  background-color: #001833 !important;
+  background-color: #0e1b2e !important;
 }
 
 /* Unified rounded border for code blocks */
@@ -33,6 +33,12 @@ img {
 
 #sidebar {
     background-color: black;
+}
+
+#sidebar #avatar {
+    box-shadow: none !important;
+    border: 0 !important;
+    outline: 0 !important;
 }
 
 #main-wrapper {
