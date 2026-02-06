@@ -2,11 +2,10 @@
 title: Getting Into Cybersecurity in 2026 the Right Way
 date: 2026-1-7 12:00:00 +0500
 image:
-    path: "https://miro.medium.com/v2/resize:fit:1400/format:webp/1*X_dca6xsqA8xDCTqGpQVyw.png"
+    path: "https://images.unsplash.com/photo-1583743493454-f122b10f8920?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     alt: Getting Into Cybersecurity
 toc: true
 comments: true
-pin: true
 tags: cybersecurity ethical-hacking career-advice pentesting
 categories: ["Information Reads"]
 description: How to get into cybersecurity in 2026, based on real experience what to learn, where to start, and what actually matters.
