@@ -110,6 +110,14 @@ p {
   line-height: 1.60rem;
 }
 
+/* In-page content lists (posts/pages only) */
+article .content ul,
+article .content ol,
+article .content li {
+  font-size: 18px;
+  line-height: 1.60rem;
+}
+
 h1 + .post-meta + .post-desc,
 header .post-desc {
   font-family: "Inter", "Helvetica Neue", Arial, sans-serif;

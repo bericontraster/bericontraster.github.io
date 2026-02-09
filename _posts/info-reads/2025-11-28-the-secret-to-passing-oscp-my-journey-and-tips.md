@@ -6,6 +6,7 @@ image:
     alt: 
 toc: true
 comments: true
+pin: true
 tags: oscp/oscp+ 
 categories: ["Information Reads"]
 description: "Discover the secrets to passing the OSCP exam through real experience. Read my journey, practical tips, study strategies, and lessons learned to help you prepare effectively and succeed in OSCP."

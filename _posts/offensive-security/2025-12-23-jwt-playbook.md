@@ -2,7 +2,7 @@
 title: JSON Web Token (JWT) Playbook
 date: 2025-12-23 18:00:00 +0500
 image:
-    path: '/assets/img/posts/jwt-playbook/jwt-platbook-by-bericontraster.png'
+    path: 'https://images.unsplash.com/photo-1770321695654-c07b5a61edf9?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
     alt: JSON WEB TOKENS
 toc: true
 comments: true

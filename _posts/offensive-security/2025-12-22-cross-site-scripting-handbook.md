@@ -2,7 +2,7 @@
 title: Cross-Site Scripting (XSS) Playbook
 date: 2025-12-22 12:00:00 +0500
 image:
-    path: '/assets/img/images/cross-site-scripting-by-bericontraster.png'
+    path: 'https://images.unsplash.com/photo-1739288435226-e288f81a0ed6?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
     alt: Cross-Site Scripting 
 toc: true
 comments: true

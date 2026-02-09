@@ -6,6 +6,7 @@ image:
     alt: "Building a Vulnerable Active Directory Lab for Penetration Testing: A Practical Walkthrough"
 toc: true
 comments: true
+pin: true
 tags: guide pentesting active-directory red-teaming
 categories: ["pentesting"]
 description: A practical walkthrough of Active Directory’s core components, authentication system, and administrative functions.

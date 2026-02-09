@@ -6,6 +6,7 @@ image:
     alt: Attacker Stealing Data
 toc: true
 comments: true
+pin: true
 tags: red-teaming 
 categories: ["Information Reads"]
 description: This article highlights key warning signs that indicate your website is actively being probed by attackers, including unusual traffic patterns, suspicious requests, and common reconnaissance behaviors, helping you detect threats early and strengthen your security posture.

@@ -37,20 +37,37 @@ A copy of my resume can be found here: [view resume](/assets/muhammad-zubair-res
 [Certified Penetration Testing Specialist](https://drive.google.com/file/d/1lzzE9Nl5n3X-3bakAo_ObtXl9DG1DILa/view?usp=sharing) <span style="margin-left: 20px;">  <span style="margin-left: 20px;"> HackTheBox <span style="margin-left: 10px;"> --- <span style="margin-left: 10px;"> Feb 2024  
 <!-- [Malware Development](https://maldevacademy.com/) <span style="margin-left: 151px;">  MalDev Academy <span style="margin-left: 10px;"> --- <span style="margin-left: 10px;"> Jul 2025 - Present   -->
 
-<!-- <h1 style="color: #FF6B35;"> Projects </h1> -->
-<!-- ## Projects
-### Advanced Penetration Testing Program
-Created and delivered a comprehensive, hands-on training program covering advanced penetration testing methodologies. The course includes multiple modules, practical lab exercises, and real-world exploitation scenarios used for professional upskilling and certification preparation.
-<h4 style="color: #00ADB5"><b>Web Application Security Course</b></h4>
-Developed and launched a complete, lab-based training course focused on web application security. The program covers reconnaissance, vulnerability discovery, exploitation, and defense strategies aligned with modern web security practices.  
-<h4 style="color: #00ADB5"><b>Enterprise Compliance & Monitoring Platform</b></h4>
-Designed and developed a large-scale enterprise compliance platform that enables organizations to continuously monitor, detect, and report on systems failing to meet critical security controls.
-<h4 style="color: #00ADB5"><b>Virtualized Infrastructure with Proxmox VE</b></h4>
-Designed and deployed a Proxmox-based virtual lab infrastructure of 30+ custom made vulnerable VMs. Hosted all the lab in a private network and created OpenVPN server to let students interact with the private labs. -->
-
-
 [![Medium](https://img.shields.io/badge/Medium-12100E?style=for-the-badge&logo=medium&logoColor=white)](https://medium.com/@bericontraster)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/mhamd-zubair)
 [![X (Twitter)](https://img.shields.io/badge/Twitter-000000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/bericontraster)
 [![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:contact@bericontraster.com)
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/bericontraster)
+
+## Projects
+
+> Operational Security (OpSec) Disclaimer In adherence to Non-Disclosure Agreements (NDAs) and professional ethics, all work presented here has been strictly de-identified. These summaries represent real-world methodologies and architectural achievements without compromising the security posture or identity of past clients and employers. No confidential data or proprietary assets are contained within these descriptions.
+{: .prompt-info}
+
+### Offensive Security Curriculum Architecture
+
+Developed two industry-standard offensive security courses comparable to PNPT, encompassing Web, Active
+Directory, and AI exploitation vectors. I architected the final practical examinations, managed global certification
+issuance, and personally trained over 50 students and corporate professionals on real-world adversary TTPs.
+ 
+### Enterprise Compliance Architecture: ACSC Essential Eight
+
+Built and handled most of the development and security architecture of a large-scale backend application with
+admin and user dashboards to automate Essential Eight (ACSC) compliance for enterprise clients.
+
+### Real-Time AI Vishing & Voice Synthesis Engine
+
+Co-developed a vishing (voice-phishing) platform using ElevenLabs, Twilio, and AI models to simulate realistic
+social engineering attacks and execute automated campaigns that enhanced client security awareness.
+
+### Active Directory Training Labs [↗](https://github.com/bericontraster/enterprise-offensive-security-labs)
+I engineered vulnerable Active Directory environments designed to mirror the architectural flaws found in modern enterprise networks. Beyond infrastructure setup, I authored comprehensive exploitation guides on Medium, detailing the bridge between theoretical vulnerabilities and real-world adversary tradecraft.
+
+- **Key Focus Areas:** Kerberoasting, ACL abuse, constrained delegation, and complex cross-forest escalation paths.
+- **Impact:** Bridging the gap for aspiring security professionals by providing high-fidelity, hands-on training scenarios.
+
+View the Blogs on [Medium](https://medium.com/@bericontraster/list/the-active-directory-security-handbook-e890199a76ca).
