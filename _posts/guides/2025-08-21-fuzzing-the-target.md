@@ -26,7 +26,7 @@ description: >
 Fuzzing the subdomain using the following ffuf command.
 
 ```shell
-ffuf -u https://FUZZ.domain.com/ -w /usr/share/wordlists/seclists/Discovery/DNS/subdomains-top1million-110000.txt -fc 403
+ffuf -w /usr/share/wordlists/seclists/Discovery/DNS/subdomains-top1million-110000.txt -u http://website.com/ -H "Host: FUZZ.website.com" -fc 301
 ```
 {: .nolineno}
 
