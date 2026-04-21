@@ -167,4 +167,4 @@ Conclusion
 
 Now if you look at all of this closely, one thing becomes clear. These systems are not actually intelligent, they are just pattern machines. And anything that depends on patterns can be influenced, manipulated, or broken if you understand it well enough. That’s exactly what we are going to explore next. Things like jailbreaking, prompt injection etc.
 
-Thanks for reading. I hope it proved useful. See you in the next one! If you have any questions, feel free to reach out [bericontraster.com](http://www.bericontraster.com).
+Thanks for reading. I hope it proved useful. See you in the next one! If you have any questions, feel free to reach out [bericontraster.com](https://www.bericontraster.com).
