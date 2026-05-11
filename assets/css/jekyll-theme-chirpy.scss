@@ -27,12 +27,17 @@ div[class^="language-"] {
   overflow: hidden;
 }
 
-img {
-  border-radius: 5px;
+// ####################
+// In Article Image CSS
+// ####################
+
+p img {
+  border-radius: 15px;
+  border: 0.5px solid #262323;
 }
 
 #sidebar {
-    background-color: black;
+  background-color: black;
 }
 
 #sidebar #avatar {
@@ -63,6 +68,10 @@ img {
 
 .post-preview {
     background: #111111
+}
+
+#post-list .h1 {
+  colors: red; 
 }
 
 .post-preview::before {
@@ -101,6 +110,10 @@ code, pre, kbd, samp {
   font-family: "JetBrains Mono", SFMono-Regular, Consolas, Menlo, monospace;
 }
 
+.highlight {
+  padding-bottom: 0rem;
+}
+
 body {
   font-size: 1.07rem;
 }
@@ -108,6 +121,21 @@ body {
 p {
   font-size: 18px;
   line-height: 1.60rem;
+}
+
+.post-preview {
+  box-shadow: none;
+  border-color: #043927;
+  border: 0.5px solid rdb(24, 22, 22);
+
+}
+
+#post-list .card .card-body .card-text.content p {
+  line-height: 1.2;
+}
+
+#toc-wrapper::before, .toc-border-cover {
+  background: #0a0a0a;
 }
 
 /* In-page content lists (posts/pages only) */

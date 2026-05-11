@@ -1,0 +1,417 @@
+---
+---
+
+@use 'main{%- if jekyll.environment == 'production' -%}.bundle{%- endif -%}';
+
+/*
+ * =============================================================
+ * bericontraster.com — Professional Theme Override
+ * Color system:
+ *   Primary anchor  — Navy   #1A3A5C
+ *   Light bg        — Warm White  #F8F7F4
+ *   Dark bg         — Deep Slate  #0F1623
+ * =============================================================
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap');
+
+
+/* ─────────────────────────────────────────────
+   LIGHT MODE
+   ───────────────────────────────────────────── */
+html:not([data-mode]),
+html[data-mode=light] {
+  --main-bg:                    #F8F7F4;
+  --sidebar-bg:                 #FFFFFF;
+  --card-bg:                    #FFFFFF;
+  --topbar-bg:                  rgba(248, 247, 244, 0.88);
+  --button-bg:                  #FFFFFF;
+
+  --main-border-color:          #EAE8E3;
+  --sidebar-border-color:       #ECEAE5;
+  --btn-border-color:           #DDD9D3;
+  --search-border-color:        #E0DDD8;
+  --language-border-color:      #E5E3DE;
+  --tb-border-color:            #EDEAE5;
+
+  --text-color:                 #2A2C32;
+  --text-muted-color:           #6B6F7A;
+  --text-muted-highlight-color: #4A4F5C;
+  --heading-color:              #1A1C22;
+  --label-color:                #4A4F5C;
+  --blockquote-text-color:      #6B6F7A;
+  --post-list-text-color:       #4A4F5C;
+  --topbar-text-color:          #2A2C32;
+  --site-title-color:           #1A3A5C;
+  --site-subtitle-color:        #6B6F7A;
+
+  --sidebar-muted-color:        #5A5F6C;
+  --sidebar-active-color:       #1A3A5C;
+  --sidebar-hover-bg:           rgba(26, 58, 92, 0.07);
+  --sidebar-btn-bg:             #F2F0EC;
+  --sidebar-btn-color:          #5A5F6C;
+
+  --link-color:                 #1A3A5C;
+  --link-underline-color:       #C8D4E0;
+  --toc-highlight:              #1A3A5C;
+
+  --btn-patinator-text-color:   #4A4F5C;
+  --btn-paginator-hover-color:  #EEF2F6;
+  --btn-backtotop-color:        #5A5F6C;
+  --btn-backtotop-border-color: #DDD9D3;
+
+  --card-hover-bg:              #EEF2F6;
+  --card-shadow:                rgba(26, 58, 92, 0.06) 0 2px 8px 0,
+                                rgba(26, 58, 92, 0.08) 0 0 0 1px;
+
+  --tag-border:                 #C8D4E0;
+  --tag-shadow:                 #DDD9D3;
+  --tag-hover:                  #C8D4E0;
+  --search-tag-bg:              #EEF2F6;
+
+  --highlight-bg-color:         #F3F5F8;
+  --highlighter-rouge-color:    #1A3A5C;
+  --inline-code-bg:             rgba(26, 58, 92, 0.06);
+  --code-color:                 #2A3A4A;
+  --code-header-text-color:     #8A9AAA;
+  --code-header-muted-color:    #D8DCE2;
+  --code-header-icon-color:     #AABACA;
+
+  --blockquote-border-color:    #D0D8E0;
+  --avatar-border-color:        #FFFFFF;
+  --categories-border:          rgba(26, 58, 92, 0.1);
+  --categories-hover-bg:        #EEF2F6;
+  --timeline-color:             rgba(26, 58, 92, 0.1);
+  --timeline-node-bg:           #A8BCCC;
+  --tb-odd-bg:                  #F8F7F4;
+  --footnote-target-bg:         #E6F0F8;
+
+  --prompt-info-bg:             #EBF4FB;
+  --prompt-info-icon-color:     #1A6AAA;
+  --prompt-tip-bg:              rgba(26, 140, 80, 0.1);
+  --prompt-warning-bg:          rgba(200, 140, 20, 0.1);
+  --prompt-danger-bg:           rgba(180, 40, 30, 0.08);
+}
+
+
+/* ─────────────────────────────────────────────
+   DARK MODE
+   ───────────────────────────────────────────── */
+html[data-mode=dark] {
+  --main-bg:                    #0F1623;
+  --sidebar-bg:                 #141C2B;
+  --card-bg:                    #141C2B;
+  --topbar-bg:                  rgba(15, 22, 35, 0.82);
+  --button-bg:                  #1A2235;
+
+  --main-border-color:          #1E2A3D;
+  --sidebar-border-color:       #1E2A3D;
+  --btn-border-color:           #253448;
+  --search-border-color:        #253448;
+  --language-border-color:      #1E2A3D;
+  --tb-border-color:            #1A2235;
+
+  --text-color:                 #C8D0DC;
+  --text-muted-color:           #7A8490;
+  --text-muted-highlight-color: #9AAAB8;
+  --heading-color:              #D8E2EC;
+  --label-color:                #9AAAB8;
+  --blockquote-text-color:      #7A8490;
+  --post-list-text-color:       #9AAAB8;
+  --topbar-text-color:          #C8D0DC;
+  --site-title-color:           #6A9FC0;
+  --site-subtitle-color:        #5A6878;
+
+  --sidebar-muted-color:        #7A8490;
+  --sidebar-active-color:       #A8C8E8;
+  --sidebar-hover-bg:           rgba(45, 90, 142, 0.18);
+  --sidebar-btn-bg:             #1A2235;
+  --sidebar-btn-color:          #7A8490;
+
+  --link-color:                 #7AB8E0;
+  --link-underline-color:       #2D4A6E;
+  --toc-highlight:              #7AB8E0;
+
+  --btn-patinator-text-color:   #9AAAB8;
+  --btn-paginator-hover-color:  #1A2235;
+  --btn-backtotop-color:        #9AAAB8;
+  --btn-backtotop-border-color: #1E2A3D;
+
+  --card-hover-bg:              #1E2A3D;
+  --card-shadow:                rgba(0, 0, 0, 0.5) 0 6px 20px 0,
+                                rgba(45, 90, 142, 0.2) 0 0 0 1px;
+
+  --tag-border:                 #2D4A6E;
+  --tag-shadow:                 #0F1623;
+  --tag-hover:                  rgba(45, 90, 142, 0.35);
+  --search-tag-bg:              #1A2235;
+
+  --highlight-bg-color:         #0C1420;
+  --highlighter-rouge-color:    #90C4E0;
+  --inline-code-bg:             rgba(122, 184, 224, 0.08);
+  --code-color:                 #A8C0D0;
+  --code-header-text-color:     #506070;
+  --code-header-muted-color:    #1E2A3D;
+  --code-header-icon-color:     #3A5068;
+
+  --blockquote-border-color:    #253448;
+  --avatar-border-color:        rgba(200, 208, 220, 0.85);
+  --categories-border:          rgba(45, 90, 142, 0.25);
+  --categories-hover-bg:        rgba(45, 90, 142, 0.2);
+  --timeline-color:             rgba(45, 90, 142, 0.25);
+  --timeline-node-bg:           #3A6080;
+  --tb-odd-bg:                  #141C2B;
+  --footnote-target-bg:         #1A2E45;
+
+  --prompt-info-bg:             rgba(26, 80, 140, 0.35);
+  --prompt-info-icon-color:     #5A9FD0;
+  --prompt-tip-bg:              rgba(20, 100, 60, 0.35);
+  --prompt-warning-bg:          rgba(130, 90, 10, 0.4);
+  --prompt-danger-bg:           rgba(120, 30, 20, 0.4);
+}
+
+/* System dark mode (no manual toggle set) */
+@media (prefers-color-scheme: dark) {
+  html:not([data-mode]) {
+    --main-bg:              #0F1623;
+    --sidebar-bg:           #141C2B;
+    --card-bg:              #141C2B;
+    --topbar-bg:            rgba(15, 22, 35, 0.82);
+    --main-border-color:    #1E2A3D;
+    --sidebar-border-color: #1E2A3D;
+    --btn-border-color:     #253448;
+    --text-color:           #C8D0DC;
+    --text-muted-color:     #7A8490;
+    --heading-color:        #D8E2EC;
+    --site-title-color:     #6A9FC0;
+    --sidebar-muted-color:  #7A8490;
+    --sidebar-active-color: #A8C8E8;
+    --sidebar-hover-bg:     rgba(45, 90, 142, 0.18);
+    --link-color:           #7AB8E0;
+    --link-underline-color: #2D4A6E;
+    --toc-highlight:        #7AB8E0;
+    --card-hover-bg:        #1E2A3D;
+    --tag-border:           #2D4A6E;
+    --tag-hover:            rgba(45, 90, 142, 0.35);
+    --highlight-bg-color:   #0C1420;
+    --inline-code-bg:       rgba(122, 184, 224, 0.08);
+  }
+}
+
+
+/* ─────────────────────────────────────────────
+   TYPOGRAPHY
+   ───────────────────────────────────────────── */
+body {
+  font-family: 'DM Sans', 'Microsoft Yahei', sans-serif;
+}
+
+h1, h2, h3, h4, h5,
+#sidebar .site-title,
+header .post-desc,
+#post-list .card .card-body .card-title {
+  font-family: 'DM Serif Display', 'Microsoft Yahei', serif;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+
+/* ─────────────────────────────────────────────
+   SIDEBAR
+   ───────────────────────────────────────────── */
+#sidebar .site-title {
+  font-size: 1.55rem;
+  color: var(--site-title-color);
+}
+
+#sidebar .site-subtitle {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+#sidebar ul li.nav-item a.nav-link {
+  border-left: 3px solid transparent;
+  transition: background-color 0.2s ease, border-left-color 0.2s ease;
+}
+
+#sidebar ul li.nav-item a.nav-link:hover {
+  border-left-color: rgba(26, 58, 92, 0.3);
+}
+
+#sidebar ul li.nav-item.active .nav-link {
+  font-weight: 600;
+  border-left: 3px solid var(--sidebar-active-color);
+}
+
+#sidebar #avatar {
+  box-shadow: #1A3A5C 0 0 0 2px;
+}
+
+html[data-mode=dark] #sidebar #avatar {
+  box-shadow: rgba(122, 184, 224, 0.5) 0 0 0 2px;
+}
+
+
+/* ─────────────────────────────────────────────
+   TOPBAR
+   ───────────────────────────────────────────── */
+#topbar-wrapper {
+  border-bottom: 1px solid var(--main-border-color);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+
+/* ─────────────────────────────────────────────
+   POST CARDS
+   ───────────────────────────────────────────── */
+#post-list .post-preview {
+  border-radius: 12px;
+  border: 1px solid var(--main-border-color);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+#post-list .post-preview:hover {
+  border-color: var(--link-color);
+  box-shadow: 0 4px 20px rgba(26, 58, 92, 0.1);
+}
+
+#post-list .card .card-body .card-title {
+  font-size: 1.18rem;
+  line-height: 1.4;
+}
+
+
+/* ─────────────────────────────────────────────
+   LINK HOVER  — keep original Chirpy rust accent
+   ───────────────────────────────────────────── */
+#page-category a:hover,
+#page-tag a:hover,
+#access-lastmod a:hover,
+.post-tail-wrapper .license-wrapper > a:hover,
+#search-results a:hover,
+footer a:hover,
+#topbar #breadcrumb a:hover,
+.post-meta a:not([class]):hover,
+.content a:not(.img-link):hover {
+  color: #C05A30 !important;
+  border-bottom: 1px solid #C05A30;
+  text-decoration: none;
+}
+
+
+/* ─────────────────────────────────────────────
+   TAGS
+   ───────────────────────────────────────────── */
+.post-tag {
+  border-radius: 100px;
+  font-size: 0.78rem;
+  padding: 0.15rem 0.6rem;
+  letter-spacing: 0.2px;
+  color: var(--link-color);
+}
+
+#panel-wrapper .post-tag {
+  border-radius: 100px;
+}
+
+
+/* ─────────────────────────────────────────────
+   CODE
+   ───────────────────────────────────────────── */
+code.highlighter-rouge {
+  border-radius: 5px;
+  font-size: 0.84rem;
+}
+
+div[class^=language-] {
+  border-radius: 10px;
+}
+
+
+/* ─────────────────────────────────────────────
+   PAGINATION
+   ───────────────────────────────────────────── */
+.pagination .page-item.active .page-link {
+  background-color: #1A3A5C;
+  color: #ffffff;
+  border-color: #1A3A5C;
+  border-radius: 8px;
+}
+
+html[data-mode=dark] .pagination .page-item.active .page-link {
+  background-color: #2D5A8E;
+  border-color: #2D5A8E;
+}
+
+
+/* ─────────────────────────────────────────────
+   TOC
+   ───────────────────────────────────────────── */
+#toc-wrapper ul .is-active-link::before {
+  background-color: #1A3A5C !important;
+  width: 2px;
+}
+
+html[data-mode=dark] #toc-wrapper ul .is-active-link::before {
+  background-color: #7AB8E0 !important;
+}
+
+
+/* ─────────────────────────────────────────────
+   BLOCKQUOTES
+   ───────────────────────────────────────────── */
+blockquote:not([class^=prompt-]) {
+  border-left-color: #1A3A5C;
+  border-left-width: 3px;
+}
+
+html[data-mode=dark] blockquote:not([class^=prompt-]) {
+  border-left-color: #2D5A8E;
+}
+
+
+/* ─────────────────────────────────────────────
+   BACK TO TOP
+   ───────────────────────────────────────────── */
+html:not([data-mode]) #back-to-top:hover,
+html[data-mode=light] #back-to-top:hover {
+  background-color: #1A3A5C;
+  color: #ffffff;
+  border-color: #1A3A5C;
+}
+
+html[data-mode=dark] #back-to-top:hover {
+  background-color: #2D5A8E;
+  color: #ffffff;
+  border-color: #2D5A8E;
+}
+
+
+/* ─────────────────────────────────────────────
+   POST HEADER
+   ───────────────────────────────────────────── */
+header h1 {
+  font-family: 'DM Serif Display', serif;
+  font-weight: 400;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+
+
+/* ─────────────────────────────────────────────
+   CATEGORIES
+   ───────────────────────────────────────────── */
+.categories.card {
+  border-color: var(--main-border-color);
+  border-radius: 10px;
+}
+
+.categories .card-header {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
