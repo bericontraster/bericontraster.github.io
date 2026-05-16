@@ -173,7 +173,7 @@ While listening on `TUN0` I followed the stream and found the LDAP user's creden
 ![Wireshark, showing credentials of ldap user sent in plaintext.](assets/img/posts/support-hackthebox/wireshark-screenshot-one.webp)
 *LDAP User Credentials — Wireshark*
 
-![Wireshark, ldap credentials sent in plaintext of user LDAP.](assets/img/posts/support-hackthebox/wireshark-screenshot-one.webp)
+![Wireshark, ldap credentials sent in plaintext of user LDAP.](assets/img/posts/support-hackthebox/wireshark-screen-two.webp)
 *LDAP User Credentials - Wireshark*
 
 Let’s verify the credentials with Netexec.
