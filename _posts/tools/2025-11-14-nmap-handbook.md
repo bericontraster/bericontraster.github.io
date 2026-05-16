@@ -2,8 +2,8 @@
 title: Nmap Cheat Sheet
 date: 2025-11-14 17:51:00 +0500
 image:
-    path: "https://www.vaadata.com/blog/wp-content/uploads/2025/05/Nmap.png"
-    alt: Nessus
+    path: "assets/img/posts/nmap-cheatsheet/nmap-logo.png"
+    alt: Nmap Eye Logo
 toc: true
 comments: true
 tags: guide tools enumeration
@@ -13,7 +13,19 @@ description: A quick-access reference covering essential Nmap commands, scanning
 
 ## What is NMAP?    
 
-Nmap is a free and open-source tool for network discovery and security auditing that scans networks to discover hosts, services, and operating systems
+[Nmap](https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://en.wikipedia.org/wiki/Nmap&ved=2ahUKEwifksPOouSOAxVms1YBHdHtObYQmhN6BAg0EAQ&usg=AOvVaw0PI_u5gUbhEAOzSewimiSk) is a network scanner created by Gordon Lyon. Nmap is used to discover hosts and services on a computer network by sending packets and analyzing the responses. Nmap provides a number of features for probing computer networks, including host discovery and service and operating system detection.
+
+```shell
+nmap -sC -sV -p -vvv IP -oX "filename.xml"
+```
+{: .nolineno}
+
+Convert the `.xml` file to `.html`.
+```shell
+apt install xsltproc
+xsltproc filename.xml -o filename.html
+```
+{: .nolineno}
 
 ## Nmap Target Specification
 Define the specific IPs, ranges, or subnets you want Nmap to examine during reconnaissance. 
