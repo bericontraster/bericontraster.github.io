@@ -7,8 +7,8 @@ image:
 toc: true
 comments: true
 published: true
-tags: hacking ctf hackthebox active-directory genericall smb-shares
-categories: ["Capture The Flag"]
+tags: hacking ctf active-directory genericall smb-shares
+categories: ["HackTheBox"]
 description: 'Learn how to exploit the Support machine on Hack The Box. This comprehensive walkthrough covers anonymous SMB access, reverse engineering .NET executables to extract LDAP credentials, and leveraging BloodHound to identify GenericAll privileges. Finish the chain by executing a Resource-Based Constrained Delegation (RBCD) attack to escalate privileges to NT AUTHORITY\SYSTEM on a Windows Domain Controller.'
 ---
 

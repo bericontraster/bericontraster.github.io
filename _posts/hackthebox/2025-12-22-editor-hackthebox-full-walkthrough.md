@@ -6,8 +6,8 @@ image:
     alt: Editor Cover Image
 toc: true
 comments: true
-tags: hacking ctf hackthebox
-categories: ["Capture The Flag"]
+tags: hacking ctf rce 
+categories: ["HackTheBox"]
 description: Read full walkthrough of Editor from HackTheBox.
 ---
 
