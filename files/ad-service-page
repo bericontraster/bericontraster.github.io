@@ -1,0 +1,104 @@
+---
+title: AD Security Assessment
+---
+
+Active Directory is the backbone of most Windows environments — and the most targeted 
+attack surface inside any corporate network. A single misconfiguration can hand an 
+attacker a path from standard user to full Domain Admin without a single exploit.
+
+This assessment finds those paths before a real attacker does.
+
+---
+
+## What This Covers
+
+This is a full internal AD security assessment simulating a threat actor who already has 
+a foothold — a compromised workstation, a phished employee, or a contractor account. 
+Starting from that position, I map every viable path to domain-level control.
+
+**Identity & Authentication Abuse**
+- AS-REP Roasting — identifying accounts with pre-authentication disabled
+- Kerberoasting — extracting and cracking service account tickets
+- Password spraying and credential reuse across accounts
+- Weak or default credentials on service and admin accounts
+
+**Privilege Escalation & Lateral Movement**
+- Unconstrained and constrained delegation abuse
+- GenericAll, WriteDACL, and ACL-based privilege escalation
+- Local admin reuse and pass-the-hash movement
+- Token impersonation and over-permissioned service accounts
+
+**Active Directory Certificate Services (ADCS)**
+- ESC1 through ESC8 misconfiguration checks
+- Certificate template abuse for privilege escalation and persistence
+- CA misconfiguration review
+
+**Trust & Configuration Abuse**
+- LLMNR/NBT-NS poisoning and relay attacks
+- Domain trust enumeration and cross-trust exploitation
+- GPO misconfiguration and policy abuse
+- AdminSDHolder and protected group misconfigurations
+
+**Persistence Indicators**
+- Golden and Silver Ticket viability assessment
+- DCSync rights review
+- Backdoor account and shadow admin identification
+
+---
+
+## The Problem
+
+Most AD environments were built over years — policies inherited, accounts accumulated, 
+permissions granted and never reviewed. Legacy configurations and trust relationships 
+chain together in ways no single administrator can track manually. A single foothold 
+becomes full domain compromise when those chains are left unvalidated.
+
+---
+
+## Our Approach
+
+1. **Recon** — Host and user enumeration, trust mapping, and AD object inventory using 
+   targeted tools and manual verification.
+2. **Enumeration** — Identify misconfigured accounts, ACL paths, delegation settings, 
+   certificate templates, and exploitable trust relationships.
+3. **Exploitation** — Safely demonstrate real attack paths with proof: ticket captures, 
+   hash extractions, privilege escalation chains documented step by step.
+4. **Post-Exploitation** — Assess domain persistence viability, blast radius of 
+   compromise, and data access risk from Domain Admin position.
+
+---
+
+## The Deliverables
+
+- **Executive Summary** — Business-language explanation of what was found, what it means, 
+  and what the highest-priority risks are. Written for leadership and risk owners.
+- **Technical Breakdown** — Full attack path documentation with screenshots, tool output, 
+  and reproduction steps. Every finding severity-rated with context.
+- **Remediation Roadmap** — Prioritized, actionable fixes ordered by risk reduction 
+  impact. Includes hardening guidance for AD, ADCS, delegation, and identity controls.
+- **1-Year Re-test** — Included at no additional cost. Verify your fixes actually close 
+  the paths we found.
+
+---
+
+## Why Me
+
+I have compromised real AD environments through AS-REP roasting, unconstrained delegation 
+chains, ADCS ESC1 abuse, and GenericAll ACL escalation in live engagements. I built 
+SillyAuthority — a fully vulnerable AD lab covering these exact attack chains — used by 
+security practitioners to train against realistic environments.
+
+I operate to OSCP and CPTS standards. My reports are written for both the CISO and the 
+sysadmin — executive context and actionable technical detail in the same document.
+
+---
+
+## Book a Scoping Call
+
+If you are running Active Directory and have never had it tested by someone who thinks 
+like an attacker, schedule a scoping call. We will align on scope, access requirements, 
+and what a realistic worst-case scenario looks like for your environment.
+
+{% include embed/calendly.html %}
+
+[Or email me →](mailto:contact@bericontraster.com)

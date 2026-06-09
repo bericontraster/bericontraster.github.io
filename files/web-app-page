@@ -1,0 +1,111 @@
+---
+title: Web Application Pentest
+---
+
+Modern web applications ship fast and handle sensitive data — customer records, financial 
+transactions, authentication flows. Automated scanners catch known signatures. They do not 
+understand your application logic. I do.
+
+This pentest combines full OWASP Top 10 coverage with deep manual testing of how your 
+application actually works — the workflows, the trust assumptions, the edge cases your 
+developers didn't think an attacker would try.
+
+---
+
+## What This Covers
+
+**Authentication & Session Management**
+- Broken authentication flows, weak session handling, insecure token design
+- MFA bypass and account takeover paths
+- Password reset logic flaws and user enumeration
+
+**Authorisation & Access Control**
+- Horizontal and vertical privilege escalation
+- IDOR (Insecure Direct Object Reference) — accessing other users' data by manipulating 
+  IDs
+- Broken function-level access control on API endpoints
+- Mass assignment and parameter tampering
+
+**Injection & Input Handling**
+- SQL injection — manual testing beyond automated payloads
+- Server-Side Request Forgery (SSRF) — internal network access via application requests
+- XXE injection and file inclusion vulnerabilities
+- Command injection in upload handlers and backend integrations
+
+**Business Logic Flaws**
+- Workflow bypass — skipping steps in multi-stage processes
+- Price and quantity manipulation in transaction flows
+- Coupon, referral, and rate-limiting abuse
+- Race conditions in financial and state-changing operations
+
+**API Security**
+- REST and GraphQL endpoint enumeration and testing
+- Excessive data exposure in API responses
+- Missing authentication on administrative endpoints
+- OAuth and JWT implementation flaws
+
+**Client-Side Security**
+- Cross-Site Scripting (XSS) — stored, reflected, and DOM-based
+- Cross-Site Request Forgery (CSRF) on state-changing actions
+- Sensitive data exposure in client-side code and responses
+- Subresource integrity and third-party script risk
+
+---
+
+## The Problem
+
+Developers build features under time pressure. Security testing happens late or not at 
+all. Logic flaws, access control gaps, and broken integrations rarely trigger scanner 
+alerts — they require understanding how the application is supposed to work and then 
+finding where it breaks. A single IDOR or authentication bypass can expose your entire 
+customer dataset or allow an attacker to transact as any user.
+
+---
+
+## Our Approach
+
+1. **Recon** — Application architecture review, endpoint mapping, user role identification, 
+   and authentication flow analysis before any active testing begins.
+2. **Enumeration** — Map all input vectors, trust boundaries, API endpoints, and 
+   role-based access points with manual validation.
+3. **Exploitation** — Demonstrate real impact across OWASP categories and logic flaws. 
+   Every finding includes a working proof-of-concept showing actual exploitability.
+4. **Post-Exploitation** — Assess data exposure scope, account takeover viability, and 
+   chaining potential across identified vulnerabilities.
+
+---
+
+## The Deliverables
+
+- **Executive Summary** — Business-risk framing of findings for product owners and 
+  leadership. What was found, what it exposes, and what fixing it prioritises.
+- **Technical Breakdown** — Full vulnerability documentation with reproduction steps, 
+  request/response evidence, severity ratings, and CVSS context.
+- **Remediation Roadmap** — Developer-ready fix guidance prioritised by exploitability 
+  and business impact. Includes secure design recommendations where relevant.
+- **1-Year Re-test** — Validate your fixes closed the vulnerabilities we reported at no 
+  additional cost.
+
+---
+
+## Why Me
+
+I test with a manual-first mindset shaped by OSCP and CPTS methodology. In real 
+engagements I have found RCE on production assets and authentication bypasses that 
+automated tools reported as clean. Logic flaws and access control gaps require a tester 
+who understands your application flow — not a scanner running a signature list.
+
+You work directly with me. I explain every finding in a way your developers can act on 
+immediately.
+
+---
+
+## Book a Scoping Call
+
+Whether you are preparing for a compliance audit, releasing a new product, or just want 
+to know where you actually stand — schedule a scoping call and we will scope the 
+engagement honestly.
+
+{% include embed/calendly.html %}
+
+[Or email me →](mailto:contact@bericontraster.com)

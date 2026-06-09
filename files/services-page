@@ -1,0 +1,86 @@
+---
+title: Services
+icon: fas fa-shield-halved
+order: 2
+---
+
+I deliver manual-first security assessments that mirror how real attackers operate — not 
+automated scans dressed up as pentests. Every engagement produces clear, prioritized, 
+evidence-backed findings your team can act on immediately.
+
+---
+
+## AD Security Assessment
+
+Most internal breaches don't need zero-days. They chain misconfigurations, weak identity 
+controls, and over-permissioned accounts to reach Domain Admin. I find those chains before 
+a real attacker does.
+
+**Who this is for:** Organizations running Windows environments with Active Directory — 
+SMBs, fintechs, and any business where internal compromise would be catastrophic.
+
+[Learn More →](/services/ad-security-assessment)
+
+---
+
+## Web Application Pentest
+
+Scanners flag noise. I find the flaws that break real business workflows — broken access 
+control, logic abuse, insecure integrations, and authorization gaps that scanners miss 
+entirely.
+
+**Who this is for:** SaaS companies, product teams, and any business with a 
+customer-facing application handling sensitive data or financial transactions.
+
+[Learn More →](/services/web-application-pentest)
+
+---
+
+## Security Readiness for SMBs
+
+Most small and mid-size businesses don't know where they are exposed until something goes 
+wrong. This service maps your real risk, aligns it to frameworks like NCA ECC or SAMA CSF 
+where relevant, and gives you a clear action plan — without the enterprise price tag.
+
+**Who this is for:** SMBs, startups, and fintechs that need to understand their security 
+posture, prepare for audits, or satisfy client/regulatory requirements.
+
+[Learn More →](/services/security-readiness-smb)
+
+---
+
+## Why Hire Me Over a Larger Firm
+
+- **Manual-first.** No scan-and-report. Every finding is manually verified and 
+  contextualised to your environment.
+- **OSCP + CPTS certified.** I operate to the same standards used to evaluate professional 
+  pentesters — not just compliance checklists.
+- **Real attack experience.** I have compromised AD environments via AS-REP roasting, 
+  unconstrained delegation, and privilege escalation chains in real engagements — not just 
+  labs.
+- **You talk to the tester.** No account managers, no handoffs. You work directly with me 
+  from scoping to report delivery.
+- **Findings that hold up.** Reports are written to stand up to audit scrutiny and give 
+  engineering teams exactly what they need to fix the issue.
+
+---
+
+## How It Works
+
+1. **Scoping Call (30 min)** — We align on environment, goals, timelines, and rules of 
+   engagement.
+2. **Assessment** — Manual, structured testing using real attacker methodology.
+3. **Report Delivery** — Executive Summary + full Technical Breakdown + Remediation 
+   Roadmap within the agreed timeline.
+4. **Re-test** — 1-year window to verify fixes at no additional cost.
+
+---
+
+## Book a Scoping Call
+
+No commitment. We align on scope and I tell you honestly whether the engagement makes 
+sense for your situation.
+
+{% include embed/calendly.html %}
+
+[Or email me directly →](mailto:contact@bericontraster.com)

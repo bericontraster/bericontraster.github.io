@@ -1,147 +1,88 @@
 ---
-icon: fas fa-clipboard-check
-order: 0
+title: Services
+icon: fas fa-shield-halved
+order: 2
 draft: false
 toc: true
 ---
 
-<style>
-  .service-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 20px;
-    margin: 24px 0 20px;
-  }
+I deliver manual-first security assessments that mirror how real attackers operate — not
+automated scans dressed up as pentests. Every engagement produces clear, prioritized,
+evidence-backed findings your team can act on immediately.
 
-  .service-widget {
-    background: #0f1115;
-    border: 1px solid #1f222b;
-    border-radius: 16px;
-    padding: 20px 22px;
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
+---
 
-  .service-widget__icon {
-    font-size: 1.4rem;
-    color: #8fe0c3;
-  }
+## AD Security Assessment
 
-  .service-widget__title {
-    font-size: 1.2rem;
-    font-weight: 600;
-    margin: 0;
-  }
+Most internal breaches don't need zero-days. They chain misconfigurations, weak identity
+controls, and over-permissioned accounts to reach Domain Admin. I find those chains before
+a real attacker does.
 
-  .service-widget__copy {
-    margin: 0;
-    color: #d5d9e0;
-  }
+**Who this is for:** Organizations running Windows environments with Active Directory —
+SMBs, fintechs, and any business where internal compromise would be catastrophic.
 
-  .service-widget__button {
-    align-self: flex-start;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: #043927;
-    color: #ffffff;
-    padding: 8px 14px;
-    border-radius: 999px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.95rem;
-    border: 1px solid #0b553c;
-  }
+[Learn More →](/services/ad-security-assessment)
 
-  .service-widget__button,
-  .service-widget__button:hover,
-  .service-widget__button:focus-visible {
-    color: #ffffff !important;
-    text-decoration: none !important;
-    border-bottom: none !important;
-  }
+---
 
-  .content a.service-widget__button,
-  .content a.service-widget__button:hover,
-  .content a.service-widget__button:focus-visible,
-  .content a.service-widget__button:visited {
-    color: #ffffff !important;
-    text-decoration: none !important;
-    border-bottom: none !important;
-  }
+## Web Application Pentest
 
-  .service-widget__button:hover,
-  .service-widget__button:focus-visible {
-    background: #0b4b34;
-  }
+Scanners flag noise. I find the flaws that break real business workflows — broken access
+control, logic abuse, insecure integrations, and authorization gaps that scanners miss
+entirely.
 
-  @media (max-width: 900px) {
-    .service-grid {
-      grid-template-columns: 1fr;
-    }
-  }
-</style>
+**Who this is for:** SaaS companies, product teams, and any business with a
+customer-facing application handling sensitive data or financial transactions.
 
-I deliver manual-first penetration testing that mirrors how real attackers probe, pivot, and exploit. You get clear, prioritized risk and evidence-backed findings that stand up to audits and executive scrutiny.
+[Learn More →](/services/web-application-pentest)
 
-<div class="service-grid">
-  <article class="service-widget">
-    <div class="service-widget__icon"><i class="fas fa-satellite-dish"></i></div>
-    <h3 class="service-widget__title">External Perimeter Audit</h3>
-    <p class="service-widget__copy">Map your true internet exposure, including shadow IT, forgotten assets, and leaked access paths. I validate what an attacker can actually reach, not just what a scanner reports.</p>
-    <a class="service-widget__button" href="{{ '/services/external-perimeter-audit/' | relative_url }}">Learn More</a>
-  </article>
+---
 
-  <article class="service-widget">
-    <div class="service-widget__icon"><i class="fas fa-network-wired"></i></div>
-    <h3 class="service-widget__title">Internal Network Assessment</h3>
-    <p class="service-widget__copy">Assume breach and test how far a threat actor can move inside the network. I focus on Active Directory security, lateral movement, and privilege escalation chains.</p>
-    <a class="service-widget__button" href="{{ '/services/internal-network-assessment/' | relative_url }}">Learn More</a>
-  </article>
+## Security Readiness for SMBs
 
-  <article class="service-widget">
-    <div class="service-widget__icon"><i class="fas fa-code"></i></div>
-    <h3 class="service-widget__title">Web Application Pentest</h3>
-    <p class="service-widget__copy">Cover OWASP Top 10 and the business logic flaws that scanners miss. I test real user flows to uncover authorization gaps and exploitability.</p>
-    <a class="service-widget__button" href="{{ '/services/web-application-pentest/' | relative_url }}">Learn More</a>
-  </article>
-</div>
+Most small and mid-size businesses don't know where they are exposed until something goes
+wrong. This service maps your real risk, aligns it to frameworks like NCA ECC or SAMA CSF
+where relevant, and gives you a clear action plan — without the enterprise price tag.
 
-## The Problem
-Attack surfaces are expanding faster than most teams can track. Automated tools flag volume, but they rarely prove exploitability, path to impact, or business risk.
+**Who this is for:** SMBs, startups, and fintechs that need to understand their security
+posture, prepare for audits, or satisfy client/regulatory requirements.
 
-## Our Approach
-1. Recon: Enumerate external and internal exposures using OSINT, configuration review, and targeted discovery.
-2. Enumeration: Validate assets, access paths, and trust relationships with manual verification.
-3. Exploitation: Safely demonstrate real-world impact and chain weaknesses where it matters.
-4. Post-Exploitation: Document pivot paths, privilege escalation opportunities, and blast radius.
+[Learn More →](/services/security-readiness-smb)
 
-## The Deliverables
-- Executive Summary for leadership and risk owners.
-- Technical Breakdown with reproducible evidence and severity context.
-- Remediation Roadmap with prioritized fixes and hardening guidance.
-- 1-year re-test window to verify fixes and measure risk reduction.
+---
 
-## Why Me
-I operate to OSCP and CPTS standards, with 3 years of real-world assessment experience. My work emphasizes manual testing, clear evidence, and practical remediation so engineering teams can act fast.
+## Why Hire Me Over a Larger Firm
 
-## Book a Security Call
-If you need a clear, defensible view of your exposure, schedule a short scoping call. We will align on scope, timelines, and the highest-risk areas so testing stays focused on outcomes.
+- **Manual-first.** No scan-and-report. Every finding is manually verified and
+  contextualised to your environment.
+- **OSCP + CPTS certified.** I operate to the same standards used to evaluate professional
+  pentesters — not just compliance checklists.
+- **Real attack experience.** I have compromised AD environments via AS-REP roasting,
+  unconstrained delegation, and privilege escalation chains in real engagements — not just
+  labs.
+- **You talk to the tester.** No account managers, no handoffs. You work directly with me
+  from scoping to report delivery.
+- **Findings that hold up.** Reports are written to stand up to audit scrutiny and give
+  engineering teams exactly what they need to fix the issue.
 
-<!-- Calendly inline widget begin -->
-<div style="display: flex; justify-content: center; width: 100%;">
-  <div class="calendly-inline-widget"
-       data-url="https://calendly.com/contact-bericontraster/30min"
-       style="min-width:600px; height:700px; width:600px;margin-top:30px;margin-bottom:30px;">
-  </div>
-</div>
+---
 
-<script type="text/javascript"
-        src="https://assets.calendly.com/assets/external/widget.js"
-        async>
-</script>
-<!-- Calendly inline widget end -->
+## How It Works
 
-[**Email Me**](mailto:contact@bericontraster.com) and let's secure your business today.
+1. **Scoping Call (30 min)** — We align on environment, goals, timelines, and rules of
+   engagement.
+2. **Assessment** — Manual, structured testing using real attacker methodology.
+3. **Report Delivery** — Executive Summary + full Technical Breakdown + Remediation
+   Roadmap within the agreed timeline.
+4. **Re-test** — 1-year window to verify fixes at no additional cost.
+
+---
+
+## Book a Scoping Call
+
+No commitment. We align on scope and I tell you honestly whether the engagement makes
+sense for your situation.
+
+{% include embed/calendly.html %}
+
+[Or email me directly →](mailto:contact@bericontraster.com)
