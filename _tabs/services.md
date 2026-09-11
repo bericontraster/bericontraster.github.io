@@ -1,7 +1,7 @@
 ---
 title: Services
 icon: fas fa-shield-halved
-order: 2
+order: 1
 draft: false
 toc: true
 ---
