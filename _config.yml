@@ -19,7 +19,7 @@ title: bericontraster # the main title
 tagline: Cybersecurity Consultant # it will display as the subtitle
 
 description: >- # used by seo meta and the atom feed
-  Compliance-focused vulnerability assessments, practical security guidance, and real-world cybersecurity insights. Helping businesses meet audit and vendor security requirements without overcomplication.
+  Blog, offensive security research, and free vulnerable lab releases (SillyAuthority and more) by Muhammad Zubair — plus professional pentesting and compliance-focused vulnerability assessment services.
 
 # Fill in the protocol & hostname for your site.
 # E.g. 'https://username.github.io', note that it does not end with a '/'.

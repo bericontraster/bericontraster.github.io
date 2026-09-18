@@ -3,7 +3,7 @@ icon: fas fa-info-circle
 order: 6
 toc: true
 author: bericontraster
-tags: about
+tags: about bericontraster oscp cpts 
 ---
 
 ## Hi, I’m Muhammad Zubair

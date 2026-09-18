@@ -4,6 +4,7 @@ icon: fas fa-user-secret
 order: 1
 draft: false
 toc: true
+tags: Blacksite vulnerable-vms active-directory ctf-challenges windows
 ---
 
 Blacksite is a collection of vulnerables lab environments built to practice, learn, and teach real-world offensive security at a deeper level. Each lab simulates the misconfigurations, adversary tradecraft, and privilege escalation chains found in actual internal networks and red-team engagements.
@@ -23,11 +24,12 @@ Blacksite started as a way to go past passing certifications and actually master
 > The writeup is available on [Medium](https://medium.com/@bericontraster/inside-sillyauthority-a-complete-pentest-of-a-purpose-built-ad-lab-7fc6978e18f8).
 
 **Name:** SillyAuthority  
+**Difficulty:** Medium  
 **Release Date:** 19 Nov, 2025  
 **Author:** Muhammad Zubair (@bericontraster)  
-**Download:** `SillyAuthority.ova` [drive.google.com](https://drive.google.com/drive/folders/1XId5DdpxgJJox9QtcSIbFcQHZMp4mNQW?usp=sharing) (Size: 6.58GB)  
-**Difficulty:** Medium  
+**Download:** `SillyAuthority.ova` [drive.google.com](https://drive.google.com/drive/folders/1XId5DdpxgJJox9QtcSIbFcQHZMp4mNQW?usp=sharing) (Size: 6.29GB)  
 **Tags:** `Windows` `Active Directory` `Privilege Escalation`  
+**OVA MD5:** `ACABB3020EA0CC82BE0DC208C5D04A80`  
 **Supported Hypervisors:** VirtualBox, VMware Workstation / Fusion  
 
 
@@ -38,15 +40,17 @@ Blacksite started as a way to go past passing certifications and actually master
   <img src="/assets/img/blacksite/cascading-trust-by-bericontraster.png" alt="SillyAuthority" width="130">
 </p>
 
+The client has provided the following credentials for authenticated testing of the environment: `ethan.mercer:E7han!Ops#Mercury26`.
+
 > The writeup will be available on [Medium](https://medium.com/@bericontraster) soon.
 
 **Name:** Cascading Trust  
+**Difficulty:** Medium  
 **Release Date:** 10 Sep, 2026    
 **Author:** Muhammad Zubair (@bericontraster)  
-**Download:** `Cascading Trust.7z` [drive.google.com](https://drive.google.com/drive/folders/1o8bn4Msu7nkRg5Afcu0eV7eUHtYVUSIa?usp=sharing) (Size: 5.86GB)    
-**Difficulty:** Easy   
-**Tags:** `Windows` `Active Directory` `Privilege Escalation`  
-**OVA MD5:** `725506D48E1A879A98623C5A12937417`   
+**Download:** `Cascading Trust.7z` [drive.google.com](https://drive.google.com/drive/folders/1o8bn4Msu7nkRg5Afcu0eV7eUHtYVUSIa?usp=sharing) (Size: 5.62GB)    
+**Tags:** `Windows` `Active Directory` `Enumeration` `Privilege Escalation`  
+**OVA MD5:** `B0BDC37B3016963D97B5C0CA5A677579`   
 **Supported Hypervisors:** VirtualBox, VMware Workstation / Fusion    
 
 ## Setup Guide

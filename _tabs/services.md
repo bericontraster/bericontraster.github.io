@@ -4,6 +4,7 @@ icon: fas fa-shield-halved
 order: 1
 draft: false
 toc: true
+tags: Services pentesting-services web-pentesting-services active-directory-pentesting-services calendly cybersecurity-consultant
 ---
 
 I deliver manual-first security assessments that mirror how real attackers operate — not
