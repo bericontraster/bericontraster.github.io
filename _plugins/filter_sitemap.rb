@@ -24,6 +24,21 @@ Jekyll::Hooks.register :site, :post_write do |site|
       ""
     )
 
+    # Escape ampersands inside <loc> values for valid XML.
+    filtered = filtered.gsub(
+      /(<loc>.*?)(<\/loc>)/m
+    ) do
+      loc = Regexp.last_match(1)
+      closing = Regexp.last_match(2)
+
+      loc = loc.gsub(
+        /&(?!amp;|lt;|gt;|quot;|apos;)/,
+        "&amp;"
+      )
+
+      "#{loc}#{closing}"
+    end
+
     File.write(sitemap, filtered)
   end
 end
