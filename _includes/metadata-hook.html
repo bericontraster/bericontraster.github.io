@@ -1,0 +1,8 @@
+{% if page.url == "/archives/"
+   or page.url contains "/tags/"
+   or page.url contains "/categories/"
+   or page.url == "/page2/"
+   or page.url == "/page3/"
+   or page.url == "/page4/" %}
+<meta name="robots" content="noindex, follow">
+{% endif %}
