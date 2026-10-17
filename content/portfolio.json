@@ -187,8 +187,8 @@
     },
     "text-51": {
       "type": "text",
-      "label": "Thoughts",
-      "value": "Thoughts"
+      "label": "Blogs",
+      "value": "Blogs"
     },
     "text-52": {
       "type": "text",
@@ -262,8 +262,8 @@
     },
     "text-66": {
       "type": "html",
-      "label": "Scaling Start-ups for Growth.",
-      "value": "<span class=\"framer-text\" style=\"--framer-text-color:var(--extracted-1qn201a, var(--token-2fcd1089-c4fe-44ec-8e47-1defe3c9bd50, rgb(250, 247, 243)))\"><span style=\"display: inline-block; opacity: 1; filter: none; transform: translateX(0px) translateY(10px) scale(1) rotate(0deg) skewX(0deg) skewY(0deg);\">Scaling</span> <span style=\"display: inline-block; opacity: 1; filter: none; transform: translateX(0px) translateY(10px) scale(1) rotate(0deg) skewX(0deg) skewY(0deg);\"></span></span><br class=\"framer-text\"><span class=\"framer-text\" style=\"--framer-text-color:var(--extracted-g1tnir, var(--token-2fcd1089-c4fe-44ec-8e47-1defe3c9bd50, rgb(250, 247, 243)))\"><span style=\"display: inline-block; opacity: 1; filter: none; transform: translateX(0px) translateY(10px) scale(1) rotate(0deg) skewX(0deg) skewY(0deg);\">Start-ups</span> <span style=\"display: inline-block; opacity: 1; filter: none; transform: translateX(0px) translateY(10px) scale(1) rotate(0deg) skewX(0deg) skewY(0deg);\">for</span> <span style=\"display: inline-block; opacity: 1; filter: none; transform: translateX(0px) translateY(10px) scale(1) rotate(0deg) skewX(0deg) skewY(0deg);\">Growth.</span></span>"
+      "label": "Offensive Security. Actionable Results.",
+      "value": "Offensive<br class=\"framer-text\">Security.<br class=\"framer-text\">Actionable<br class=\"framer-text\">Results."
     },
     "text-67": {
       "type": "text",
@@ -420,23 +420,23 @@
     },
     "link-106": {
       "type": "link",
-      "label": "Link",
-      "value": "https://x.com/"
+      "label": "X profile",
+      "value": "https://x.com/bericontraster"
     },
     "link-107": {
       "type": "link",
-      "label": "Link",
-      "value": "https://www.instagram.com/"
+      "label": "LinkedIn profile",
+      "value": "https://www.linkedin.com/in/mhamd-zubair/"
     },
     "link-108": {
       "type": "link",
-      "label": "Link",
-      "value": "https://www.linkedin.com/"
+      "label": "Medium profile",
+      "value": "https://medium.com/@bericontraster"
     },
     "link-109": {
       "type": "link",
-      "label": "Link",
-      "value": "https://www.youtube.com/"
+      "label": "GitHub profile",
+      "value": "https://github.com/bericontraster"
     },
     "link-110": {
       "type": "link",
@@ -557,8 +557,8 @@
     },
     "text-18": {
       "type": "html",
-      "label": "Scaling Start-ups for Growth.",
-      "value": "<span class=\"framer-text\" style=\"--framer-text-color:var(--extracted-1qn201a, var(--token-2fcd1089-c4fe-44ec-8e47-1defe3c9bd50, rgb(250, 247, 243)))\"><span style=\"display: inline-block; opacity: 1; filter: none; transform: translateX(0px) translateY(10px) scale(1) rotate(0deg) skewX(0deg) skewY(0deg);\">Scaling</span> <span style=\"display: inline-block; opacity: 1; filter: none; transform: translateX(0px) translateY(10px) scale(1) rotate(0deg) skewX(0deg) skewY(0deg);\"></span></span><br class=\"framer-text\"><span class=\"framer-text\" style=\"--framer-text-color:var(--extracted-g1tnir, var(--token-2fcd1089-c4fe-44ec-8e47-1defe3c9bd50, rgb(250, 247, 243)))\"><span style=\"display: inline-block; opacity: 1; filter: none; transform: translateX(0px) translateY(10px) scale(1) rotate(0deg) skewX(0deg) skewY(0deg);\">Start-ups</span> <span style=\"display: inline-block; opacity: 1; filter: none; transform: translateX(0px) translateY(10px) scale(1) rotate(0deg) skewX(0deg) skewY(0deg);\">for</span> <span style=\"display: inline-block; opacity: 1; filter: none; transform: translateX(0px) translateY(10px) scale(1) rotate(0deg) skewX(0deg) skewY(0deg);\">Growth.</span></span>"
+      "label": "Offensive Security. Actionable Results.",
+      "value": "Offensive<br class=\"framer-text\">Security.<br class=\"framer-text\">Actionable<br class=\"framer-text\">Results."
     },
     "text-19": {
       "type": "text",
@@ -735,13 +735,13 @@
     },
     "text-4": {
       "type": "text",
-      "label": "My Brightest Thoughts",
-      "value": "My Brightest Thoughts"
+      "label": "Blogs",
+      "value": "Blogs"
     },
     "text-5": {
       "type": "text",
       "label": "Discover ideas, perspectives, and creative thinking shaped by our work in brand identity and art dir",
-      "value": "Discover ideas, perspectives, and creative thinking shaped by our work in brand identity and art direction. Each article explores how thoughtful design helps brands with clarity and intention."
+      "value": "Cybersecurity articles, vulnerability research, and penetration testing walkthroughs."
     },
     "text-6": {
       "type": "text",
@@ -850,8 +850,8 @@
     },
     "text-27": {
       "type": "html",
-      "label": "Scaling Start-ups for Growth.",
-      "value": "<span class=\"framer-text\" style=\"--framer-text-color:var(--extracted-1qn201a, var(--token-2fcd1089-c4fe-44ec-8e47-1defe3c9bd50, rgb(250, 247, 243)))\"><span style=\"display: inline-block; opacity: 1; filter: none; transform: translateX(0px) translateY(10px) scale(1) rotate(0deg) skewX(0deg) skewY(0deg);\">Scaling</span> <span style=\"display: inline-block; opacity: 1; filter: none; transform: translateX(0px) translateY(10px) scale(1) rotate(0deg) skewX(0deg) skewY(0deg);\"></span></span><br class=\"framer-text\"><span class=\"framer-text\" style=\"--framer-text-color:var(--extracted-g1tnir, var(--token-2fcd1089-c4fe-44ec-8e47-1defe3c9bd50, rgb(250, 247, 243)))\"><span style=\"display: inline-block; opacity: 1; filter: none; transform: translateX(0px) translateY(10px) scale(1) rotate(0deg) skewX(0deg) skewY(0deg);\">Start-ups</span> <span style=\"display: inline-block; opacity: 1; filter: none; transform: translateX(0px) translateY(10px) scale(1) rotate(0deg) skewX(0deg) skewY(0deg);\">for</span> <span style=\"display: inline-block; opacity: 1; filter: none; transform: translateX(0px) translateY(10px) scale(1) rotate(0deg) skewX(0deg) skewY(0deg);\">Growth.</span></span>"
+      "label": "Offensive Security. Actionable Results.",
+      "value": "Offensive<br class=\"framer-text\">Security.<br class=\"framer-text\">Actionable<br class=\"framer-text\">Results."
     },
     "text-28": {
       "type": "text",
@@ -1194,8 +1194,8 @@
     },
     "text-35": {
       "type": "html",
-      "label": "Scaling Start-ups for Growth.",
-      "value": "<span class=\"framer-text\" style=\"--framer-text-color:var(--extracted-1qn201a, var(--token-2fcd1089-c4fe-44ec-8e47-1defe3c9bd50, rgb(250, 247, 243)))\"><span style=\"display: inline-block; opacity: 1; filter: none; transform: translateX(0px) translateY(10px) scale(1) rotate(0deg) skewX(0deg) skewY(0deg);\">Scaling</span> <span style=\"display: inline-block; opacity: 1; filter: none; transform: translateX(0px) translateY(10px) scale(1) rotate(0deg) skewX(0deg) skewY(0deg);\"></span></span><br class=\"framer-text\"><span class=\"framer-text\" style=\"--framer-text-color:var(--extracted-g1tnir, var(--token-2fcd1089-c4fe-44ec-8e47-1defe3c9bd50, rgb(250, 247, 243)))\"><span style=\"display: inline-block; opacity: 1; filter: none; transform: translateX(0px) translateY(10px) scale(1) rotate(0deg) skewX(0deg) skewY(0deg);\">Start-ups</span> <span style=\"display: inline-block; opacity: 1; filter: none; transform: translateX(0px) translateY(10px) scale(1) rotate(0deg) skewX(0deg) skewY(0deg);\">for</span> <span style=\"display: inline-block; opacity: 1; filter: none; transform: translateX(0px) translateY(10px) scale(1) rotate(0deg) skewX(0deg) skewY(0deg);\">Growth.</span></span>"
+      "label": "Offensive Security. Actionable Results.",
+      "value": "Offensive<br class=\"framer-text\">Security.<br class=\"framer-text\">Actionable<br class=\"framer-text\">Results."
     },
     "text-36": {
       "type": "text",
@@ -1517,8 +1517,8 @@
     },
     "text-36": {
       "type": "html",
-      "label": "Scaling Start-ups for Growth.",
-      "value": "<span class=\"framer-text\" style=\"--framer-text-color:var(--extracted-1qn201a, var(--token-2fcd1089-c4fe-44ec-8e47-1defe3c9bd50, rgb(250, 247, 243)))\"><span style=\"display: inline-block; opacity: 1; filter: none; transform: translateX(0px) translateY(10px) scale(1) rotate(0deg) skewX(0deg) skewY(0deg);\">Scaling</span> <span style=\"display: inline-block; opacity: 1; filter: none; transform: translateX(0px) translateY(10px) scale(1) rotate(0deg) skewX(0deg) skewY(0deg);\"></span></span><br class=\"framer-text\"><span class=\"framer-text\" style=\"--framer-text-color:var(--extracted-g1tnir, var(--token-2fcd1089-c4fe-44ec-8e47-1defe3c9bd50, rgb(250, 247, 243)))\"><span style=\"display: inline-block; opacity: 1; filter: none; transform: translateX(0px) translateY(10px) scale(1) rotate(0deg) skewX(0deg) skewY(0deg);\">Start-ups</span> <span style=\"display: inline-block; opacity: 1; filter: none; transform: translateX(0px) translateY(10px) scale(1) rotate(0deg) skewX(0deg) skewY(0deg);\">for</span> <span style=\"display: inline-block; opacity: 1; filter: none; transform: translateX(0px) translateY(10px) scale(1) rotate(0deg) skewX(0deg) skewY(0deg);\">Growth.</span></span>"
+      "label": "Offensive Security. Actionable Results.",
+      "value": "Offensive<br class=\"framer-text\">Security.<br class=\"framer-text\">Actionable<br class=\"framer-text\">Results."
     },
     "text-37": {
       "type": "text",
@@ -1835,8 +1835,8 @@
     },
     "text-35": {
       "type": "html",
-      "label": "Scaling Start-ups for Growth.",
-      "value": "<span class=\"framer-text\" style=\"--framer-text-color:var(--extracted-1qn201a, var(--token-2fcd1089-c4fe-44ec-8e47-1defe3c9bd50, rgb(250, 247, 243)))\"><span style=\"display: inline-block; opacity: 1; filter: none; transform: translateX(0px) translateY(10px) scale(1) rotate(0deg) skewX(0deg) skewY(0deg);\">Scaling</span> <span style=\"display: inline-block; opacity: 1; filter: none; transform: translateX(0px) translateY(10px) scale(1) rotate(0deg) skewX(0deg) skewY(0deg);\"></span></span><br class=\"framer-text\"><span class=\"framer-text\" style=\"--framer-text-color:var(--extracted-g1tnir, var(--token-2fcd1089-c4fe-44ec-8e47-1defe3c9bd50, rgb(250, 247, 243)))\"><span style=\"display: inline-block; opacity: 1; filter: none; transform: translateX(0px) translateY(10px) scale(1) rotate(0deg) skewX(0deg) skewY(0deg);\">Start-ups</span> <span style=\"display: inline-block; opacity: 1; filter: none; transform: translateX(0px) translateY(10px) scale(1) rotate(0deg) skewX(0deg) skewY(0deg);\">for</span> <span style=\"display: inline-block; opacity: 1; filter: none; transform: translateX(0px) translateY(10px) scale(1) rotate(0deg) skewX(0deg) skewY(0deg);\">Growth.</span></span>"
+      "label": "Offensive Security. Actionable Results.",
+      "value": "Offensive<br class=\"framer-text\">Security.<br class=\"framer-text\">Actionable<br class=\"framer-text\">Results."
     },
     "text-36": {
       "type": "text",
@@ -2158,8 +2158,8 @@
     },
     "text-36": {
       "type": "html",
-      "label": "Scaling Start-ups for Growth.",
-      "value": "<span class=\"framer-text\" style=\"--framer-text-color:var(--extracted-1qn201a, var(--token-2fcd1089-c4fe-44ec-8e47-1defe3c9bd50, rgb(250, 247, 243)))\"><span style=\"display: inline-block; opacity: 1; filter: none; transform: translateX(0px) translateY(10px) scale(1) rotate(0deg) skewX(0deg) skewY(0deg);\">Scaling</span> <span style=\"display: inline-block; opacity: 1; filter: none; transform: translateX(0px) translateY(10px) scale(1) rotate(0deg) skewX(0deg) skewY(0deg);\"></span></span><br class=\"framer-text\"><span class=\"framer-text\" style=\"--framer-text-color:var(--extracted-g1tnir, var(--token-2fcd1089-c4fe-44ec-8e47-1defe3c9bd50, rgb(250, 247, 243)))\"><span style=\"display: inline-block; opacity: 1; filter: none; transform: translateX(0px) translateY(10px) scale(1) rotate(0deg) skewX(0deg) skewY(0deg);\">Start-ups</span> <span style=\"display: inline-block; opacity: 1; filter: none; transform: translateX(0px) translateY(10px) scale(1) rotate(0deg) skewX(0deg) skewY(0deg);\">for</span> <span style=\"display: inline-block; opacity: 1; filter: none; transform: translateX(0px) translateY(10px) scale(1) rotate(0deg) skewX(0deg) skewY(0deg);\">Growth.</span></span>"
+      "label": "Offensive Security. Actionable Results.",
+      "value": "Offensive<br class=\"framer-text\">Security.<br class=\"framer-text\">Actionable<br class=\"framer-text\">Results."
     },
     "text-37": {
       "type": "text",
@@ -2556,8 +2556,8 @@
     },
     "text-51": {
       "type": "html",
-      "label": "Scaling Start-ups for Growth.",
-      "value": "<span class=\"framer-text\" style=\"--framer-text-color:var(--extracted-1qn201a, var(--token-2fcd1089-c4fe-44ec-8e47-1defe3c9bd50, rgb(250, 247, 243)))\"><span style=\"display: inline-block; opacity: 1; filter: none; transform: translateX(0px) translateY(10px) scale(1) rotate(0deg) skewX(0deg) skewY(0deg);\">Scaling</span> <span style=\"display: inline-block; opacity: 1; filter: none; transform: translateX(0px) translateY(10px) scale(1) rotate(0deg) skewX(0deg) skewY(0deg);\"></span></span><br class=\"framer-text\"><span class=\"framer-text\" style=\"--framer-text-color:var(--extracted-g1tnir, var(--token-2fcd1089-c4fe-44ec-8e47-1defe3c9bd50, rgb(250, 247, 243)))\"><span style=\"display: inline-block; opacity: 1; filter: none; transform: translateX(0px) translateY(10px) scale(1) rotate(0deg) skewX(0deg) skewY(0deg);\">Start-ups</span> <span style=\"display: inline-block; opacity: 1; filter: none; transform: translateX(0px) translateY(10px) scale(1) rotate(0deg) skewX(0deg) skewY(0deg);\">for</span> <span style=\"display: inline-block; opacity: 1; filter: none; transform: translateX(0px) translateY(10px) scale(1) rotate(0deg) skewX(0deg) skewY(0deg);\">Growth.</span></span>"
+      "label": "Offensive Security. Actionable Results.",
+      "value": "Offensive<br class=\"framer-text\">Security.<br class=\"framer-text\">Actionable<br class=\"framer-text\">Results."
     },
     "text-52": {
       "type": "text",
@@ -3072,8 +3072,8 @@
     },
     "text-76": {
       "type": "html",
-      "label": "Scaling Start-ups for Growth.",
-      "value": "<span class=\"framer-text\" style=\"--framer-text-color:var(--extracted-1qn201a, var(--token-2fcd1089-c4fe-44ec-8e47-1defe3c9bd50, rgb(250, 247, 243)))\"><span style=\"display: inline-block; opacity: 1; filter: none; transform: translateX(0px) translateY(10px) scale(1) rotate(0deg) skewX(0deg) skewY(0deg);\">Scaling</span> <span style=\"display: inline-block; opacity: 1; filter: none; transform: translateX(0px) translateY(10px) scale(1) rotate(0deg) skewX(0deg) skewY(0deg);\"></span></span><br class=\"framer-text\"><span class=\"framer-text\" style=\"--framer-text-color:var(--extracted-g1tnir, var(--token-2fcd1089-c4fe-44ec-8e47-1defe3c9bd50, rgb(250, 247, 243)))\"><span style=\"display: inline-block; opacity: 1; filter: none; transform: translateX(0px) translateY(10px) scale(1) rotate(0deg) skewX(0deg) skewY(0deg);\">Start-ups</span> <span style=\"display: inline-block; opacity: 1; filter: none; transform: translateX(0px) translateY(10px) scale(1) rotate(0deg) skewX(0deg) skewY(0deg);\">for</span> <span style=\"display: inline-block; opacity: 1; filter: none; transform: translateX(0px) translateY(10px) scale(1) rotate(0deg) skewX(0deg) skewY(0deg);\">Growth.</span></span>"
+      "label": "Offensive Security. Actionable Results.",
+      "value": "Offensive<br class=\"framer-text\">Security.<br class=\"framer-text\">Actionable<br class=\"framer-text\">Results."
     },
     "text-77": {
       "type": "text",
@@ -3393,8 +3393,8 @@
     },
     "text-37": {
       "type": "html",
-      "label": "Scaling Start-ups for Growth.",
-      "value": "<span class=\"framer-text\" style=\"--framer-text-color:var(--extracted-1qn201a, var(--token-2fcd1089-c4fe-44ec-8e47-1defe3c9bd50, rgb(250, 247, 243)))\"><span style=\"display: inline-block; opacity: 1; filter: none; transform: translateX(0px) translateY(10px) scale(1) rotate(0deg) skewX(0deg) skewY(0deg);\">Scaling</span> <span style=\"display: inline-block; opacity: 1; filter: none; transform: translateX(0px) translateY(10px) scale(1) rotate(0deg) skewX(0deg) skewY(0deg);\"></span></span><br class=\"framer-text\"><span class=\"framer-text\" style=\"--framer-text-color:var(--extracted-g1tnir, var(--token-2fcd1089-c4fe-44ec-8e47-1defe3c9bd50, rgb(250, 247, 243)))\"><span style=\"display: inline-block; opacity: 1; filter: none; transform: translateX(0px) translateY(10px) scale(1) rotate(0deg) skewX(0deg) skewY(0deg);\">Start-ups</span> <span style=\"display: inline-block; opacity: 1; filter: none; transform: translateX(0px) translateY(10px) scale(1) rotate(0deg) skewX(0deg) skewY(0deg);\">for</span> <span style=\"display: inline-block; opacity: 1; filter: none; transform: translateX(0px) translateY(10px) scale(1) rotate(0deg) skewX(0deg) skewY(0deg);\">Growth.</span></span>"
+      "label": "Offensive Security. Actionable Results.",
+      "value": "Offensive<br class=\"framer-text\">Security.<br class=\"framer-text\">Actionable<br class=\"framer-text\">Results."
     },
     "text-38": {
       "type": "text",
@@ -3716,8 +3716,8 @@
     },
     "text-36": {
       "type": "html",
-      "label": "Scaling Start-ups for Growth.",
-      "value": "<span class=\"framer-text\" style=\"--framer-text-color:var(--extracted-1qn201a, var(--token-2fcd1089-c4fe-44ec-8e47-1defe3c9bd50, rgb(250, 247, 243)))\"><span style=\"display: inline-block; opacity: 1; filter: none; transform: translateX(0px) translateY(10px) scale(1) rotate(0deg) skewX(0deg) skewY(0deg);\">Scaling</span> <span style=\"display: inline-block; opacity: 1; filter: none; transform: translateX(0px) translateY(10px) scale(1) rotate(0deg) skewX(0deg) skewY(0deg);\"></span></span><br class=\"framer-text\"><span class=\"framer-text\" style=\"--framer-text-color:var(--extracted-g1tnir, var(--token-2fcd1089-c4fe-44ec-8e47-1defe3c9bd50, rgb(250, 247, 243)))\"><span style=\"display: inline-block; opacity: 1; filter: none; transform: translateX(0px) translateY(10px) scale(1) rotate(0deg) skewX(0deg) skewY(0deg);\">Start-ups</span> <span style=\"display: inline-block; opacity: 1; filter: none; transform: translateX(0px) translateY(10px) scale(1) rotate(0deg) skewX(0deg) skewY(0deg);\">for</span> <span style=\"display: inline-block; opacity: 1; filter: none; transform: translateX(0px) translateY(10px) scale(1) rotate(0deg) skewX(0deg) skewY(0deg);\">Growth.</span></span>"
+      "label": "Offensive Security. Actionable Results.",
+      "value": "Offensive<br class=\"framer-text\">Security.<br class=\"framer-text\">Actionable<br class=\"framer-text\">Results."
     },
     "text-37": {
       "type": "text",
@@ -4139,8 +4139,8 @@
     },
     "text-56": {
       "type": "html",
-      "label": "Scaling Start-ups for Growth.",
-      "value": "<span class=\"framer-text\" style=\"--framer-text-color:var(--extracted-1qn201a, var(--token-2fcd1089-c4fe-44ec-8e47-1defe3c9bd50, rgb(250, 247, 243)))\"><span style=\"display: inline-block; opacity: 1; filter: none; transform: translateX(0px) translateY(10px) scale(1) rotate(0deg) skewX(0deg) skewY(0deg);\">Scaling</span> <span style=\"display: inline-block; opacity: 1; filter: none; transform: translateX(0px) translateY(10px) scale(1) rotate(0deg) skewX(0deg) skewY(0deg);\"></span></span><br class=\"framer-text\"><span class=\"framer-text\" style=\"--framer-text-color:var(--extracted-g1tnir, var(--token-2fcd1089-c4fe-44ec-8e47-1defe3c9bd50, rgb(250, 247, 243)))\"><span style=\"display: inline-block; opacity: 1; filter: none; transform: translateX(0px) translateY(10px) scale(1) rotate(0deg) skewX(0deg) skewY(0deg);\">Start-ups</span> <span style=\"display: inline-block; opacity: 1; filter: none; transform: translateX(0px) translateY(10px) scale(1) rotate(0deg) skewX(0deg) skewY(0deg);\">for</span> <span style=\"display: inline-block; opacity: 1; filter: none; transform: translateX(0px) translateY(10px) scale(1) rotate(0deg) skewX(0deg) skewY(0deg);\">Growth.</span></span>"
+      "label": "Offensive Security. Actionable Results.",
+      "value": "Offensive<br class=\"framer-text\">Security.<br class=\"framer-text\">Actionable<br class=\"framer-text\">Results."
     },
     "text-57": {
       "type": "text",
@@ -4530,8 +4530,8 @@
     },
     "text-51": {
       "type": "html",
-      "label": "Scaling Start-ups for Growth.",
-      "value": "<span class=\"framer-text\" style=\"--framer-text-color:var(--extracted-1qn201a, var(--token-2fcd1089-c4fe-44ec-8e47-1defe3c9bd50, rgb(250, 247, 243)))\"><span style=\"display: inline-block; opacity: 1; filter: none; transform: translateX(0px) translateY(10px) scale(1) rotate(0deg) skewX(0deg) skewY(0deg);\">Scaling</span> <span style=\"display: inline-block; opacity: 1; filter: none; transform: translateX(0px) translateY(10px) scale(1) rotate(0deg) skewX(0deg) skewY(0deg);\"></span></span><br class=\"framer-text\"><span class=\"framer-text\" style=\"--framer-text-color:var(--extracted-g1tnir, var(--token-2fcd1089-c4fe-44ec-8e47-1defe3c9bd50, rgb(250, 247, 243)))\"><span style=\"display: inline-block; opacity: 1; filter: none; transform: translateX(0px) translateY(10px) scale(1) rotate(0deg) skewX(0deg) skewY(0deg);\">Start-ups</span> <span style=\"display: inline-block; opacity: 1; filter: none; transform: translateX(0px) translateY(10px) scale(1) rotate(0deg) skewX(0deg) skewY(0deg);\">for</span> <span style=\"display: inline-block; opacity: 1; filter: none; transform: translateX(0px) translateY(10px) scale(1) rotate(0deg) skewX(0deg) skewY(0deg);\">Growth.</span></span>"
+      "label": "Offensive Security. Actionable Results.",
+      "value": "Offensive<br class=\"framer-text\">Security.<br class=\"framer-text\">Actionable<br class=\"framer-text\">Results."
     },
     "text-52": {
       "type": "text",
@@ -4961,8 +4961,8 @@
     },
     "text-59": {
       "type": "html",
-      "label": "Scaling Start-ups for Growth.",
-      "value": "<span class=\"framer-text\" style=\"--framer-text-color:var(--extracted-1qn201a, var(--token-2fcd1089-c4fe-44ec-8e47-1defe3c9bd50, rgb(250, 247, 243)))\"><span style=\"display: inline-block; opacity: 1; filter: none; transform: translateX(0px) translateY(10px) scale(1) rotate(0deg) skewX(0deg) skewY(0deg);\">Scaling</span> <span style=\"display: inline-block; opacity: 1; filter: none; transform: translateX(0px) translateY(10px) scale(1) rotate(0deg) skewX(0deg) skewY(0deg);\"></span></span><br class=\"framer-text\"><span class=\"framer-text\" style=\"--framer-text-color:var(--extracted-g1tnir, var(--token-2fcd1089-c4fe-44ec-8e47-1defe3c9bd50, rgb(250, 247, 243)))\"><span style=\"display: inline-block; opacity: 1; filter: none; transform: translateX(0px) translateY(10px) scale(1) rotate(0deg) skewX(0deg) skewY(0deg);\">Start-ups</span> <span style=\"display: inline-block; opacity: 1; filter: none; transform: translateX(0px) translateY(10px) scale(1) rotate(0deg) skewX(0deg) skewY(0deg);\">for</span> <span style=\"display: inline-block; opacity: 1; filter: none; transform: translateX(0px) translateY(10px) scale(1) rotate(0deg) skewX(0deg) skewY(0deg);\">Growth.</span></span>"
+      "label": "Offensive Security. Actionable Results.",
+      "value": "Offensive<br class=\"framer-text\">Security.<br class=\"framer-text\">Actionable<br class=\"framer-text\">Results."
     },
     "text-60": {
       "type": "text",
@@ -5347,8 +5347,8 @@
     },
     "text-50": {
       "type": "html",
-      "label": "Scaling Start-ups for Growth.",
-      "value": "<span class=\"framer-text\" style=\"--framer-text-color:var(--extracted-1qn201a, var(--token-2fcd1089-c4fe-44ec-8e47-1defe3c9bd50, rgb(250, 247, 243)))\"><span style=\"display: inline-block; opacity: 1; filter: none; transform: translateX(0px) translateY(10px) scale(1) rotate(0deg) skewX(0deg) skewY(0deg);\">Scaling</span> <span style=\"display: inline-block; opacity: 1; filter: none; transform: translateX(0px) translateY(10px) scale(1) rotate(0deg) skewX(0deg) skewY(0deg);\"></span></span><br class=\"framer-text\"><span class=\"framer-text\" style=\"--framer-text-color:var(--extracted-g1tnir, var(--token-2fcd1089-c4fe-44ec-8e47-1defe3c9bd50, rgb(250, 247, 243)))\"><span style=\"display: inline-block; opacity: 1; filter: none; transform: translateX(0px) translateY(10px) scale(1) rotate(0deg) skewX(0deg) skewY(0deg);\">Start-ups</span> <span style=\"display: inline-block; opacity: 1; filter: none; transform: translateX(0px) translateY(10px) scale(1) rotate(0deg) skewX(0deg) skewY(0deg);\">for</span> <span style=\"display: inline-block; opacity: 1; filter: none; transform: translateX(0px) translateY(10px) scale(1) rotate(0deg) skewX(0deg) skewY(0deg);\">Growth.</span></span>"
+      "label": "Offensive Security. Actionable Results.",
+      "value": "Offensive<br class=\"framer-text\">Security.<br class=\"framer-text\">Actionable<br class=\"framer-text\">Results."
     },
     "text-51": {
       "type": "text",
@@ -5733,8 +5733,8 @@
     },
     "text-50": {
       "type": "html",
-      "label": "Scaling Start-ups for Growth.",
-      "value": "<span class=\"framer-text\" style=\"--framer-text-color:var(--extracted-1qn201a, var(--token-2fcd1089-c4fe-44ec-8e47-1defe3c9bd50, rgb(250, 247, 243)))\"><span style=\"display: inline-block; opacity: 1; filter: none; transform: translateX(0px) translateY(10px) scale(1) rotate(0deg) skewX(0deg) skewY(0deg);\">Scaling</span> <span style=\"display: inline-block; opacity: 1; filter: none; transform: translateX(0px) translateY(10px) scale(1) rotate(0deg) skewX(0deg) skewY(0deg);\"></span></span><br class=\"framer-text\"><span class=\"framer-text\" style=\"--framer-text-color:var(--extracted-g1tnir, var(--token-2fcd1089-c4fe-44ec-8e47-1defe3c9bd50, rgb(250, 247, 243)))\"><span style=\"display: inline-block; opacity: 1; filter: none; transform: translateX(0px) translateY(10px) scale(1) rotate(0deg) skewX(0deg) skewY(0deg);\">Start-ups</span> <span style=\"display: inline-block; opacity: 1; filter: none; transform: translateX(0px) translateY(10px) scale(1) rotate(0deg) skewX(0deg) skewY(0deg);\">for</span> <span style=\"display: inline-block; opacity: 1; filter: none; transform: translateX(0px) translateY(10px) scale(1) rotate(0deg) skewX(0deg) skewY(0deg);\">Growth.</span></span>"
+      "label": "Offensive Security. Actionable Results.",
+      "value": "Offensive<br class=\"framer-text\">Security.<br class=\"framer-text\">Actionable<br class=\"framer-text\">Results."
     },
     "text-51": {
       "type": "text",
@@ -5874,8 +5874,8 @@
   "about": {
     "text-18": {
       "type": "html",
-      "label": "Scaling Start-ups for Growth.",
-      "value": "<span class=\"framer-text\" style=\"--framer-text-color:var(--extracted-1qn201a, var(--token-2fcd1089-c4fe-44ec-8e47-1defe3c9bd50, rgb(250, 247, 243)))\"><span style=\"display: inline-block; opacity: 1; filter: none; transform: translateX(0px) translateY(10px) scale(1) rotate(0deg) skewX(0deg) skewY(0deg);\">Scaling</span> <span style=\"display: inline-block; opacity: 1; filter: none; transform: translateX(0px) translateY(10px) scale(1) rotate(0deg) skewX(0deg) skewY(0deg);\"></span></span><br class=\"framer-text\"><span class=\"framer-text\" style=\"--framer-text-color:var(--extracted-g1tnir, var(--token-2fcd1089-c4fe-44ec-8e47-1defe3c9bd50, rgb(250, 247, 243)))\"><span style=\"display: inline-block; opacity: 1; filter: none; transform: translateX(0px) translateY(10px) scale(1) rotate(0deg) skewX(0deg) skewY(0deg);\">Start-ups</span> <span style=\"display: inline-block; opacity: 1; filter: none; transform: translateX(0px) translateY(10px) scale(1) rotate(0deg) skewX(0deg) skewY(0deg);\">for</span> <span style=\"display: inline-block; opacity: 1; filter: none; transform: translateX(0px) translateY(10px) scale(1) rotate(0deg) skewX(0deg) skewY(0deg);\">Growth.</span></span>"
+      "label": "Offensive Security. Actionable Results.",
+      "value": "Offensive<br class=\"framer-text\">Security.<br class=\"framer-text\">Actionable<br class=\"framer-text\">Results."
     },
     "text-19": {
       "type": "text",
@@ -6132,5 +6132,6 @@
       "label": "Resume file",
       "value": "/assets/documents/muhammad-zubair-resume.pdf"
     }
-  }
+  },
+  "blog--cve-2026-85706-gitlab-file-read": {}
 }

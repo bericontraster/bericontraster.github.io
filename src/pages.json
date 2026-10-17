@@ -3,7 +3,7 @@
     "route": "/",
     "slug": "home",
     "title": "BeriContraster",
-    "description": "Software engineer and Framer creator with a strong focus on building modern, scalable, and conversion-driven web experiences. ",
+    "description": "Muhammad Zubair (BeriContraster), an OSCP and CPTS certified offensive security professional specializing in web, API, Active Directory, and cloud penetration testing.",
     "components": [
       "home--0--hero-bio-sections",
       "home--1--quote-section",
@@ -41,8 +41,8 @@
   {
     "route": "/blog",
     "slug": "blog",
-    "title": "Thoughts - BeriContraster",
-    "description": "Software engineer and Framer creator with a strong focus on building modern, scalable, and conversion-driven web experiences. ",
+    "title": "Blogs - BeriContraster",
+    "description": "Cybersecurity articles, vulnerability research, and penetration testing walkthroughs by Beri Contraster.",
     "components": [
       "blog--0--projects-section",
       "blog--1--phone"
@@ -189,6 +189,16 @@
       "blog--starting-and-growing-a-career-in-web-design--0--article-section",
       "blog--starting-and-growing-a-career-in-web-design--1--more-articles",
       "blog--starting-and-growing-a-career-in-web-design--2--phone"
+    ]
+  },
+  {
+    "route": "/posts/cve-2026-85706-gitlab-file-read/",
+    "slug": "blog--cve-2026-85706-gitlab-file-read",
+    "title": "CVE-2026-85706: Deep Dive into GitLab’s Critical File Read Vulnerability - BeriContraster",
+    "description": "A technical deep dive into GitLab’s file read vulnerability, request processing, lab exploitation, affected versions, mitigation, and detection.",
+    "components": [
+      "blog--cve-2026-85706-gitlab-file-read--article",
+      "blog--1--phone"
     ]
   }
 ]

@@ -1,4 +1,3 @@
-import { setupHeroRibbons } from './hero-ribbons.js';
 import { setupFooterHands } from './footer-hands.js';
 
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -94,20 +93,37 @@ function setupScrollMotion(settings) {
   const clamp = value => Math.max(0, Math.min(1, value));
   let frame = 0;
   let progress = group ? clamp(-group.getBoundingClientRect().top / innerHeight) : 0;
-  function paint() {
+  let previousTime = 0;
+  let resetMotion = true;
+  let portraitsReady = false;
+  let lastAnimated = false;
+  const portraitImages = [...(avatar?.querySelectorAll('img') || [])];
+  portraitImages.forEach(image => { image.loading = 'eager'; });
+  Promise.all(portraitImages.map(image => image.decode())).then(() => {
+    portraitsReady = true;
+    resetMotion = true;
+    schedule();
+  }).catch(() => { /* Keep the front portrait static if either image fails. */ });
+  function paint(time = performance.now()) {
     frame = 0;
     const target = group ? clamp(-group.getBoundingClientRect().top / innerHeight) : 0;
-    const animated = innerWidth >= 1280 && !reducedMotion.matches;
-    progress = animated ? progress + (target - progress) * .18 : 1;
+    const animated = portraitsReady && innerWidth >= 1280 && !reducedMotion.matches;
+    const delta = previousTime ? Math.min(64, Math.max(0, time - previousTime)) : 1000 / 60;
+    previousTime = time;
+    if (resetMotion || animated !== lastAnimated) progress = target;
+    else if (animated) progress += (target - progress) * (1 - Math.exp(-delta / 95));
+    resetMotion = false;
+    lastAnimated = animated;
     if (Math.abs(target - progress) < .0005 && animated) progress = target;
     if (front && back) {
       const desktop = innerWidth >= 1280;
-      const scale = desktop ? .5 + (animated ? progress * .5 : 0) : 1;
-      const y = desktop ? avatar.offsetHeight * .25 * (animated ? 1 - progress : 1) : 0;
+      const scale = desktop && !reducedMotion.matches ? .5 + (animated ? progress * .5 : 0) : 1;
+      const y = desktop && !reducedMotion.matches ? avatar.offsetHeight * .25 * (animated ? 1 - progress : 1) : 0;
       const angle = animated ? progress * 180 : 0;
-      const base = `perspective(1200px) translateY(${y}px) scale(${scale})`;
-      front.style.transform = `${base} rotateY(${angle}deg)`;
-      back.style.transform = `${base} rotateY(${angle - 180}deg)`;
+      avatar.style.transform = `translate3d(0, ${y}px, 0) scale(${scale}) rotateY(${angle}deg)`;
+      front.style.transform = 'rotateY(0deg)';
+      back.style.transform = 'rotateY(-180deg)';
+      back.style.visibility = animated ? 'visible' : 'hidden';
     }
     if (quoteSection && words.length) {
       const rect = quoteParent.getBoundingClientRect();
@@ -126,12 +142,17 @@ function setupScrollMotion(settings) {
       });
     }
     if (animated && Math.abs(target - progress) >= .0005) schedule();
+    else previousTime = 0;
   }
   function schedule() { if (!frame) frame = requestAnimationFrame(paint); }
   paint();
   window.addEventListener('scroll', schedule, { passive: true });
-  window.addEventListener('resize', schedule, { passive: true });
-  reducedMotion.addEventListener('change', schedule);
+  function reset() { resetMotion = true; previousTime = 0; schedule(); }
+  window.addEventListener('resize', reset, { passive: true });
+  window.addEventListener('pageshow', reset);
+  window.addEventListener('load', reset, { once: true });
+  document.addEventListener('visibilitychange', reset);
+  reducedMotion.addEventListener('change', reset);
 }
 
 function setupForms(settings) {
@@ -177,17 +198,11 @@ function setupForms(settings) {
 
 async function setup() {
   const settings = await fetch('/assets/settings.json').then(response => response.json());
-  setupHeroRibbons(settings.heroRibbons);
   setupNavigation();
   setupFooter(settings);
   setupFooterHands(settings.footerHands);
   setupScrollMotion(settings);
   setupForms(settings);
-  const socialNames = ['X', 'Instagram', 'LinkedIn', 'YouTube'];
-  document.querySelectorAll('[data-framer-name="Social Media Icons"] a').forEach((link, index) => {
-    link.setAttribute('aria-label', socialNames[index] || 'Social profile');
-    link.rel = 'noopener noreferrer';
-  });
 }
 
 setup().catch(console.error);

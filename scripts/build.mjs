@@ -27,6 +27,13 @@ fs.copyFileSync('src/opening-dots.js','dist/assets/opening-dots.js');
 fs.copyFileSync('src/analytics.js','dist/assets/analytics.js');
 fs.copyFileSync('src/site-migration.js','dist/assets/site-migration.js');
 fs.writeFileSync('dist/assets/settings.json',JSON.stringify(settings));
+function applyContent(html,fields){
+ for(const [key,field]of Object.entries(fields)){
+  if(field.type==='html'||field.type==='text'){const re=new RegExp('(<(h[1-6]|p)\\b[^>]*data-edit="'+key+'"[^>]*>)[\\s\\S]*?<\\/\\2>','g');html=html.replace(re,(_,open,tag)=>open+(field.type==='text'?escape(field.value):field.value)+'</'+tag+'>')}
+  else {const marker=field.type==='image'?'data-edit-image':'data-edit-link';const re=new RegExp('<(?:img|a)\\b[^>]*'+marker+'="'+key+'"[^>]*>','g');html=html.replace(re,tag=>{const attr=field.type==='image'?'src':'href';tag=tag.replace(new RegExp(attr+'="[^"]*"'),attr+'="'+escape(field.value)+'"');if(field.type==='image')tag=tag.replace(/alt="[^"]*"/,'alt="'+escape(field.alt||'')+'"');return tag})}
+ }
+ return html;
+}
 for(const page of pages){
  let html=fs.readFileSync('src/pages/'+page.slug+'.html','utf8');
  const navigationLinks=settings.navigation.map(item=>{
@@ -37,9 +44,11 @@ for(const page of pages){
  }).join('\n');
  html=html.replaceAll('<!--HEADER-->',fs.readFileSync('src/components/Header.html','utf8').replaceAll('{{displayName}}',escape(settings.displayName)).replaceAll('{{navigationLinks}}',navigationLinks));
  page.components.forEach((name,i)=>{html=html.replace('<!--COMPONENT:'+i+'-->',fs.readFileSync('src/components/'+name+'.html','utf8'))});
- for(const [key,field]of Object.entries(content[page.slug])){
-  if(field.type==='html'||field.type==='text'){const re=new RegExp('(<(h[1-6]|p)\\b[^>]*data-edit="'+key+'"[^>]*>)[\\s\\S]*?<\\/\\2>','g');html=html.replace(re,(_,open,tag)=>open+(field.type==='text'?escape(field.value):field.value)+'</'+tag+'>')}
-  else {const marker=field.type==='image'?'data-edit-image':'data-edit-link';const re=new RegExp('<(?:img|a)\\b[^>]*'+marker+'="'+key+'"[^>]*>','g');html=html.replace(re,tag=>{const attr=field.type==='image'?'src':'href';tag=tag.replace(new RegExp(attr+'="[^"]*"'),attr+'="'+escape(field.value)+'"');if(field.type==='image')tag=tag.replace(/alt="[^"]*"/,'alt="'+escape(field.alt||'')+'"');return tag})}
+ html=applyContent(html,content[page.slug]);
+ // Render the imported article footer from the same source and content as the homepage.
+ if(page.slug==='blog--cve-2026-85706-gitlab-file-read'){
+  const footer=applyContent(fs.readFileSync('src/components/home--7--phone.html','utf8'),content.home);
+  html=html.replace(/<footer\b[\s\S]*?<\/footer>/,()=>footer);
  }
  const dir=path.join('dist',page.route);fs.mkdirSync(dir,{recursive:true});
  fs.writeFileSync('dist/assets/'+page.slug+'.css',localize(fs.readFileSync('src/styles/'+page.slug+'.css','utf8')));
@@ -53,7 +62,8 @@ for(const page of pages){
   return open+body+'</svg>';
  });
  html=html.replace(/(<footer\b[^>]*>)/g, '$1'+fs.readFileSync('src/components/FooterHands.html','utf8'));
- html=html.replace(/(<div\b[^>]*class="[^"]*\bframer-zpn31\b[^"]*"[^>]*>)/, '$1'+fs.readFileSync('src/components/HeroRibbons.html','utf8').replace('{{ribbonLayout}}',page.slug==='home'?'hero':'page'));
+ const heroBackground=fs.readFileSync('src/components/HeroBackground.html','utf8');
+ html=html.replace(/(<div\b[^>]*class="[^"]*\bframer-zpn31\b[^"]*"[^>]*>)/, '$1'+heroBackground);
  html=html.replaceAll('href="./','href="/');
  for(const [oldRoute,newRoute]of aliases)html=html.replaceAll('href="'+oldRoute+'"','href="'+newRoute+'"').replaceAll('href="'+oldRoute+'/"','href="'+newRoute+'"');
  html=html.replace(/href="(\/[^"#]+)(#[^"]*)?"/g,(match,target,hash='')=>{if(pages.some(p=>p.route===target))return match;const found=pages.find(p=>p.route.split('/').filter(Boolean).at(-1)===target.slice(1));return found?'href="'+found.route+hash+'"':match});
