@@ -1,28 +1,51 @@
-# Bundler cache
-.bundle
-vendor
-Gemfile.lock
+node.exe
+.browser/
+reference.html
+reference.png
+inspect.mjs
+capture.mjs
+qa.mjs
+debug.mjs
+tidy.mjs
+local-*.png
+refactor.mjs
+browser-check.mjs
+browser-report.json
+icons.mjs
+dist/
+*.zip
+*.tar.gz
+# Local tooling, browser profiles, previews, and deployment metadata
+.openai/
+.codex/
+.vscode/
+.idea/
+node_modules/
+node-*.zip
+*.exe
+*.log
+*.local.*
+__pycache__/
+.DS_Store
+Thumbs.db
 
-# Jekyll cache
-.jekyll-cache
-.jekyll-metadata
-_site
-
-# RubyGems
-*.gem
-
-# NPM dependencies
-node_modules
-package-lock.json
-
-# IDE configurations
-.idea
-.vscode/*
-!.vscode/settings.json
-!.vscode/extensions.json
-!.vscode/tasks.json
-
-# Misc
-_sass/vendors
-assets/js/dist
-_posts/ignore
+# Keep credentials, environment files, and private material on this computer
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.keystore
+.npmrc
+.netrc
+credentials.json
+*-credentials.json
+service-account*.json
+secrets/
+private/
+backups/
+*.bak
+*.backup
+*.md

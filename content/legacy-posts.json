@@ -1,0 +1,186 @@
+{
+  "siteUrl": "https://bericontraster.com",
+  "capturedOn": "2026-10-17",
+  "posts": [
+    {
+      "route": "/posts/abducted-hackthebox-detailed-writeup/",
+      "title": "Abducted:  HackTheBox Detailed Walkthrough",
+      "lastmod": "2026-05-13T14:00:00+05:00"
+    },
+    {
+      "route": "/posts/ai-is-just-patterns-and-patterns-can-be-broken/",
+      "title": "AI is Just Patterns — And Patterns Can Be Broken",
+      "lastmod": "2026-04-21T17:05:43+05:00"
+    },
+    {
+      "route": "/posts/android-pentesting-lab/",
+      "title": "Android Penetration Testing Lab Setup",
+      "lastmod": "2025-07-25T12:12:54+05:00"
+    },
+    {
+      "route": "/posts/aws-cognito-user-&-identity-poles/",
+      "title": "AWS Cognito User & Identity Pole",
+      "lastmod": "2025-07-30T12:27:00+05:00"
+    },
+    {
+      "route": "/posts/binary-exploitation-toolkit/",
+      "title": "Binary Exploitation Toolkit",
+      "lastmod": "2026-05-11T19:39:37+05:00"
+    },
+    {
+      "route": "/posts/cross-site-scripting-handbook/",
+      "title": "Cross-Site Scripting (XSS) Playbook",
+      "lastmod": "2026-02-09T13:22:25+05:00"
+    },
+    {
+      "route": "/posts/custom-siem-lab-implementation/",
+      "title": "Custom SIEM Lab Implementation",
+      "lastmod": "2024-08-13T09:01:00+05:00"
+    },
+    {
+      "route": "/posts/editor-hackthebox-full-walkthrough/",
+      "title": "Editor — HackTheBox Full Walkthrough",
+      "lastmod": "2026-05-19T19:02:51+05:00"
+    },
+    {
+      "route": "/posts/fireflow-hackthebox-detailed-walkthrough/",
+      "title": "Fireflow — HackTheBox Detailed Walkthrough",
+      "lastmod": "2026-08-18T14:00:00+05:00"
+    },
+    {
+      "route": "/posts/fuzzing-the-target/",
+      "title": "Fuzzing The Web: 101",
+      "lastmod": "2026-04-21T17:03:42+05:00"
+    },
+    {
+      "route": "/posts/git-playbook-the-complete-version-control/",
+      "title": "Git Playbook: The Complete Guide to Git Commands for Version Control",
+      "lastmod": "2025-07-21T01:38:48+05:00"
+    },
+    {
+      "route": "/posts/how-much-does-a-data-breach-actually-cost-a-small-business/",
+      "title": "How Much Does a Data Breach Actually Cost a Small Business",
+      "lastmod": "2026-01-06T12:00:00+05:00"
+    },
+    {
+      "route": "/posts/how-to-get-into-cybersecurity-in-2026/",
+      "title": "Getting Into Cybersecurity in 2026 the Right Way",
+      "lastmod": "2026-02-06T23:16:55+05:00"
+    },
+    {
+      "route": "/posts/hybrid-full-chain-walkthrough-tjnull-list/",
+      "title": "Hybrid — Full Chain Walkthrough (TjNull list)",
+      "lastmod": "2024-09-19T12:00:00+05:00"
+    },
+    {
+      "route": "/posts/if-i-joined-your-security-team-this-is-what-i-d-fix-in-the-first-90-days/",
+      "title": "If I Joined Your Security Team, This Is What I’d Fix in the First 90 Days",
+      "lastmod": "2025-12-16T12:00:00+05:00"
+    },
+    {
+      "route": "/posts/jwt-playbook/",
+      "title": "JSON Web Token (JWT) Playbook",
+      "lastmod": "2026-02-09T13:22:25+05:00"
+    },
+    {
+      "route": "/posts/linux-torvalds/",
+      "title": "Linus Torvalds",
+      "lastmod": "2025-12-23T16:04:58+05:00"
+    },
+    {
+      "route": "/posts/malware-development-writing-a-keylogger-in-c/",
+      "title": "Malware Development: Writing a Keylogger in C",
+      "lastmod": "2026-05-11T19:39:37+05:00"
+    },
+    {
+      "route": "/posts/master-active-directory/",
+      "title": "Master Active Directory: A Complete Beginner's to Intermediate Guide",
+      "lastmod": "2026-05-11T19:39:37+05:00"
+    },
+    {
+      "route": "/posts/mastering-reflected-cross-site-scripting-&-bypassing-filters/",
+      "title": "Mastering Reflected Cross-Site Scripting & Bypassing Filters",
+      "lastmod": "2025-08-25T12:00:00+05:00"
+    },
+    {
+      "route": "/posts/mssql-attack-handbook/",
+      "title": "Microsoft SQL Server: 101",
+      "lastmod": "2026-04-23T12:00:00+05:00"
+    },
+    {
+      "route": "/posts/nessus-guide/",
+      "title": "Vulnerability Assessment with Nessus",
+      "lastmod": "2025-07-10T16:47:21+05:00"
+    },
+    {
+      "route": "/posts/network-pentesting-guide/",
+      "title": "Network Enumeration Handbook",
+      "lastmod": "2026-06-17T15:06:35+05:00"
+    },
+    {
+      "route": "/posts/nmap-handbook/",
+      "title": "Nmap Cheat Sheet",
+      "lastmod": "2026-05-16T14:53:05+05:00"
+    },
+    {
+      "route": "/posts/nuclei-guide/",
+      "title": "Nuclei Vulnerability Scanner HandBook",
+      "lastmod": "2025-12-27T20:27:06+05:00"
+    },
+    {
+      "route": "/posts/openvpn-setup-guide/",
+      "title": "Step-by-Step Guide: Setting Up and Troubleshooting OpenVPN on Ubuntu 24.04",
+      "lastmod": "2024-03-16T17:51:00+05:00"
+    },
+    {
+      "route": "/posts/pentesting-an-enterprise-active-directory-environment/",
+      "title": "Pentesting an Enterprise Active Directory Environment",
+      "lastmod": "2026-02-09T13:22:25+05:00"
+    },
+    {
+      "route": "/posts/phantom-vulnlab-full-walkthrough-tjnull-list/",
+      "title": "Phantom — Vulnlab Full Walkthrough (TjNull list)",
+      "lastmod": "2024-09-10T12:00:00+05:00"
+    },
+    {
+      "route": "/posts/pre-win2k-to-domain-admin-a-five-step-active-directory-kill-chain-cascading-trust/",
+      "title": "Pre-Win2k to Domain Admin: A Five-Step Active Directory Kill Chain — Cascading Trust",
+      "lastmod": "2026-09-23T19:13:46+05:00"
+    },
+    {
+      "route": "/posts/red-flags-that-your-website-is-already-being-probed-by-attackers/",
+      "title": "Red Flags That Your Website Is Already Being Probed by Attackers",
+      "lastmod": "2026-05-11T19:39:37+05:00"
+    },
+    {
+      "route": "/posts/support-hackthebox-detauled-writeup/",
+      "title": "Support HackTheBox Detailed Writeup",
+      "lastmod": "2026-05-19T19:02:51+05:00"
+    },
+    {
+      "route": "/posts/sweep-vulnlab/",
+      "title": "Sweep — Vulnlab Full Walkthrough (TjNull list)",
+      "lastmod": "2025-12-23T16:04:58+05:00"
+    },
+    {
+      "route": "/posts/the-secret-to-passing-oscp-my-journey-and-tips/",
+      "title": "The Secret to Passing OSCP: My Journey and Tips",
+      "lastmod": "2026-02-09T13:22:25+05:00"
+    },
+    {
+      "route": "/posts/vulnerable-active-directory-lab/",
+      "title": "Building a Vulnerable Active Directory Lab for Penetration Testing: A Practical Walkthrough",
+      "lastmod": "2026-02-09T13:22:25+05:00"
+    },
+    {
+      "route": "/posts/vulnlab-sync-full-walkthrough-tjnull-list/",
+      "title": "Sync — Full Walkthrough (TjNull list)",
+      "lastmod": "2024-09-06T12:00:00+05:00"
+    },
+    {
+      "route": "/posts/whiterose/",
+      "title": "Whiterose Writeup | TryHackMe",
+      "lastmod": "2025-12-23T16:04:58+05:00"
+    }
+  ]
+}

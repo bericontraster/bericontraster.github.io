@@ -1,0 +1,48 @@
+{
+  "displayName": "BeriContraster",
+  "siteUrl": "https://bericontraster.com",
+  "googleSiteVerification": "TtIUoL98GEiT6_K75hD5VJH-Rp97JrXHCbRz1GP_Isk",
+  "googleAnalyticsId": "G-NJ0NQRZ3JV",
+  "contactEmail": "contact@bericontraster.com",
+  "copyrightYear": "2022",
+  "quote": "Security testing that goes beyond scanner output. Every engagement ends with proven attack paths, clear risk ratings, and remediation your team can act on.",
+  "contactEndpoint": "",
+  "newsletterEndpoint": "",
+  "openingDots": {
+    "enabled": true,
+    "text": "[BeriContraster]",
+    "duration": 5600,
+    "oncePerSession": true
+  },
+  "heroNetwork": {
+    "enabled": true,
+    "color": "#7297c4",
+    "signalColor": "#8cd6ca",
+    "intensity": 0.82,
+    "speed": 0.65
+  },
+  "navigation": [
+    {
+      "label": "About Me",
+      "href": "/about"
+    },
+    {
+      "label": "Services",
+      "href": "/#services"
+    },
+    {
+      "label": "Projects",
+      "href": "/work"
+    },
+    {
+      "label": "Contact",
+      "href": "/#contact"
+    }
+  ],
+  "footerHands": {
+    "enabled": true,
+    "color": "#62f5b5",
+    "opacity": 0.65,
+    "columns": 80
+  }
+}
