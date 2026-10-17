@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-labelledby="brand-title brand-description">
+<title id="brand-title">BeriContraster ASCII B</title>
+<desc id="brand-description">An uppercase B made entirely from greater-than, exclamation, and less-than characters.</desc>
+<defs>
+<symbol id="glyph-0" viewBox="0 0 12 12"><path d="m3 2 6 4-6 4"/></symbol>
+<symbol id="glyph-1" viewBox="0 0 12 12"><path d="M6 1.5v5.3M6 10v.1"/></symbol>
+<symbol id="glyph-2" viewBox="0 0 12 12"><path d="m9 2-6 4 6 4"/></symbol>
+</defs>
+<rect width="256" height="256" rx="40" fill="#080809"/>
+<g fill="none" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+<use href="#glyph-0" x="40.5" y="15.5" width="25" height="25" stroke="#64c994"/>
+<use href="#glyph-2" x="65.5" y="15.5" width="25" height="25" stroke="#64c994"/>
+<use href="#glyph-1" x="90.5" y="15.5" width="25" height="25" stroke="#64c994"/>
+<use href="#glyph-0" x="115.5" y="15.5" width="25" height="25" stroke="#64c994"/>
+<use href="#glyph-2" x="140.5" y="15.5" width="25" height="25" stroke="#64c994"/>
+<use href="#glyph-1" x="40.5" y="40.5" width="25" height="25" stroke="#64c994"/>
+<use href="#glyph-0" x="65.5" y="40.5" width="25" height="25" stroke="#64c994"/>
+<use href="#glyph-0" x="140.5" y="40.5" width="25" height="25" stroke="#64c994"/>
+<use href="#glyph-2" x="165.5" y="40.5" width="25" height="25" stroke="#64c994"/>
+<use href="#glyph-2" x="40.5" y="65.5" width="25" height="25" stroke="#64c994"/>
+<use href="#glyph-1" x="65.5" y="65.5" width="25" height="25" stroke="#64c994"/>
+<use href="#glyph-0" x="165.5" y="65.5" width="25" height="25" stroke="#64c994"/>
+<use href="#glyph-2" x="190.5" y="65.5" width="25" height="25" stroke="#64c994"/>
+<use href="#glyph-0" x="40.5" y="90.5" width="25" height="25" stroke="#64c994"/>
+<use href="#glyph-2" x="65.5" y="90.5" width="25" height="25" stroke="#64c994"/>
+<use href="#glyph-2" x="140.5" y="90.5" width="25" height="25" stroke="#64c994"/>
+<use href="#glyph-1" x="165.5" y="90.5" width="25" height="25" stroke="#64c994"/>
+<use href="#glyph-1" x="40.5" y="115.5" width="25" height="25" stroke="#64c994"/>
+<use href="#glyph-0" x="65.5" y="115.5" width="25" height="25" stroke="#64c994"/>
+<use href="#glyph-2" x="90.5" y="115.5" width="25" height="25" stroke="#64c994"/>
+<use href="#glyph-1" x="115.5" y="115.5" width="25" height="25" stroke="#64c994"/>
+<use href="#glyph-0" x="140.5" y="115.5" width="25" height="25" stroke="#64c994"/>
+<use href="#glyph-2" x="165.5" y="115.5" width="25" height="25" stroke="#64c994"/>
+<use href="#glyph-2" x="40.5" y="140.5" width="25" height="25" stroke="#64c994"/>
+<use href="#glyph-1" x="65.5" y="140.5" width="25" height="25" stroke="#64c994"/>
+<use href="#glyph-0" x="165.5" y="140.5" width="25" height="25" stroke="#64c994"/>
+<use href="#glyph-2" x="190.5" y="140.5" width="25" height="25" stroke="#64c994"/>
+<use href="#glyph-0" x="40.5" y="165.5" width="25" height="25" stroke="#64c994"/>
+<use href="#glyph-2" x="65.5" y="165.5" width="25" height="25" stroke="#64c994"/>
+<use href="#glyph-1" x="165.5" y="165.5" width="25" height="25" stroke="#64c994"/>
+<use href="#glyph-0" x="190.5" y="165.5" width="25" height="25" stroke="#64c994"/>
+<use href="#glyph-1" x="40.5" y="190.5" width="25" height="25" stroke="#64c994"/>
+<use href="#glyph-0" x="65.5" y="190.5" width="25" height="25" stroke="#64c994"/>
+<use href="#glyph-0" x="140.5" y="190.5" width="25" height="25" stroke="#64c994"/>
+<use href="#glyph-2" x="165.5" y="190.5" width="25" height="25" stroke="#64c994"/>
+<use href="#glyph-2" x="40.5" y="215.5" width="25" height="25" stroke="#64c994"/>
+<use href="#glyph-1" x="65.5" y="215.5" width="25" height="25" stroke="#64c994"/>
+<use href="#glyph-0" x="90.5" y="215.5" width="25" height="25" stroke="#64c994"/>
+<use href="#glyph-2" x="115.5" y="215.5" width="25" height="25" stroke="#64c994"/>
+<use href="#glyph-1" x="140.5" y="215.5" width="25" height="25" stroke="#64c994"/>
+</g>
+</svg>

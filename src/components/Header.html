@@ -1,8 +1,11 @@
 <nav class="portfolio-nav" aria-label="Portfolio">
   <div class="portfolio-nav-bar">
     <a class="portfolio-logo" href="/#hero-section" aria-label="{{displayName}} home">
-      {{displayName}}
+      <span>{{headerDisplayName}}</span>
     </a>
-    <div class="portfolio-nav-links">{{navigationLinks}}</div>
+    <div class="portfolio-nav-actions">
+      <div class="portfolio-nav-links">{{navigationLinks}}</div>
+      {{contactLink}}
+    </div>
   </div>
 </nav>

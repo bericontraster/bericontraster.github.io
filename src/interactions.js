@@ -1,4 +1,5 @@
 import { setupFooterHands } from './footer-hands.js';
+import { setupArticleToc } from './article-toc.js';
 
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
@@ -205,4 +206,5 @@ async function setup() {
   setupForms(settings);
 }
 
+setupArticleToc();
 setup().catch(console.error);

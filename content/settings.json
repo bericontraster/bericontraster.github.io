@@ -1,5 +1,6 @@
 {
   "displayName": "BeriContraster",
+  "headerDisplayName": "BERI CONTRASTER",
   "siteUrl": "https://bericontraster.com",
   "googleSiteVerification": "TtIUoL98GEiT6_K75hD5VJH-Rp97JrXHCbRz1GP_Isk",
   "googleAnalyticsId": "G-NJ0NQRZ3JV",
@@ -21,16 +22,20 @@
   },
   "navigation": [
     {
-      "label": "About Me",
-      "href": "/about"
-    },
-    {
       "label": "Services",
       "href": "/#services"
     },
     {
+      "label": "Blogs",
+      "href": "/blog"
+    },
+    {
       "label": "Projects",
       "href": "/work"
+    },
+    {
+      "label": "About Me",
+      "href": "/about"
     },
     {
       "label": "Contact",

@@ -1,11 +1,16 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import { createHash } from 'node:crypto';
+import { addArticleHeadingIds } from './article-headings.mjs';
+import { highlightCodeBlocks } from './highlight-code.mjs';
 const pages=JSON.parse(fs.readFileSync('src/pages.json','utf8'));
 const content=JSON.parse(fs.readFileSync('content/portfolio.json','utf8'));
 const settings=JSON.parse(fs.readFileSync('content/settings.json','utf8'));
 const assets=fs.existsSync('content/assets.json')?JSON.parse(fs.readFileSync('content/assets.json','utf8')):{};
 const localize=value=>{for(const [url,local]of Object.entries(assets)){value=value.replaceAll(url,local).replaceAll(url.replaceAll('&','&amp;'),local)}return value};
 const escape=s=>String(s).replaceAll('&','&amp;').replaceAll('"','&quot;').replaceAll('<','&lt;').replaceAll('>','&gt;');
+const customCssVersion=createHash('sha256').update(fs.readFileSync('src/styles/custom.css')).digest('hex').slice(0,12);
+const brandIcons='<link rel="icon" href="/favicon.ico?v=ascii-b" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="/assets/brand/favicon-32.png?v=ascii-b"><link rel="icon" type="image/png" sizes="16x16" href="/assets/brand/favicon-16.png?v=ascii-b"><link rel="icon" type="image/svg+xml" sizes="any" href="/assets/brand/favicon-ascii-b.svg"><link rel="apple-touch-icon" sizes="180x180" href="/assets/brand/apple-touch-icon.png?v=ascii-b"><meta name="theme-color" content="#080809">';
 const siteUrl=new URL(settings.siteUrl).origin;
 const domain=fs.readFileSync('CNAME','utf8').trim();
 if(new URL(siteUrl).hostname!==domain)throw new Error('CNAME must match settings.siteUrl');
@@ -21,6 +26,7 @@ fs.writeFileSync('dist/CNAME',domain+'\n');
 fs.writeFileSync('dist/.nojekyll','');
 fs.copyFileSync('src/styles/custom.css','dist/assets/custom.css');
 fs.copyFileSync('src/interactions.js','dist/assets/interactions.js');
+fs.copyFileSync('src/article-toc.js','dist/assets/article-toc.js');
 fs.copyFileSync('src/hero-ribbons.js','dist/assets/hero-ribbons.js');
 fs.copyFileSync('src/footer-hands.js','dist/assets/footer-hands.js');
 fs.copyFileSync('src/opening-dots.js','dist/assets/opening-dots.js');
@@ -36,17 +42,21 @@ function applyContent(html,fields){
 }
 for(const page of pages){
  let html=fs.readFileSync('src/pages/'+page.slug+'.html','utf8');
- const navigationLinks=settings.navigation.map(item=>{
+ const navigationItems=settings.navigation.map(item=>{
   const target=new URL(item.href,'https://portfolio.local');
   const current=!target.hash&&(target.pathname===page.route||page.route.startsWith(target.pathname+'/'));
   const contact=target.hash==='#contact';
-  return `<a class="portfolio-nav-link${contact?' portfolio-nav-contact':''}" href="${escape(item.href)}"${current?' aria-current="page"':''}>${escape(item.label)}</a>`;
- }).join('\n');
- html=html.replaceAll('<!--HEADER-->',fs.readFileSync('src/components/Header.html','utf8').replaceAll('{{displayName}}',escape(settings.displayName)).replaceAll('{{navigationLinks}}',navigationLinks));
+  return {contact,html:`<a class="portfolio-nav-link${contact?' portfolio-nav-contact':''}" href="${escape(item.href)}"${current?' aria-current="page"':''}>${escape(item.label)}</a>`};
+ });
+ const navigationLinks=navigationItems.filter(item=>!item.contact).map(item=>item.html).join('\n');
+ const contactLink=navigationItems.filter(item=>item.contact).map(item=>item.html).join('\n');
+ html=html.replaceAll('<!--HEADER-->',fs.readFileSync('src/components/Header.html','utf8').replaceAll('{{displayName}}',escape(settings.displayName)).replaceAll('{{headerDisplayName}}',escape(settings.headerDisplayName||settings.displayName)).replaceAll('{{navigationLinks}}',navigationLinks).replaceAll('{{contactLink}}',contactLink));
  page.components.forEach((name,i)=>{html=html.replace('<!--COMPONENT:'+i+'-->',fs.readFileSync('src/components/'+name+'.html','utf8'))});
  html=applyContent(html,content[page.slug]);
- // Render the imported article footer from the same source and content as the homepage.
- if(page.slug==='blog--cve-2026-85706-gitlab-file-read'){
+ html=highlightCodeBlocks(html);
+ if(page.route.startsWith('/posts/'))html=addArticleHeadingIds(html);
+ // Imported pages share the homepage's populated footer.
+ if(page.sharedFooter||page.slug==='blog--cve-2026-85706-gitlab-file-read'){
   const footer=applyContent(fs.readFileSync('src/components/home--7--phone.html','utf8'),content.home);
   html=html.replace(/<footer\b[\s\S]*?<\/footer>/,()=>footer);
  }
@@ -73,16 +83,16 @@ for(const page of pages){
  const canonical=siteUrl+(page.route==='/'?'/':page.route.replace(/\/$/,'')+'/');
  const seo=`<link rel="canonical" href="${escape(canonical)}"><meta property="og:url" content="${escape(canonical)}"><meta property="og:title" content="${escape(page.title)}"><meta property="og:description" content="${escape(page.description)}"><meta property="og:type" content="${page.route.startsWith('/posts/')?'article':'website'}"><meta property="og:site_name" content="${escape(settings.displayName)}"><meta name="google-site-verification" content="${escape(settings.googleSiteVerification||'')}">`;
  const analytics=`<script defer src="/assets/site-migration.js"></script>`+(settings.googleAnalyticsId?`<script defer src="/assets/analytics.js" data-measurement-id="${escape(settings.googleAnalyticsId)}" data-site-origin="${escape(siteUrl)}"></script>`:'');
- const doc=`<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${escape(page.title)}</title><meta name="description" content="${escape(page.description)}">${seo}${analytics}<link rel="stylesheet" href="/assets/${page.slug}.css"><link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/assets/fonts/inter-tight-latin.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="/assets/fonts/fonts.css"><link rel="stylesheet" href="/assets/custom.css"></head><body>${opening}${icons}${html}<script type="module" src="/assets/interactions.js"></script></body></html>`;
+ const doc=`<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${escape(page.title)}</title><meta name="description" content="${escape(page.description)}">${seo}${brandIcons}${analytics}<link rel="stylesheet" href="/assets/${page.slug}.css"><link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/assets/fonts/inter-tight-latin.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="/assets/fonts/fonts.css"><link rel="stylesheet" href="/assets/custom.css?v=${customCssVersion}"></head><body>${opening}${icons}${html}<script type="module" src="/assets/interactions.js"></script></body></html>`;
  fs.writeFileSync(path.join(dir,'index.html'),doc);
 }
 for(const [oldRoute,target]of aliases){
  const dir=path.join('dist',oldRoute);fs.mkdirSync(dir,{recursive:true});
  const canonical=siteUrl+target;
- fs.writeFileSync(path.join(dir,'index.html'),`<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="robots" content="noindex,follow"><link rel="canonical" href="${escape(canonical)}"><meta http-equiv="refresh" content="0;url=${escape(target)}"><title>Article moved</title></head><body><a href="${escape(target)}">Continue to article</a></body></html>`);
+ fs.writeFileSync(path.join(dir,'index.html'),`<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="robots" content="noindex,follow">${brandIcons}<link rel="canonical" href="${escape(canonical)}"><meta http-equiv="refresh" content="0;url=${escape(target)}"><title>Article moved</title></head><body><a href="${escape(target)}">Continue to article</a></body></html>`);
 }
 fs.writeFileSync('dist/robots.txt',`User-agent: *\nDisallow: /norobots/\n\nSitemap: ${siteUrl}/sitemap.xml\n`);
 const urls=pages.map(page=>siteUrl+(page.route==='/'?'/':page.route.replace(/\/$/,'')+'/'));
 fs.writeFileSync('dist/sitemap.xml',`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map(url=>`  <url><loc>${escape(url)}</loc></url>`).join('\n')}\n</urlset>\n`);
-fs.writeFileSync('dist/404.html',`<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Page not found - ${escape(settings.displayName)}</title></head><body><main><h1>Page not found</h1><p>The address may be incorrect or the page may have moved.</p><a href="/">Back home</a> · <a href="/blog/">Browse articles</a></main></body></html>`);
+fs.writeFileSync('dist/404.html',`<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">${brandIcons}<title>Page not found - ${escape(settings.displayName)}</title></head><body><main><h1>Page not found</h1><p>The address may be incorrect or the page may have moved.</p><a href="/">Back home</a> · <a href="/blog/">Browse articles</a></main></body></html>`);
 console.log('Built '+pages.length+' pages into dist/.');

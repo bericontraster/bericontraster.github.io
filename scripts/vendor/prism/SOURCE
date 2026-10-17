@@ -1,0 +1,10 @@
+PrismJS 1.30.0, MIT license (see LICENSE).
+Source: https://github.com/PrismJS/prism/tree/v1.30.0
+
+The following upstream files are unmodified, with .cjs extensions for this ESM project:
+components/prism-core.js -> core.cjs
+components/prism-bash.js -> bash.cjs
+components/prism-shell-session.js -> shell-session.cjs
+components/prism-http.js -> http.cjs
+
+Used only during the build; no Prism JavaScript is shipped to the browser.
