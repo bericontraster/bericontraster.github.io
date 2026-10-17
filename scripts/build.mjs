@@ -21,7 +21,7 @@ fs.writeFileSync('dist/CNAME',domain+'\n');
 fs.writeFileSync('dist/.nojekyll','');
 fs.copyFileSync('src/styles/custom.css','dist/assets/custom.css');
 fs.copyFileSync('src/interactions.js','dist/assets/interactions.js');
-fs.copyFileSync('src/security-network.js','dist/assets/security-network.js');
+fs.copyFileSync('src/hero-ribbons.js','dist/assets/hero-ribbons.js');
 fs.copyFileSync('src/footer-hands.js','dist/assets/footer-hands.js');
 fs.copyFileSync('src/opening-dots.js','dist/assets/opening-dots.js');
 fs.copyFileSync('src/analytics.js','dist/assets/analytics.js');
@@ -53,7 +53,7 @@ for(const page of pages){
   return open+body+'</svg>';
  });
  html=html.replace(/(<footer\b[^>]*>)/g, '$1'+fs.readFileSync('src/components/FooterHands.html','utf8'));
- html=html.replace(/(<div\b[^>]*class="[^"]*\bframer-zpn31\b[^"]*"[^>]*>)/, '$1'+fs.readFileSync('src/components/SecurityNetwork.html','utf8'));
+ html=html.replace(/(<div\b[^>]*class="[^"]*\bframer-zpn31\b[^"]*"[^>]*>)/, '$1'+fs.readFileSync('src/components/HeroRibbons.html','utf8').replace('{{ribbonLayout}}',page.slug==='home'?'hero':'page'));
  html=html.replaceAll('href="./','href="/');
  for(const [oldRoute,newRoute]of aliases)html=html.replaceAll('href="'+oldRoute+'"','href="'+newRoute+'"').replaceAll('href="'+oldRoute+'/"','href="'+newRoute+'"');
  html=html.replace(/href="(\/[^"#]+)(#[^"]*)?"/g,(match,target,hash='')=>{if(pages.some(p=>p.route===target))return match;const found=pages.find(p=>p.route.split('/').filter(Boolean).at(-1)===target.slice(1));return found?'href="'+found.route+hash+'"':match});

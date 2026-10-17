@@ -6,13 +6,13 @@
   --label-font-size: clamp(12px, 1vw, 13px);
   --quote-font-size: 30px;
   --motion-ease: cubic-bezier(.22, 1, .36, 1);
-  --cyber-bg: #0b0b0e;
-  --cyber-panel: #161619;
+  --cyber-bg: #080809;
+  --cyber-panel: #141416;
   --cyber-text: #f4f4f5;
   --cyber-muted: #a1a1aa;
-  --cyber-accent: #62f5b5;
-  --cyber-cyan: #38cddd;
-  --cyber-line: #2c2c32;
+  --cyber-accent: #d7d9e0;
+  --cyber-cyan: #f4f4f5;
+  --cyber-line: #27272b;
   --opening-background: var(--cyber-bg);
   --opening-foreground: var(--cyber-accent);
   --quote-active: var(--cyber-text);
@@ -85,40 +85,33 @@ body footer [data-brand-wordmark] p {
 .opening-dots-canvas { display: block; width: 100%; height: 100%; }
 html.opening-dots-active { overflow: hidden; scrollbar-gutter: stable; }
 html.opening-dots-active body { touch-action: none; }
-.security-network {
-  --network-color: #7297c4; --network-intensity: .82;
-  position: absolute; top: 0; left: 0; right: 0; z-index: 0;
-  width: 100%; height: 100vh; height: 100svh;
-  pointer-events: none; overflow: hidden; contain: strict;
-  background: radial-gradient(ellipse at 12% 24%, rgb(70 100 150 / 8%), transparent 45%),
-    radial-gradient(ellipse at 90% 48%, rgb(83 126 155 / 6%), transparent 42%);
-  mask-image: linear-gradient(to bottom, #000 65%, transparent 100%);
-}
-.security-network[hidden] { display: none; }
-.security-network::before {
-  content: ''; position: absolute; inset: 0;
-  background-image: linear-gradient(rgb(140 158 183 / 5%) 1px, transparent 1px),
-    linear-gradient(90deg, rgb(140 158 183 / 5%) 1px, transparent 1px);
-  background-size: 64px 64px;
-  mask-image: radial-gradient(ellipse at 50% 30%, #000, transparent 75%);
-}
-.security-network-canvas, .security-network-fallback {
-  position: absolute; inset: 0; display: block; width: 100%; height: 100%;
-  mask-image: radial-gradient(ellipse 38% 20% at 50% 52%, rgb(0 0 0 / 60%) 20%, #000 100%);
-}
-.security-network-fallback { color: var(--network-color); opacity: calc(var(--network-intensity) * .42); }
-.security-network[data-renderer="canvas"] .security-network-fallback { display: none; }
 * { box-sizing: border-box; }
 a:focus-visible, button:focus-visible, [role="button"]:focus-visible { outline: 2px solid var(--cyber-accent); outline-offset: 5px; }
-.draggable-decoration:focus-visible { outline: 2px solid var(--cyber-accent); outline-offset: 5px; border-radius: 12px; }
-.draggable-decoration { cursor: grab !important; touch-action: none; user-select: none; }
-.draggable-decoration.is-dragging { cursor: grabbing !important; }
-.draggable-decoration :is(img, svg) { pointer-events: none; }
-.hero-security-glyph {
-  width: clamp(64px, 8vw, 112px) !important;
-  height: clamp(64px, 8vw, 112px) !important;
+/* Smooth silver contours fade around the portrait into the following section. */
+.hero-ribbons {
+  --ribbon-intensity: .92;
+  position: absolute; inset: 0 0 auto; z-index: 0;
+  width: 100%; height: 116vh; height: 116svh;
+  pointer-events: none; overflow: hidden; contain: strict;
+  mask-image: linear-gradient(to bottom, #000 12%, rgb(0 0 0 / 85%) 45%, rgb(0 0 0 / 35%) 72%, transparent 98%);
 }
-.hero-security-glyph svg { display: block; width: 100%; height: 100%; overflow: visible; }
+.hero-ribbons[hidden] { display: none; }
+.hero-ribbons-poster, .hero-ribbons-canvas {
+  position: absolute; inset: 0; width: 100%; height: 100%; display: block;
+  mask-image: radial-gradient(ellipse 37% 17% at 50% 44%, rgb(0 0 0 / 30%) 15%, #000 100%);
+}
+.hero-ribbons-poster {
+  background: url('/assets/media/hero-ribbons-poster.webp') center / cover no-repeat;
+  opacity: var(--ribbon-intensity);
+}
+.hero-ribbons[data-renderer="canvas"] .hero-ribbons-poster { display: none; }
+.hero-ribbons[data-layout="page"] { opacity: .42; }
+@media (max-width: 639px) {
+  .hero-ribbons-poster { background-image: url('/assets/media/hero-ribbons-poster-mobile.webp'); background-size: cover; }
+  .hero-ribbons-canvas, .hero-ribbons-poster {
+    mask-image: radial-gradient(ellipse 72% 16% at 50% 39%, rgb(0 0 0 / 18%) 20%, #000 100%);
+  }
+}
 section[id] { scroll-margin-top: 110px; }
 
 /* Floating glass header; navigation stays visible at every screen size. */
@@ -258,7 +251,7 @@ footer a { color: inherit; text-decoration: none; }
 footer { isolation: isolate; overflow: hidden; }
 footer > [data-framer-name="Container"] { z-index: 2; }
 .footer-hands {
-  --hands-color: #62f5b5; --hands-opacity: .65; --hands-offset: 105%; --hand-cell: 7px;
+  --hands-color: #a1a1aa; --hands-opacity: .28; --hands-offset: 105%; --hand-cell: 7px;
   position: absolute; top: 0; left: 0; width: 100%; height: 360px;
   z-index: 0; pointer-events: none; user-select: none; overflow: hidden;
   opacity: var(--hands-enter-opacity, 0);
@@ -311,11 +304,11 @@ html body { background: var(--cyber-bg); }
   word-break: normal;
   overflow-wrap: normal;
   text-wrap: balance;
-  text-shadow: none;
+  text-shadow: 0 2px 24px rgb(0 0 0 / 22%);
 }
 [data-framer-name="Dot"] {
   background: var(--cyber-accent) !important;
-  box-shadow: 0 0 12px #62f5b54d;
+  box-shadow: none;
 }
 
 /* Original inverse panels keep light text on charcoal surfaces. */
@@ -323,7 +316,7 @@ footer, form, .framer-1dt4txd, .framer-1q32mfl, .framer-6Ku2B {
   --token-2fcd1089-c4fe-44ec-8e47-1defe3c9bd50: var(--cyber-text);
 }
 footer {
-  background: #101013 !important;
+  background: #0c0c0e !important;
   border-top: 1px solid var(--cyber-line);
 }
 .framer-C6ykL .framer-1dt4txd, .framer-YRpro .framer-1q32mfl,
@@ -364,7 +357,7 @@ form button[type="submit"] {
   color: var(--cyber-bg);
 }
 form button[type="submit"] :is(p, span) { color: var(--cyber-bg) !important; }
-form button[type="submit"]:hover { background: #a4ffd5 !important; }
+form button[type="submit"]:hover { background: #fff !important; }
 footer a:hover { color: #fff; }
 footer [data-framer-name="Quick Links"] a {
   background: #1c1c21 !important;
@@ -374,10 +367,6 @@ footer [data-framer-name="Quick Links"] a:hover {
   background: #27272d !important;
 }
 
-@media (max-width: 1279px) {
-  .framer-C6ykL .hero-security-glyph[data-security-glyph="terminal"] { right: 0; }
-  .framer-C6ykL .hero-security-glyph[data-security-glyph="network"] { left: 0; top: -76px; }
-}
 @media (max-width: 809px) {
   .footer-hand-left pre { top: auto; bottom: 8%; }
   .footer-hand-right pre { top: auto; bottom: 0; }

@@ -17,12 +17,14 @@
   {
     "route": "/about",
     "slug": "about",
-    "title": "About - BeriContraster",
-    "description": "Education, work experience, and milestones.",
+    "title": "Muhammad Zubair | About - BeriContraster",
+    "description": "Meet Muhammad Zubair, an OSCP-certified offensive security professional. Explore his journey, certifications, penetration testing experience, and resume.",
     "components": [
       "about--0--intro",
-      "about--1--education",
+      "about--3--journey",
+      "about--1--certifications",
       "about--2--experience",
+      "about--4--resume",
       "work--1--phone"
     ]
   },

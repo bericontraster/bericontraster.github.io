@@ -5952,125 +5952,185 @@
       "label": "BeriContraster",
       "value": "BeriContraster"
     },
+    "about-eyebrow": {
+      "type": "text",
+      "label": "About eyebrow",
+      "value": "About me / Offensive security"
+    },
     "about-title": {
       "type": "text",
-      "label": "about-title",
-      "value": "About"
+      "label": "About title",
+      "value": "Hi, I’m Muhammad Zubair"
     },
     "about-intro": {
       "type": "text",
-      "label": "about-intro",
-      "value": "Education, experience, and the milestones along the way."
+      "label": "About intro",
+      "value": "I’m an Offensive Security Professional focused on identifying the vulnerabilities that actually matter."
     },
-    "education-title": {
+    "about-focus": {
       "type": "text",
-      "label": "education-title",
-      "value": "Education"
+      "label": "About focus",
+      "value": "My work focuses on simulating real-world attacks across web applications, APIs, Active Directory, cloud environments, and internal systems. I focus on identifying weaknesses and translating them into realistic attack paths, ultimately presenting clear, actionable risks to engineering teams and leadership."
     },
-    "education-1-years": {
-      "type": "text",
-      "label": "education-1-years",
-      "value": "Year – Year"
+    "about-background": {
+      "type": "html",
+      "label": "About background",
+      "value": "I’m <strong>OSCP-certified</strong>, have hands-on experience delivering penetration tests for high-impact and regulated environments, and design enterprise-grade offensive security labs and training programs to help teams build practical defensive capability."
     },
-    "education-1-title": {
+    "journey-title": {
       "type": "text",
-      "label": "education-1-title",
-      "value": "Degree / Qualification"
+      "label": "Journey title",
+      "value": "My Journey"
     },
-    "education-1-organization": {
+    "journey-1": {
       "type": "text",
-      "label": "education-1-organization",
-      "value": "School / University"
+      "label": "Journey 1",
+      "value": "My path into IT and cybersecurity didn’t start in a classroom. It started with games. I was that kid who couldn’t just play. I needed to know how everything worked behind the scenes. That curiosity pushed me into game development, and that’s where I wrote my first lines of code."
     },
-    "education-1-description": {
+    "journey-2": {
       "type": "text",
-      "label": "education-1-description",
-      "value": "Field of study and key achievements."
+      "label": "Journey 2",
+      "value": "A friend eventually introduced me to cybersecurity, and honestly, it was love at first sight. The challenge, the problem-solving, the adrenaline, it all clicked. From that moment, I dove in headfirst."
     },
-    "education-2-years": {
+    "journey-3": {
       "type": "text",
-      "label": "education-2-years",
-      "value": "Year – Year"
+      "label": "Journey 3",
+      "value": "I enrolled in a Cybersecurity degree at university, but financial hurdles and the weak cybersecurity curriculum in Pakistan held me back. Still, I wasn’t stopping. I stumbled onto TryHackMe, then HackTheBox, and that opened an entire universe for me. I pushed through CPTS, then OSCP, countless restless days and nights, but all fueled by passion, not pressure."
     },
-    "education-2-title": {
+    "journey-4": {
       "type": "text",
-      "label": "education-2-title",
-      "value": "Course / Certification"
+      "label": "Journey 4",
+      "value": "And it paid off. I landed my first cybersecurity role as an Information Security Engineer, and I’m still learning, still growing, and still doing it for the love of the game."
     },
-    "education-2-organization": {
+    "certifications-title": {
       "type": "text",
-      "label": "education-2-organization",
-      "value": "Institution / Provider"
+      "label": "Certifications title",
+      "value": "Certifications"
     },
-    "education-2-description": {
+    "certification-1-date": {
       "type": "text",
-      "label": "education-2-description",
-      "value": "Skills learned and areas of focus."
+      "label": "Certification 1 date",
+      "value": "Oct 2024"
+    },
+    "certification-1-title": {
+      "type": "html",
+      "label": "Certification 1 title",
+      "value": "<a class=\"about-credential\" href=\"https://www.credential.net/677f4c26-3f2b-4a12-9b14-dbb45565d6a8\" data-edit-link=\"certification-1-link\" target=\"_blank\" rel=\"noopener noreferrer\"><span>Offensive Security Certified Professional (OSCP)</span><span class=\"about-external-arrow\" aria-hidden=\"true\">↗</span></a>"
+    },
+    "certification-1-issuer": {
+      "type": "text",
+      "label": "Certification 1 issuer",
+      "value": "OffSec"
+    },
+    "certification-2-date": {
+      "type": "text",
+      "label": "Certification 2 date",
+      "value": "Feb 2024"
+    },
+    "certification-2-title": {
+      "type": "html",
+      "label": "Certification 2 title",
+      "value": "<a class=\"about-credential\" href=\"https://drive.google.com/file/d/1lzzE9Nl5n3X-3bakAo_ObtXl9DG1DILa/view?usp=sharing\" data-edit-link=\"certification-2-link\" target=\"_blank\" rel=\"noopener noreferrer\"><span>Certified Penetration Testing Specialist (CPTS)</span><span class=\"about-external-arrow\" aria-hidden=\"true\">↗</span></a>"
+    },
+    "certification-2-issuer": {
+      "type": "text",
+      "label": "Certification 2 issuer",
+      "value": "HackTheBox"
+    },
+    "certification-1-link": {
+      "type": "link",
+      "label": "Certification 1 link",
+      "value": "https://www.credential.net/677f4c26-3f2b-4a12-9b14-dbb45565d6a8"
+    },
+    "certification-2-link": {
+      "type": "link",
+      "label": "Certification 2 link",
+      "value": "https://drive.google.com/file/d/1lzzE9Nl5n3X-3bakAo_ObtXl9DG1DILa/view?usp=sharing"
     },
     "experience-title": {
       "type": "text",
-      "label": "experience-title",
+      "label": "Experience title",
       "value": "Work Experience"
     },
     "experience-1-years": {
       "type": "text",
-      "label": "experience-1-years",
-      "value": "Year – Present"
+      "label": "Experience 1 years",
+      "value": "Dec 2024 – Present"
     },
     "experience-1-title": {
       "type": "text",
-      "label": "experience-1-title",
-      "value": "Current Role / Job Title"
+      "label": "Experience 1 title",
+      "value": "Penetration Tester"
     },
     "experience-1-organization": {
       "type": "text",
-      "label": "experience-1-organization",
-      "value": "Company / Organization"
+      "label": "Experience 1 organization",
+      "value": "Tranchulas · London, UK (Remote)"
     },
     "experience-1-description": {
       "type": "text",
-      "label": "experience-1-description",
-      "value": "Responsibilities and key contributions."
+      "label": "Experience 1 description",
+      "value": "Deliver web, API, Active Directory, and cloud security assessments for international clients. Perform threat modeling and AWS security reviews, identify chained attack paths, and translate findings into business-risk reports with prioritized remediation."
     },
     "experience-2-years": {
       "type": "text",
-      "label": "experience-2-years",
-      "value": "Year – Year"
+      "label": "Experience 2 years",
+      "value": "Feb 2026 – Apr 2026"
     },
     "experience-2-title": {
       "type": "text",
-      "label": "experience-2-title",
-      "value": "Previous Role / Job Title"
+      "label": "Experience 2 title",
+      "value": "IT Security & Infrastructure Consultant"
     },
     "experience-2-organization": {
       "type": "text",
-      "label": "experience-2-organization",
-      "value": "Company / Organization"
+      "label": "Experience 2 organization",
+      "value": "Mutalabah · Jeddah, KSA (Onsite)"
     },
     "experience-2-description": {
       "type": "text",
-      "label": "experience-2-description",
-      "value": "Projects, responsibilities, and achievements."
+      "label": "Experience 2 description",
+      "value": "Migrated 100 endpoints to a new Active Directory domain with no business downtime or mailbox data loss. Validated the environment against SAMA Cybersecurity Framework requirements and deployed hardened golden images."
     },
     "experience-3-years": {
       "type": "text",
-      "label": "experience-3-years",
-      "value": "Year – Year"
+      "label": "Experience 3 years",
+      "value": "May 2023 – Aug 2024"
     },
     "experience-3-title": {
       "type": "text",
-      "label": "experience-3-title",
-      "value": "Earlier Role / Internship"
+      "label": "Experience 3 title",
+      "value": "Systems & Infrastructure Technician"
     },
     "experience-3-organization": {
       "type": "text",
-      "label": "experience-3-organization",
-      "value": "Company / Organization"
+      "label": "Experience 3 organization",
+      "value": "11ven Tech Yards · Islamabad, Pakistan (Hybrid)"
     },
     "experience-3-description": {
       "type": "text",
-      "label": "experience-3-description",
-      "value": "Experience gained and work completed."
+      "label": "Experience 3 description",
+      "value": "Administered and hardened production Linux servers for high-availability web services. Built PowerShell and Python diagnostic tools to investigate Windows internals and automate root-cause analysis."
+    },
+    "resume-title": {
+      "type": "text",
+      "label": "Resume title",
+      "value": "My Resume"
+    },
+    "resume-training": {
+      "type": "text",
+      "label": "Resume training",
+      "value": "I’ve created two industry-standard training courses featuring 20+ custom hands-on labs built on AWS and Proxmox, and I’ve delivered these trainings internationally. In my current role, I actively work on penetration testing projects, staying sharp through real-world assessments as well as platforms like HackTheBox and various CTF challenges."
+    },
+    "resume-writing": {
+      "type": "html",
+      "label": "Resume writing",
+      "value": "I also write regularly on <a href=\"https://medium.com/@bericontraster\" target=\"_blank\" rel=\"noopener noreferrer\">Medium</a> and <a href=\"/blog\">my personal site</a>, where I break down security concepts and share practical guidance to help others level up in cybersecurity."
+    },
+    "resume-file": {
+      "type": "link",
+      "label": "Resume file",
+      "value": "/assets/documents/muhammad-zubair-resume.pdf"
     }
   }
 }

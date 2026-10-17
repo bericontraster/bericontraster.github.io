@@ -13,8 +13,8 @@ async function startOpening(layer) {
   if (!context) throw new Error('Canvas unavailable');
   const reduce = matchMedia('(prefers-reduced-motion: reduce)');
   const theme = getComputedStyle(layer);
-  const backgroundColor = theme.getPropertyValue('--opening-background').trim() || '#080e11';
-  const dotColor = theme.getPropertyValue('--opening-foreground').trim() || '#62f5b5';
+  const backgroundColor = theme.getPropertyValue('--opening-background').trim() || '#080809';
+  const dotColor = theme.getPropertyValue('--opening-foreground').trim() || '#d7d9e0';
   const duration = Number(layer.dataset.duration);
   const page = document.getElementById('main');
   const previousInert = page?.inert;

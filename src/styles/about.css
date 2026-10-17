@@ -1,37 +1,68 @@
-/* Reuse the existing page typography, paper texture, and footer theme. */
+/* Share the portfolio's type system, network background, and footer. */
 @import url("/assets/work.css");
 
 .about-page {
   position: relative; width: calc(100% - 60px); max-width: 1180px;
   margin: 0 auto; padding: 180px 0 120px;
-  font-family: var(--portfolio-font); color: #111;
+  font-family: var(--portfolio-font); color: var(--cyber-text);
 }
-.about-intro { margin-bottom: 90px; }
-.about-intro > p { margin-top: 16px; max-width: 660px; }
-.about-history + .about-history { margin-top: 90px; }
-.about-history > h2 { font-size: 48px; font-weight: 500; letter-spacing: -1.8px; line-height: 1.1; margin-bottom: 36px; }
+.about-intro h1 { font-size: clamp(40px, 5.6vw, 80px); max-width: 1040px; margin: 20px 0 32px; text-wrap: balance; }
+body .about-page .about-eyebrow {
+  font-family: var(--portfolio-label-font) !important; font-size: var(--label-font-size) !important;
+  letter-spacing: .1em !important; text-transform: uppercase; color: var(--cyber-muted);
+}
+.about-prose { max-width: 800px; min-width: 0; }
+.about-prose p { margin: 0; }
+.about-prose p + p { margin-top: 22px; }
+.about-prose strong { font-weight: 700; }
+.about-prose a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 4px; }
+.about-prose a:hover { color: #fff; }
+.about-section-links { display: flex; flex-wrap: wrap; gap: 12px 28px; margin-top: 32px; }
+.about-section-links a, .about-resume-actions a {
+  font: 400 var(--label-font-size)/1.5 var(--portfolio-label-font);
+  letter-spacing: .08em; text-transform: uppercase;
+}
+.about-section-links a { color: var(--cyber-muted); padding: 8px 0; text-decoration: none; border-bottom: 1px solid var(--cyber-line); }
+.about-section-links a:hover { color: var(--cyber-text); border-color: var(--cyber-muted); }
+.about-page > section { margin-top: 96px; }
+.about-story { display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 60px; }
+.about-story > h2, .about-history > h2 { font-size: 48px; margin: 0; }
+.about-history > h2 { margin-bottom: 36px; }
 .about-timeline { list-style: none; padding: 0; margin: 0; }
-.about-entry { display: grid; grid-template-columns: 180px minmax(0, 1fr); gap: 60px; padding: 36px 0; border-top: 1px solid #0000001a; }
-.about-entry:last-child { border-bottom: 1px solid #0000001a; }
-.about-year { font-size: 20px; font-weight: 400; line-height: 1.45; letter-spacing: -.4px; color: #777; padding-top: 5px; }
+.about-entry { display: grid; grid-template-columns: 180px minmax(0, 1fr); gap: 60px; padding: 36px 0; border-top: 1px solid var(--cyber-line); }
+.about-entry:last-child { border-bottom: 1px solid var(--cyber-line); }
+.about-year { color: var(--cyber-muted); padding-top: 5px; margin: 0; }
 .about-entry-content { min-width: 0; }
-.about-entry-content > h3 { font-size: 32px; font-weight: 500; letter-spacing: -1px; line-height: 1.2; }
-.about-organization { font-size: 20px; line-height: 1.45; letter-spacing: -.4px; color: #777; margin-top: 10px; }
-.about-description { font-size: 20px; line-height: 1.45; letter-spacing: -.4px; margin-top: 14px; max-width: 700px; }
+.about-entry-content > h3 { font-size: 32px; margin: 0; }
+.about-organization { color: var(--cyber-muted); margin: 10px 0 0; }
+.about-description { margin: 14px 0 0; max-width: 800px; }
+.about-credential { display: inline-flex; align-items: baseline; gap: 12px; color: inherit; text-decoration: none; }
+.about-credential > span:first-child { min-width: 0; }
+.about-credential:hover { color: #b7dfd8; }
+.about-external-arrow { font: 400 22px/1 var(--portfolio-font); color: var(--cyber-muted); flex: none; }
+.about-resume-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 20px 28px; margin-top: 28px; }
+.about-resume-actions .about-resume-button {
+  display: inline-flex; align-items: center; gap: 20px; min-height: 48px; padding: 14px 20px;
+  background: var(--cyber-text); color: var(--cyber-bg); border-radius: 10px; text-decoration: none;
+}
+.about-resume-actions .about-resume-button:hover { background: #fff; color: var(--cyber-bg); }
+.about-resume-view { padding: 12px 0; }
 
 @media (max-width: 1279px) {
   .about-page { max-width: 840px; padding-top: 160px; padding-bottom: 100px; }
   .about-entry { grid-template-columns: 150px minmax(0, 1fr); gap: 40px; }
-  .about-history > h2 { font-size: 42px; }
+  .about-story { grid-template-columns: 200px minmax(0, 1fr); gap: 40px; }
+  .about-story > h2, .about-history > h2 { font-size: 42px; }
 }
 @media (max-width: 809px) {
   .about-page { width: calc(100% - 40px); padding-top: 140px; padding-bottom: 80px; }
-  .about-intro { margin-bottom: 60px; }
-  .about-history + .about-history { margin-top: 60px; }
-  .about-history > h2 { font-size: 36px; letter-spacing: -1.2px; margin-bottom: 28px; }
+  .about-intro h1 { margin: 18px 0 26px; }
+  .about-page > section { margin-top: 64px; }
+  .about-story { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+  .about-story > h2, .about-history > h2 { font-size: 36px; }
+  .about-history > h2 { margin-bottom: 28px; }
   .about-entry { grid-template-columns: 110px minmax(0, 1fr); gap: 24px; padding: 28px 0; }
   .about-entry-content > h3 { font-size: 28px; }
-  .about-year, .about-organization, .about-description { font-size: 18px; }
 }
 @media (max-width: 600px) {
   .about-entry { grid-template-columns: minmax(0, 1fr); gap: 12px; }

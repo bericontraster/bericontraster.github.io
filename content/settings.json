@@ -14,12 +14,10 @@
     "duration": 5600,
     "oncePerSession": true
   },
-  "heroNetwork": {
+  "heroRibbons": {
     "enabled": true,
-    "color": "#7297c4",
-    "signalColor": "#8cd6ca",
-    "intensity": 0.82,
-    "speed": 0.65
+    "intensity": 0.92,
+    "speed": 0.8
   },
   "navigation": [
     {
@@ -41,8 +39,8 @@
   ],
   "footerHands": {
     "enabled": true,
-    "color": "#62f5b5",
-    "opacity": 0.65,
+    "color": "#a1a1aa",
+    "opacity": 0.28,
     "columns": 80
   }
 }
