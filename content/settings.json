@@ -47,5 +47,20 @@
     "color": "#097441",
     "opacity": 0.65,
     "columns": 80
+  },
+  "seo": {
+    "titleBrand": "Beri Contraster",
+    "description": "Beri Contraster is the portfolio of Muhammad Zubair, OSCP & CPTS certified. Penetration testing services, detailed CVE research, and hands-on vulnerable labs.",
+    "authorName": "Muhammad Zubair",
+    "defaultImage": "/assets/brand/bericontraster-logo-512.png",
+    "defaultImageAlt": "BeriContraster ASCII B logo",
+    "twitterHandle": "@bericontraster",
+    "sameAs": [
+      "https://x.com/bericontraster",
+      "https://www.linkedin.com/in/mhamd-zubair/",
+      "https://medium.com/@bericontraster",
+      "https://github.com/bericontraster",
+      "https://profile.hackthebox.com/profile/019f218e-e0e7-71be-9dbf-2a8514e450f1"
+    ]
   }
 }

@@ -49,3 +49,8 @@ backups/
 *.bak
 *.backup
 *.md
+!content/**/*.md
+!CONTENT-GUIDE.md
+
+# Other Files
+output/

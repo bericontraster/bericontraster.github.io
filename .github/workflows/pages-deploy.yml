@@ -26,7 +26,11 @@ jobs:
         uses: actions/setup-node@v6
         with:
           node-version: '22'
-      # This project uses only Node built-ins; no install step or secrets needed.
+          cache: npm
+      - name: Install Markdown build dependencies
+        run: npm ci
+      - name: Test content publishing
+        run: npm test
       - name: Build static website
         run: node scripts/build.mjs
       - name: Verify routes, assets, SEO, and migration coverage

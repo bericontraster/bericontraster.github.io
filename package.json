@@ -2,13 +2,22 @@
   "name": "editable-portfolio",
   "private": true,
   "type": "module",
-  "engines": { "node": ">=22" },
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
     "build": "node scripts/build.mjs",
     "verify": "node scripts/verify.mjs",
     "verify:migration": "node scripts/verify.mjs --require-legacy-posts",
-    "check": "npm run build && npm run verify",
-    "dev": "node scripts/serve.mjs",
-    "preview": "node scripts/serve.mjs"
+    "check": "npm test && npm run build && npm run verify",
+    "test": "node --test scripts/content.test.mjs",
+    "dev": "node scripts/serve.mjs --watch --drafts",
+    "preview": "node scripts/serve.mjs",
+    "new:post": "node scripts/new-content.mjs post",
+    "new:project": "node scripts/new-content.mjs project"
+  },
+  "dependencies": {
+    "markdown-it": "15.0.3",
+    "yaml": "2.9.1"
   }
 }

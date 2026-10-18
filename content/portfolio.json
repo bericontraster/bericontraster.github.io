@@ -193,7 +193,7 @@
     "text-71": {
       "type": "text",
       "label": "Works",
-      "value": "Works"
+      "value": "Projects"
     },
     "text-72": {
       "type": "text",
@@ -208,7 +208,7 @@
     "text-74": {
       "type": "html",
       "label": "Mejed@Templyo.io",
-      "value": "<a class=\"framer-text framer-styles-preset-lfjhkq\" data-styles-preset=\"yaETO81Ao\" href=\"contact@bericontraster.com\" target=\"_blank\" rel=\"\">contact@bericontraster.com</a><!--/$-->"
+      "value": "<a class=\"framer-text framer-styles-preset-lfjhkq\" data-styles-preset=\"yaETO81Ao\" href=\"mailto:contact@bericontraster.com\" target=\"_blank\" rel=\"\">contact@bericontraster.com</a><!--/$-->"
     },
     "text-75": {
       "type": "text",
@@ -285,7 +285,7 @@
     "link-115": {
       "type": "link",
       "label": "Mejed@Templyo.io",
-      "value": "mailto:mejed@templyo.io"
+      "value": "mailto:contact@bericontraster.com"
     }
   },
   "work": {
@@ -327,7 +327,7 @@
     "text-23": {
       "type": "text",
       "label": "Works",
-      "value": "Works"
+      "value": "Projects"
     },
     "text-24": {
       "type": "text",
@@ -342,12 +342,12 @@
     "text-26": {
       "type": "html",
       "label": "Mejed@Templyo.io",
-      "value": "<a class=\"framer-text framer-styles-preset-lfjhkq\" data-styles-preset=\"yaETO81Ao\" href=\"mailto:mejed@templyo.io\" target=\"_blank\" rel=\"\">Mejed@Templyo.io</a><!--/$-->"
+      "value": "<a class=\"framer-text framer-styles-preset-lfjhkq\" data-styles-preset=\"yaETO81Ao\" href=\"mailto:contact@bericontraster.com\" target=\"_blank\" rel=\"\">contact@bericontraster.com</a><!--/$-->"
     },
     "text-27": {
       "type": "text",
       "label": "BeriContraster",
-      "value": "BeriContraster"
+      "value": "BERICONTRASTER"
     },
     "link-43": {
       "type": "link",
@@ -377,7 +377,7 @@
     "link-48": {
       "type": "link",
       "label": "Mejed@Templyo.io",
-      "value": "mailto:mejed@templyo.io"
+      "value": "mailto:contact@bericontraster.com"
     }
   },
   "blog": {
@@ -419,7 +419,7 @@
     "text-32": {
       "type": "text",
       "label": "Works",
-      "value": "Works"
+      "value": "Projects"
     },
     "text-33": {
       "type": "text",
@@ -434,12 +434,12 @@
     "text-35": {
       "type": "html",
       "label": "Mejed@Templyo.io",
-      "value": "<a class=\"framer-text framer-styles-preset-lfjhkq\" data-styles-preset=\"yaETO81Ao\" href=\"mailto:mejed@templyo.io\" target=\"_blank\" rel=\"\">Mejed@Templyo.io</a><!--/$-->"
+      "value": "<a class=\"framer-text framer-styles-preset-lfjhkq\" data-styles-preset=\"yaETO81Ao\" href=\"mailto:contact@bericontraster.com\" target=\"_blank\" rel=\"\">contact@bericontraster.com</a><!--/$-->"
     },
     "text-36": {
       "type": "text",
       "label": "BeriContraster",
-      "value": "BeriContraster"
+      "value": "BERICONTRASTER"
     },
     "link-54": {
       "type": "link",
@@ -469,7 +469,7 @@
     "link-59": {
       "type": "link",
       "label": "Mejed@Templyo.io",
-      "value": "mailto:mejed@templyo.io"
+      "value": "mailto:contact@bericontraster.com"
     }
   },
   "about": {
@@ -521,7 +521,7 @@
     "text-23": {
       "type": "text",
       "label": "Works",
-      "value": "Works"
+      "value": "Projects"
     },
     "link-47": {
       "type": "link",
@@ -541,17 +541,17 @@
     "text-26": {
       "type": "html",
       "label": "Mejed@Templyo.io",
-      "value": "<a class=\"framer-text framer-styles-preset-lfjhkq\" data-styles-preset=\"yaETO81Ao\" href=\"mailto:mejed@templyo.io\" target=\"_blank\" rel=\"\">Mejed@Templyo.io</a><!--/$-->"
+      "value": "<a class=\"framer-text framer-styles-preset-lfjhkq\" data-styles-preset=\"yaETO81Ao\" href=\"mailto:contact@bericontraster.com\" target=\"_blank\" rel=\"\">contact@bericontraster.com</a><!--/$-->"
     },
     "link-48": {
       "type": "link",
       "label": "Mejed@Templyo.io",
-      "value": "mailto:mejed@templyo.io"
+      "value": "mailto:contact@bericontraster.com"
     },
     "text-27": {
       "type": "text",
       "label": "BeriContraster",
-      "value": "BeriContraster"
+      "value": "BERICONTRASTER"
     },
     "about-eyebrow": {
       "type": "text",
@@ -726,14 +726,12 @@
     "resume-writing": {
       "type": "html",
       "label": "Resume writing",
-      "value": "I also write regularly on <a href=\"https://medium.com/@bericontraster\" target=\"_blank\" rel=\"noopener noreferrer\">Medium</a> and <a href=\"/blog\">my personal site</a>, where I break down security concepts and share practical guidance to help others level up in cybersecurity."
+      "value": "I also write regularly on <a href=\"https://medium.com/@bericontraster\" target=\"_blank\" rel=\"noopener noreferrer\">Medium</a> and <a href=\"https://bericontraster.com/blog/\">my personal site</a>, where I break down security concepts and share practical guidance to help others level up in cybersecurity."
     },
     "resume-file": {
       "type": "link",
       "label": "Resume file",
       "value": "/assets/documents/muhammad-zubair-resume.pdf"
     }
-  },
-  "blog--cve-2026-85706-gitlab-file-read": {},
-  "blacksite": {}
+  }
 }

@@ -1,5 +1,7 @@
 import { setupFooterHands } from './footer-hands.js';
 import { setupArticleToc } from './article-toc.js';
+import { setupArticleShare } from './article-share.js';
+import { setupArticleBackToTop } from './article-back-to-top.js';
 
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
@@ -40,6 +42,12 @@ function setupNavigation() {
 
 function setupFooter(settings) {
   const footers = document.querySelectorAll('footer');
+  footers.forEach(footer => footer.querySelectorAll('[data-framer-name="Quick Links"] a').forEach(link => {
+    const text = link.querySelector('p') || link;
+    const label = text.textContent.trim();
+    link.setAttribute('aria-label', label);
+    text.replaceChildren(rollingLabel(label));
+  }));
   const measure = document.createElement('canvas').getContext('2d');
   function fitWordmarks() {
     footers.forEach(footer => {
@@ -207,4 +215,6 @@ async function setup() {
 }
 
 setupArticleToc();
+setupArticleShare();
+setupArticleBackToTop();
 setup().catch(console.error);

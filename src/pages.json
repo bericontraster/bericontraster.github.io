@@ -2,8 +2,8 @@
   {
     "route": "/",
     "slug": "home",
-    "title": "BeriContraster",
-    "description": "Muhammad Zubair (BeriContraster), an OSCP and CPTS certified offensive security professional specializing in web, API, Active Directory, and cloud penetration testing.",
+    "title": "Beri Contraster",
+    "description": "Beri Contraster is the portfolio of Muhammad Zubair, OSCP & CPTS certified. Penetration testing services, detailed CVE research, and hands-on vulnerable labs.",
     "components": [
       "home--0--hero-bio-sections",
       "home--1--quote-section",
@@ -17,8 +17,8 @@
   {
     "route": "/about",
     "slug": "about",
-    "title": "Muhammad Zubair | About - BeriContraster",
-    "description": "Meet Muhammad Zubair, an OSCP-certified offensive security professional. Explore his journey, certifications, penetration testing experience, and resume.",
+    "title": "About Muhammad Zubair",
+    "description": "Meet Muhammad Zubair (BeriContraster), an OSCP and CPTS certified penetration tester who builds security labs and tests web, API, cloud, and Active Directory systems.",
     "components": [
       "about--0--intro",
       "about--3--journey",
@@ -31,8 +31,8 @@
   {
     "route": "/work",
     "slug": "work",
-    "title": "Projects - BeriContraster",
-    "description": "Offensive security projects and community labs by Muhammad Zubair, including the BlackSite Active Directory lab collection.",
+    "title": "Projects & Free Security Labs",
+    "description": "Explore free offensive security labs by Muhammad Zubair (BeriContraster), including BlackSite, SillyAuthority, and Cascading Trust for hands-on practice.",
     "components": [
       "work--0--projects-section",
       "work--1--phone"
@@ -41,32 +41,11 @@
   {
     "route": "/blog",
     "slug": "blog",
-    "title": "Blogs - BeriContraster",
-    "description": "Cybersecurity articles, vulnerability research, and penetration testing walkthroughs by Beri Contraster.",
+    "title": "Cybersecurity Blog",
+    "description": "Read offensive security research, vulnerability deep dives, and practical penetration testing walkthroughs by Muhammad Zubair (BeriContraster).",
     "components": [
       "blog--0--projects-section",
       "blog--1--phone"
-    ]
-  },
-  {
-    "route": "/posts/cve-2026-85706-gitlab-file-read/",
-    "slug": "blog--cve-2026-85706-gitlab-file-read",
-    "title": "CVE-2026-85706: Deep Dive into GitLab’s Critical File Read Vulnerability - BeriContraster",
-    "description": "A technical deep dive into GitLab’s file read vulnerability, request processing, lab exploitation, affected versions, mitigation, and detection.",
-    "components": [
-      "blog--cve-2026-85706-gitlab-file-read--article",
-      "blog--1--phone"
-    ]
-  },
-  {
-    "route": "/blacksite/",
-    "slug": "blacksite",
-    "title": "BlackSite - Offensive Security Labs | BeriContraster",
-    "description": "Hand-built vulnerable environments for practicing real-world offensive security, Active Directory attacks, and privilege escalation.",
-    "sharedFooter": true,
-    "components": [
-      "blacksite--overview",
-      "home--7--phone"
     ]
   }
 ]
