@@ -50,7 +50,10 @@ backups/
 *.backup
 *.md
 !content/**/*.md
-!CONTENT-GUIDE.md
+!README.md
 
 # Other Files
 output/
+# Local documentation
+/CONTENT-GUIDE.md
+/SITE-MAINTENANCE.local.md
