@@ -36,11 +36,25 @@ export function renderMarkdown(body, { root = process.cwd(), file = 'Markdown', 
   const originalFence = md.renderer.rules.fence;
   md.renderer.rules.fence = (tokens, index, options, env, renderer) => {
     const language = tokens[index].info.trim().split(/\s+/)[0];
-    const labels = { bash: 'Bash', sh: 'Bash', shell: 'Bash', http: 'HTTP', 'shell-session': 'Terminal' };
+    const labels = { c: 'C', bash: 'Bash', sh: 'Bash', shell: 'Bash', http: 'HTTP', 'shell-session': 'Terminal' };
     const block = originalFence(tokens, index, options, env, renderer);
     return language ? block.replace('<pre>', () => `<pre data-language="${escapeHtml(labels[language] || language)}">`) : block;
   };
   const headingIds = new Set(['hero-section', 'article-section']);
+  // Recognize a warning marker only at the start of a blockquote.
+  md.core.ruler.after('inline', 'warning-callouts', state => {
+    for (let i = 0; i < state.tokens.length; i++) {
+      const token = state.tokens[i];
+      if (token.type !== 'blockquote_open' || state.tokens[i + 1]?.type !== 'paragraph_open') continue;
+      const inline = state.tokens[i + 2];
+      const first = inline?.children?.[0];
+      if (inline?.type !== 'inline' || first?.type !== 'text' || first.content !== '[!WARNING]') continue;
+      token.attrJoin('class', 'content-callout content-callout-warning');
+      inline.children.shift();
+      if (inline.children[0]?.type === 'softbreak') inline.children.shift();
+      if (!inline.children.length) state.tokens.splice(i + 1, 3);
+    }
+  });
   const headings = [];
   md.renderer.rules.heading_open = (tokens, index) => {
     const inline = tokens[index + 1];
@@ -61,11 +75,15 @@ export function renderMarkdown(body, { root = process.cwd(), file = 'Markdown', 
     return originalImage(tokens, index, options, env, renderer);
   };
   let html = md.render(body);
-  // A normal Markdown image on its own line becomes a responsive figure.
-  html = html.replace(/<p>(<img\b[^>]*>)<\/p>/g, (_, image) => {
-    const caption = image.match(/\btitle="([^"]*)"/)?.[1];
-    return `<figure>${image}${caption ? `<figcaption>${caption}</figcaption>` : ''}</figure>`;
+  // Split adjacent images into figures, including legacy italic captions.
+  html = html.replace(/<p>([\s\S]*?)<\/p>/g, (paragraph, contents) => {
+    if (!/^(?:\s|<img\b[^>]*>|<em>[\s\S]*?<\/em>|<br\s*\/?>)*$/.test(contents) || !contents.includes('<img')) return paragraph;
+    return contents.replace(/(<img\b[^>]*>)(?:\s*(?:<br\s*\/?>\s*)?<em>([\s\S]*?)<\/em>)?/g, (_, image, legacyCaption) => {
+      const caption = legacyCaption || image.match(/\btitle="([^"]*)"/)?.[1];
+      return `<figure>${image}${caption ? `<figcaption>${caption}</figcaption>` : ''}</figure>`;
+    });
   });
+  html = html.replace(/<\/figure>\s*<p><em>([\s\S]*?)<\/em><\/p>/g, (match, caption) => `<figcaption>${caption}</figcaption></figure>`);
   if (labSections.length) {
     const found = new Set();
     html = html.split(/(?=<h2\b)/).map(section => {
@@ -156,7 +174,7 @@ export function loadSiteContent({ root = process.cwd(), includeDrafts = false } 
 
 const tagList = tags => tags.length ? `<ul class="content-tags" aria-label="Tags">${tags.map(tag => `<li>${escapeHtml(tag)}</li>`).join('')}</ul>` : '';
 
-export function renderContentPage(entry, { shareUrl = '' } = {}) {
+export function renderContentPage(entry, { shareUrl = '', posts = [] } = {}) {
   const project = entry.kind === 'project';
   const date = entry.date ? `<time datetime="${entry.date}">${dateLabel(entry.date)}</time>` : '';
   const meta = project ? (date ? `<p class="post-meta">${date}</p>` : '') : `<p class="post-meta">${escapeHtml(entry.author)} · ${date} · ${entry.readingMinutes} min read</p>`;
@@ -168,11 +186,17 @@ export function renderContentPage(entry, { shareUrl = '' } = {}) {
     return `<a href="#${id}">${escapeHtml(heading.label)}</a>`;
   }).join('');
   const cover = entry.cover && entry.showCover ? `<figure><img src="${escapeHtml(entry.cover)}" alt="${escapeHtml(entry.coverAlt)}" decoding="async" fetchpriority="high">${entry.coverCaption ? `<figcaption>${escapeHtml(entry.coverCaption)}</figcaption>` : ''}</figure>` : '';
+  const tags = new Set(entry.tags.map(tag => tag.toLowerCase()));
+  const related = project ? [] : posts.filter(post => post.route !== entry.route && !post.draft)
+    .map(post => ({ post, score: new Set(post.tags.map(tag => tag.toLowerCase()).filter(tag => tags.has(tag))).size }))
+    .sort((a, b) => b.score - a.score || b.post.date.localeCompare(a.post.date) || a.post.slug.localeCompare(b.post.slug))
+    .slice(0, 3).map(item => item.post);
+  const recommendations = related.length ? `<section class="related-posts" aria-labelledby="related-posts-title"><header><h2 id="related-posts-title">More to Explore</h2><a href="/blog/">Browse all articles <span aria-hidden="true">↗</span></a></header><div class="related-posts-grid">${related.map(renderPostCard).join('')}</div></section>` : '';
   return `<main class="imported-post${project ? ' blacksite-page' : ''}" id="${project ? 'hero-section' : 'article-section'}">
 <a class="post-back" href="/${project ? 'work' : 'blog'}/">${project ? 'All Projects' : '← All Blogs'}</a>
 ${entry.draft ? '<p class="content-draft">Draft preview — excluded from the production build</p>' : ''}
 <header>${project && entry.category ? `<p class="blacksite-eyebrow">${escapeHtml(entry.category)}</p>` : ''}<h1>${escapeHtml(entry.title)}</h1>${project ? `<p class="blacksite-intro">${escapeHtml(entry.description)}</p>` : ''}${metaRow}${source}${tagList(entry.tags)}${jumps ? `<nav class="blacksite-jump" aria-label="Project sections">${jumps}</nav>` : ''}</header>
-<div class="post-body">${cover}${entry.html}</div></main>`;
+<div class="post-body">${cover}${entry.html}</div>${recommendations}</main>`;
 }
 
 export function renderPostCard(entry) {

@@ -2,6 +2,8 @@ import { createRequire } from 'node:module';
 
 const require = createRequire(import.meta.url);
 const Prism = require('./vendor/prism/core.cjs');
+require('./vendor/prism/clike.cjs');
+require('./vendor/prism/c.cjs');
 require('./vendor/prism/bash.cjs');
 require('./vendor/prism/shell-session.cjs');
 require('./vendor/prism/http.cjs');

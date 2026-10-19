@@ -226,3 +226,44 @@ test('production build discovers content, excludes drafts, and removes deleted r
   assert.doesNotMatch(read('blog/index.html'), /\/posts\/test-article\//);
   assert.doesNotMatch(read('sitemap.xml'), /test-article|draft-article/);
 });
+
+test('C highlighting preserves code and warning callouts preserve quote semantics', () => {
+  const code = '#include <stdio.h>\n// Example\nint main(void) { printf("hello"); return 0; }\n';
+  const rendered = renderMarkdown('```c\n' + code + '```\n\n> [!WARNING]\n> **Disclaimer:** Example.\n>\n> Second paragraph.\n\n> Ordinary quote.\n\n`[!WARNING]`');
+  const highlighted = highlightCodeBlocks(rendered.html);
+  assert.match(highlighted, /data-language="C"/);
+  for (const type of ['keyword', 'comment', 'string', 'function', 'directive']) assert.match(highlighted, new RegExp('class="token ' + type));
+  const stripTags = html => html.replace(/<[^>]*>/g, '').replaceAll('&lt;', '<').replaceAll('&gt;', '>').replaceAll('&quot;', '"').replaceAll('&amp;', '&');
+  assert.equal(stripTags(highlighted), stripTags(rendered.html));
+  assert.match(rendered.html, /<blockquote class="content-callout content-callout-warning">\n<p><strong>Disclaimer:<\/strong> Example\.<\/p>\n<p>Second paragraph\.<\/p>/);
+  assert.match(rendered.html, /<blockquote>\n<p>Ordinary quote\.<\/p>/);
+  assert.match(rendered.html, /<code>\[!WARNING\]<\/code>/);
+  const separate = renderMarkdown('> [!WARNING]\n>\n> Separate paragraph.').html;
+  assert.match(separate, /content-callout-warning/);
+  assert.doesNotMatch(separate, /\[!WARNING\]/);
+});
+
+test('article images get separate figures and consistent legacy captions', () => {
+ const image = '![Screenshot](https://example.com/image.png)';
+ const {html} = renderMarkdown(image + '\n' + image + '\n' + image + '\n\nText between groups.\n\n' + image + '\n_An italic caption_\n\n' + image + '\n\n*A separate caption*');
+ assert.equal((html.match(/<figure>/g) || []).length, 5);
+ assert.match(html, /<p>Text between groups\.<\/p>/);
+ assert.match(html, /<figcaption>An italic caption<\/figcaption>/);
+ assert.match(html, /<figcaption>A separate caption<\/figcaption>/);
+ assert.doesNotMatch(html, /<p><img/);
+});
+
+test('related articles prioritize shared tags and exclude the current post and drafts', t => {
+ const root = fixture(t);
+ const entry = parse(root, source({tags: ['Security']}));
+ const make = (slug, tags, date, draft = false) => ({...entry, slug, route: `/posts/${slug}/`, title: slug, tags, date, draft});
+ const posts = [entry, make('newest', [], '2026-10-19'), make('related', ['security'], '2025-01-01'), make('draft', ['Security'], '2026-10-20', true), make('older', [], '2026-01-01'), make('oldest', [], '2024-01-01')];
+ const html = renderContentPage(entry, {posts});
+ const related = html.slice(html.indexOf('<section class="related-posts"'));
+ assert.equal((related.match(/class="featured-blog-card"/g) || []).length, 3);
+ assert(related.indexOf('/posts/related/') < related.indexOf('/posts/newest/'));
+ assert(!related.includes('/posts/test-article/'));
+ assert(!related.includes('/posts/draft/'));
+ assert(!related.includes('/posts/oldest/'));
+ assert(!renderContentPage({...entry, kind: 'project'}, {posts}).includes('class="related-posts"'));
+});

@@ -38,7 +38,8 @@ const server = http.createServer((req, res) => {
     res.writeHead(200, { 'Content-Type': types[path.extname(file)] || 'application/octet-stream', 'Cache-Control': 'no-cache', ...(drafts && isHtml ? { 'X-Robots-Tag': 'noindex, nofollow' } : {}) });
     res.end(body);
   } catch {
-    res.writeHead(404, { 'Content-Type': 'text/html' }).end('<h1>Page not found</h1><a href="/">Back home</a>');
+    const errorPage = fs.readFileSync(path.join(root, '404.html'));
+    res.writeHead(404, { 'Content-Type': 'text/html; charset=utf-8', 'Cache-Control': 'no-cache' }).end(errorPage);
   }
 });
 server.on('error', error => { console.error(error.message); process.exitCode = 1; });

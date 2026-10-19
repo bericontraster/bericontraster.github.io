@@ -214,6 +214,69 @@ async function setup() {
   setupForms(settings);
 }
 
+function setupReadingHeader() {
+  const article = document.querySelector('.imported-post');
+  const nav = document.querySelector('.portfolio-nav');
+  if (!article || !nav) return;
+  nav.classList.add('reading-nav');
+  let previous = Math.max(0, window.scrollY);
+  let distance = 0;
+  let direction = 0;
+  let frame = 0;
+  const reveal = () => { nav.classList.remove('is-scroll-hidden'); distance = 0; };
+  function update() {
+    frame = 0;
+    const y = Math.max(0, window.scrollY);
+    const delta = y - previous;
+    previous = y;
+    const content = article.querySelector('.post-body') || article;
+    const threshold = Math.max(180, content.getBoundingClientRect().top + y - nav.offsetHeight - 48);
+    if (y < threshold || nav.contains(document.activeElement) || nav.matches(':hover')) {
+      reveal();
+      return;
+    }
+    if (!delta) return;
+    const nextDirection = Math.sign(delta);
+    if (nextDirection !== direction) distance = 0;
+    direction = nextDirection;
+    distance += Math.abs(delta);
+    if (distance >= (direction > 0 ? 56 : 20)) {
+      nav.classList.toggle('is-scroll-hidden', direction > 0);
+      distance = 0;
+    }
+  }
+  window.addEventListener('scroll', () => {
+    if (!frame) frame = requestAnimationFrame(update);
+  }, { passive: true });
+  nav.addEventListener('focusin', reveal);
+  nav.addEventListener('pointerenter', reveal);
+  window.addEventListener('pageshow', () => { previous = Math.max(0, window.scrollY); reveal(); });
+  window.addEventListener('resize', () => { previous = Math.max(0, window.scrollY); reveal(); });
+}
+
+function setupBlogSearch() {
+  const search = document.querySelector('.blog-search');
+  if (!search) return;
+  const input = search.querySelector('input');
+  const status = document.querySelector('.blog-search-status');
+  const cards = [...document.querySelectorAll('#blog-posts .featured-blog-card')].map(card => ({ card, text: card.textContent.toLocaleLowerCase() }));
+  search.hidden = false;
+  function filter() {
+    const words = input.value.trim().toLocaleLowerCase().split(/\s+/).filter(Boolean);
+    let count = 0;
+    for (const { card, text } of cards) {
+      card.hidden = !words.every(word => text.includes(word));
+      if (!card.hidden) count++;
+    }
+    status.hidden = !words.length;
+    status.textContent = count ? `${count} ${count === 1 ? 'article' : 'articles'} found` : 'No articles found. Try another search.';
+  }
+  input.addEventListener('input', filter);
+  filter();
+}
+
+setupReadingHeader();
+setupBlogSearch();
 setupArticleToc();
 setupArticleShare();
 setupArticleBackToTop();

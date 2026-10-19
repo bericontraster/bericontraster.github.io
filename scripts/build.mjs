@@ -3,6 +3,7 @@ import path from 'node:path';
 import { createHash } from 'node:crypto';
 import { addArticleHeadingIds } from './article-headings.mjs';
 import { highlightCodeBlocks } from './highlight-code.mjs';
+import { renderNotFound } from './error-page.mjs';
 import { loadSiteContent, renderContentPage, renderPostCard, renderProjectCard } from './content.mjs';
 import { canonicalRoute, localPageUrl, canonicalPageUrl, pageMetadata, renderPageSeo, sitemapPages } from './seo.mjs';
 const {pages,posts,projects}=loadSiteContent({includeDrafts:process.argv.includes('--drafts')});
@@ -16,7 +17,7 @@ const brandIcons='<link rel="icon" href="/favicon.ico?v=ascii-b" sizes="any"><li
 const siteUrl=new URL(settings.siteUrl).origin;
 const tabBrand=settings.seo?.titleBrand||settings.displayName;
 // Validate every Markdown page before replacing the last successful output.
-const renderedContent=new Map(pages.filter(page=>page.entry).map(page=>[page.slug,renderContentPage(page.entry,{shareUrl:siteUrl+page.route})]));
+const renderedContent=new Map(pages.filter(page=>page.entry).map(page=>[page.slug,renderContentPage(page.entry,{shareUrl:siteUrl+page.route,posts})]));
 const pageSeo=new Map(pages.map(page=>[page.slug,renderPageSeo(page,settings,pages)]));
 if(settings.seo?.defaultImage?.startsWith('/assets/')&&!fs.existsSync(path.join('public',settings.seo.defaultImage)))throw new Error('The default SEO image does not exist in public/: '+settings.seo.defaultImage);
 const domain=fs.readFileSync('CNAME','utf8').trim();
@@ -115,5 +116,5 @@ for(const [oldRoute,target]of aliases){
 fs.writeFileSync('dist/robots.txt',`User-agent: *\nDisallow: /norobots/\n\nSitemap: ${siteUrl}/sitemap.xml\n`);
 const urls=sitemapPages(pages,siteUrl).map(page=>({url:localPageUrl(page,siteUrl),updated:page.entry?.updated}));
 fs.writeFileSync('dist/sitemap.xml',`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map(({url,updated})=>`  <url><loc>${escape(url)}</loc>${updated?`<lastmod>${updated}</lastmod>`:''}</url>`).join('\n')}\n</urlset>\n`);
-fs.writeFileSync('dist/404.html',`<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">${brandIcons}<title>Page not found - ${escape(tabBrand)}</title></head><body><main><h1>Page not found</h1><p>The address may be incorrect or the page may have moved.</p><a href="/">Back home</a> · <a href="/blog/">Browse articles</a></main></body></html>`);
+fs.writeFileSync('dist/404.html', renderNotFound({ brand: tabBrand, icons: brandIcons }));
 console.log('Built '+pages.length+' pages into dist/.');
