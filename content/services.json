@@ -1,0 +1,128 @@
+[
+  {
+    "id": "web-api",
+    "path": "/services/web-api-testing/",
+    "name": "Web & API Testing",
+    "category": "Applications / APIs",
+    "headline": "Your application. An attacker's perspective.",
+    "accent": "An attacker's perspective.",
+    "summary": "Find the gaps between what your application allows and what your users should be able to do. Manual testing of authentication, access controls, and business logic across your web applications and APIs.",
+    "short": "Protect the workflows, accounts, and data your customers trust you with.",
+    "tags": ["Authentication", "Access control", "Business logic"],
+    "bestFor": "SaaS platforms, customer portals, and teams preparing for a launch or a major release.",
+    "question": "Can one customer access another customer's data?",
+    "answer": "I test across user roles and tenant boundaries, following application workflows to establish what an attacker could actually access or change.",
+    "chain": ["Standard user", "Broken access control", "Another tenant's data"],
+    "scope": [
+      ["Authentication & sessions", "Login, account recovery, multi-factor flows, session handling, and token lifecycle."],
+      ["Authorization & tenant isolation", "Object-level and function-level permissions, role boundaries, and separation between customer accounts."],
+      ["API attack surface", "Agreed REST or GraphQL endpoints, input handling, sensitive fields, and exposed functionality."],
+      ["Business logic", "Abuse of workflows such as invitations, approvals, payments, and account changes."],
+      ["Input & server-side behavior", "Injection, file handling, server-side requests, and other weaknesses relevant to the application's architecture."],
+      ["Configuration & data exposure", "Exposed secrets, error handling, deployment settings, and unintended disclosure of sensitive information."]
+    ],
+    "inputs": ["Application URLs and API documentation", "Test accounts for the agreed roles and tenants", "Key workflows, integrations, and sensitive data", "Preferred environment and release deadline"],
+    "scoping": "The number of applications, API endpoints, user roles, tenant models, and workflow complexity determine the scope. Source review can be discussed separately.",
+    "methodology": "Testing is informed by the OWASP Web Security Testing Guide, with coverage adapted to your architecture and business workflows.",
+    "resource": {"label": "OWASP Web Security Testing Guide", "href": "https://owasp.org/www-project-web-security-testing-guide/"},
+    "faq": [
+      ["Can you test authenticated applications and private APIs?", "Yes. We agree the roles, permissions, endpoints, and access method before testing. Accounts for different roles and tenants help test boundaries that an unauthenticated assessment would miss."],
+      ["Do you need access to source code?", "Source code is not required for a typical application penetration test. Documentation and test accounts help make the assessment more effective. If source review would add value, its coverage is agreed separately."],
+      ["Should testing happen in production or staging?", "A representative staging environment is often useful for testing workflows safely. If production is required, we agree test accounts, data handling, testing windows, and any restricted actions in advance."]
+    ]
+  },
+  {
+    "id": "cloud",
+    "path": "/services/cloud-security-testing/",
+    "name": "Cloud Security Testing",
+    "category": "Cloud / Identity",
+    "headline": "Understand what your cloud permissions make possible.",
+    "accent": "make possible.",
+    "summary": "Connect identity permissions, exposed services, and configuration weaknesses into a clear picture of cloud risk. Understand how an initial foothold could reach sensitive workloads or data.",
+    "short": "Trace how cloud identities and configuration gaps can expose critical resources.",
+    "tags": ["IAM review", "Misconfigurations", "Attack paths"],
+    "bestFor": "Teams adopting cloud services, changing identity policies, or reviewing an established cloud environment.",
+    "question": "What could an attacker do with a compromised cloud identity?",
+    "answer": "I review the permissions and trust relationships around agreed resources, then validate relevant attack paths within the approved boundaries.",
+    "chain": ["Cloud identity", "Excessive permissions", "Sensitive workload"],
+    "scope": [
+      ["Identity & access management", "Users, roles, policies, service identities, and permissions that exceed their intended purpose."],
+      ["Trust & privilege boundaries", "Role assumption, cross-account relationships, and opportunities to move into more privileged identities."],
+      ["Public exposure", "Internet-facing workloads, storage access, management interfaces, and unintended resource exposure."],
+      ["Workload configuration", "Security settings of the compute, storage, and managed services included in the engagement."],
+      ["Secrets & sensitive data", "Credential handling, access to secrets, and the paths that could lead to business-critical data."],
+      ["Attack-path validation", "Controlled validation of relevant combinations of identity, network, and configuration weaknesses."]
+    ],
+    "inputs": ["Cloud provider and target accounts or subscriptions", "In-scope services, regions, and critical workloads", "An agreed assessment identity and access level", "Architecture notes and provider testing requirements"],
+    "scoping": "We confirm the cloud provider, services, account boundaries, and available access before committing to coverage. A configuration review and an exploitation-focused assessment can have different scopes.",
+    "methodology": "Provider rules and service-specific restrictions are checked during scoping. Testing is limited to the customer resources and actions authorized for the engagement.",
+    "resource": {"label": "Example: AWS penetration testing policy", "href": "https://aws.amazon.com/security/penetration-testing/"},
+    "faq": [
+      ["Which cloud platforms can you assess?", "Share your provider, services, and target accounts when you enquire. Platform-specific coverage and required access are confirmed during scoping so the proposal reflects your actual environment."],
+      ["Is this a configuration review or a penetration test?", "That depends on your objective. A review examines configuration and access controls; a penetration test also validates agreed attack paths. The proposal states which activities and resources are included."],
+      ["Do we need permission from the cloud provider?", "Provider requirements vary by service and activity. We review the applicable policy before testing, confirm that you can authorize the target resources, and identify any additional approvals required."]
+    ]
+  },
+  {
+    "id": "active-directory",
+    "path": "/services/active-directory-testing/",
+    "name": "Active Directory Testing",
+    "category": "Identity / Enterprise",
+    "headline": "Find the paths from ordinary access to domain control.",
+    "accent": "domain control.",
+    "summary": "Assess how identities, permissions, and trust relationships connect across your Windows environment. Find the attack paths that could turn a compromised workstation or standard account into wider control.",
+    "short": "Reveal the identity and trust weaknesses that can turn one foothold into wider compromise.",
+    "tags": ["Privilege escalation", "Lateral movement", "AD hardening"],
+    "bestFor": "Organizations with Windows domains, complex group permissions, or concerns about internal compromise.",
+    "question": "How far could an attacker get with a standard domain account?",
+    "answer": "I examine the relationships between users, computers, groups, and services, then validate agreed paths toward higher privileges and critical assets.",
+    "chain": ["Domain user", "Misconfigured trust", "Privileged access"],
+    "scope": [
+      ["Domain & trust relationships", "In-scope domains, trusts, group membership, and paths across administrative boundaries."],
+      ["Permissions & delegation", "Directory object permissions, delegated rights, and configuration that can enable privilege escalation."],
+      ["Authentication & credentials", "Relevant authentication weaknesses, service account exposure, and credential protection controls."],
+      ["Lateral movement", "Controlled checks of how an initial foothold could reach other in-scope systems and privileged sessions."],
+      ["Certificate services", "Active Directory Certificate Services configuration and certificate-based attack paths, when deployed and in scope."],
+      ["Hardening priorities", "Practical recommendations for reducing exposed privileges and breaking the validated attack chains."]
+    ],
+    "inputs": ["Domain and forest boundaries, including trusts", "An agreed starting account and network access", "Critical systems and privileged identity groups", "Restrictions on credential testing and validation"],
+    "scoping": "Domain count, trust complexity, reachable systems, and the starting privileges determine the assessment. Hybrid identity and cloud identity coverage are agreed explicitly.",
+    "methodology": "The assessment follows the agreed starting position and rules of engagement. Potentially disruptive actions and access to sensitive systems require explicit agreement before validation.",
+    "faq": [
+      ["Do you start with a standard domain user?", "A standard-user starting point is useful for understanding what could follow a compromised employee account. Other starting positions can be agreed, depending on the scenario you want to test."],
+      ["Will you attempt to obtain domain administrator access?", "Only if the engagement explicitly authorizes that objective and its validation steps. Demonstrating a viable path with sufficient evidence can be preferable to taking control of sensitive systems."],
+      ["Does this include Entra ID or hybrid identity?", "An on-premises Active Directory assessment does not automatically include cloud identity. If your environment is hybrid, we define which identity systems and trust boundaries are included in the proposal."]
+    ]
+  },
+  {
+    "id": "network",
+    "path": "/services/network-security-testing/",
+    "name": "Network Security Testing",
+    "category": "Infrastructure / Exposure",
+    "headline": "See your network from the other side of the perimeter.",
+    "accent": "the perimeter.",
+    "summary": "Understand what is exposed, what is exploitable, and how far an attacker could move. Assess internet-facing infrastructure or internal networks with testing tailored to your assets and business priorities.",
+    "short": "Validate external exposure, internal weaknesses, and the boundaries between critical systems.",
+    "tags": ["External exposure", "Internal testing", "Segmentation"],
+    "bestFor": "Teams reviewing internet-facing assets, internal infrastructure, or network segmentation after a change.",
+    "question": "Does one exposed service create a route into critical systems?",
+    "answer": "I combine asset and service enumeration with manual validation, testing the agreed exposure and segmentation boundaries rather than relying on scanner severity alone.",
+    "chain": ["Exposed service", "Validated weakness", "Internal reach"],
+    "scope": [
+      ["External attack surface", "Agreed public IP addresses, exposed services, remote access systems, and administrative interfaces."],
+      ["Internal infrastructure", "Reachable hosts and services from an agreed internal starting point or remote connection."],
+      ["Vulnerability validation", "Manual investigation of relevant findings to establish exploitability, prerequisites, and likely business impact."],
+      ["Service configuration", "Weak defaults, unnecessary access, authentication settings, and insecure service behavior."],
+      ["Network segmentation", "Checks between agreed source and destination zones to establish whether access boundaries hold."],
+      ["Attack-path analysis", "Evidence showing how individual weaknesses could combine to expose more valuable systems."]
+    ],
+    "inputs": ["Target IP ranges, domains, and asset ownership", "Internal, external, or segmentation objectives", "VPN or on-site access requirements", "Critical assets, exclusions, and testing windows"],
+    "scoping": "Asset count, network reachability, testing location, and validation depth determine the scope. Wireless testing, social engineering, and denial-of-service testing are not included by default.",
+    "methodology": "Discovery and automated checks support manual investigation. Validation is limited by the agreed rules of engagement, with sensitive and operational systems identified before testing.",
+    "faq": [
+      ["Should I choose an internal or external assessment?", "External testing examines the services reachable from the internet. Internal testing assesses the view from inside your network. If both questions matter, we can scope them together and distinguish their coverage in the report."],
+      ["How is a penetration test different from a vulnerability scan?", "A scan identifies potential issues at scale. A penetration test adds manual investigation and agreed validation to establish exploitability, context, and attack paths. A vulnerability assessment can be scoped when broader identification is the main objective."],
+      ["Can you test whether network segmentation works?", "Yes, when the relevant zones and access paths are included in scope. We agree the source and destination systems, expected restrictions, and how access attempts will be validated."]
+    ]
+  }
+]

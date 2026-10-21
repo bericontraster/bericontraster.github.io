@@ -31,7 +31,7 @@ function pageGraph(page, settings, metadata, pages) {
     graph.push({ '@type': 'WebSite', '@id': websiteId, url: origin + '/', name: settings.displayName, alternateName: 'Beri Contraster', description: metadata.description, inLanguage: 'en', publisher: { '@id': personId } });
     graph.push({ '@type': 'Person', '@id': personId, name: settings.seo?.authorName || settings.displayName, alternateName: settings.displayName, url: origin + '/about/', jobTitle: 'Offensive Security Professional', ...(settings.seo?.sameAs?.length ? { sameAs: settings.seo.sameAs } : {}) });
   }
-  const type = page.slug === 'about' ? 'AboutPage' : ['blog', 'work'].includes(page.slug) ? 'CollectionPage' : 'WebPage';
+  const type = page.slug === 'about' ? 'AboutPage' : ['blog', 'work', 'services'].includes(page.slug) ? 'CollectionPage' : 'WebPage';
   const webpage = { '@type': type, '@id': pageId, url: metadata.canonical, name: metadata.title, description: metadata.description, inLanguage: 'en', isPartOf: { '@id': websiteId }, ...(metadata.image ? { primaryImageOfPage: { '@type': 'ImageObject', url: metadata.image, caption: metadata.imageAlt } } : {}) };
   if (page.slug === 'about') webpage.mainEntity = { '@id': personId };
   if (['blog', 'work'].includes(page.slug)) {
@@ -41,11 +41,20 @@ function pageGraph(page, settings, metadata, pages) {
   }
   if (page.route !== '/') {
     const items = [{ name: settings.displayName, item: origin + '/' }];
+    if (page.serviceId) items.push({ name: 'Services', item: origin + '/services/' });
     if (page.entry) items.push({ name: page.entry.kind === 'post' ? 'Blogs' : 'Projects', item: origin + (page.entry.kind === 'post' ? '/blog/' : '/work/') });
     items.push({ name: page.entry?.title || page.title, item: metadata.canonical });
     const breadcrumbId = metadata.canonical + '#breadcrumb';
     webpage.breadcrumb = { '@id': breadcrumbId };
     graph.push({ '@type': 'BreadcrumbList', '@id': breadcrumbId, itemListElement: items.map((item, index) => ({ '@type': 'ListItem', position: index + 1, ...item })) });
+  }
+  if (page.serviceId) {
+    const serviceId = metadata.canonical + '#service';
+    webpage.mainEntity = { '@id': serviceId };
+    graph.push({ '@type': 'Service', '@id': serviceId, name: page.serviceType, serviceType: page.serviceType, description: metadata.description, url: metadata.canonical, provider: { '@type': 'Person', '@id': personId, name: settings.seo?.authorName || settings.displayName, url: origin + '/about/' }, mainEntityOfPage: { '@id': pageId } });
+  }
+  if (page.slug === 'services') {
+    webpage.mainEntity = { '@type': 'ItemList', itemListElement: pages.filter(item => item.serviceId).map((item, index) => ({ '@type': 'ListItem', position: index + 1, name: item.serviceType, url: localPageUrl(item, origin) })) };
   }
   graph.push(webpage);
   return { '@context': 'https://schema.org', '@graph': graph };

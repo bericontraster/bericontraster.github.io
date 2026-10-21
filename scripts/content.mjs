@@ -193,7 +193,6 @@ export function renderContentPage(entry, { shareUrl = '', posts = [] } = {}) {
     .slice(0, 3).map(item => item.post);
   const recommendations = related.length ? `<section class="related-posts" aria-labelledby="related-posts-title"><header><h2 id="related-posts-title">More to Explore</h2><a href="/blog/">Browse all articles <span aria-hidden="true">↗</span></a></header><div class="related-posts-grid">${related.map(renderPostCard).join('')}</div></section>` : '';
   return `<main class="imported-post${project ? ' blacksite-page' : ''}" id="${project ? 'hero-section' : 'article-section'}">
-<a class="post-back" href="/${project ? 'work' : 'blog'}/">${project ? 'All Projects' : '← All Blogs'}</a>
 ${entry.draft ? '<p class="content-draft">Draft preview — excluded from the production build</p>' : ''}
 <header>${project && entry.category ? `<p class="blacksite-eyebrow">${escapeHtml(entry.category)}</p>` : ''}<h1>${escapeHtml(entry.title)}</h1>${project ? `<p class="blacksite-intro">${escapeHtml(entry.description)}</p>` : ''}${metaRow}${source}${tagList(entry.tags)}${jumps ? `<nav class="blacksite-jump" aria-label="Project sections">${jumps}</nav>` : ''}</header>
 <div class="post-body">${cover}${entry.html}</div>${recommendations}</main>`;

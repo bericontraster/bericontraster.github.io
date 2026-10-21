@@ -31,7 +31,7 @@ for (const page of pages) {
   check(fs.existsSync(file), page.route + ': page was not built');
   if (!fs.existsSync(file)) continue;
   const html = fs.readFileSync(file, 'utf8');
-  check(!/<!--(?:COMPONENT|HEADER|CONTENT|FOOTER|POST-CARDS|PROJECT-CARDS)|{{displayName}}/.test(html), page.route + ': unresolved component');
+  check(!/<!--(?:COMPONENT|HEADER|CONTENT|FOOTER|SERVICES|POST-CARDS|PROJECT-CARDS)|{{displayName}}/.test(html), page.route + ': unresolved component');
   inspectLinks(html, page.route);
   check(!/<script[^>]+src="https?:/.test(html), page.route + ': unexpected third-party runtime script');
   for (const [, id] of html.matchAll(/<use[^>]+href="#([^" ]+)"/g)) {
@@ -58,6 +58,19 @@ for (const page of pages) {
     schemas = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].flatMap(match => { const schema = JSON.parse(match[1]); return schema['@graph'] || [schema]; });
     check(schemas.some(schema => ['WebPage', 'AboutPage', 'CollectionPage'].includes(schema['@type'])), page.route + ': missing page structured data');
   } catch { check(false, page.route + ': invalid structured data'); }
+  if (page.template === 'services') {
+    for (const [, id] of html.matchAll(/href="#([^"]+)"/g)) {
+      check(html.includes('id="' + id + '"'), page.route + ': missing section target ' + id);
+    }
+    const enquiry = [...html.matchAll(/href="(mailto:[^"]+)"/g)].map(match => new URL(match[1].replaceAll('&amp;', '&'))).find(url => url.searchParams.has('subject'));
+    check(enquiry?.pathname === settings.contactEmail && enquiry.searchParams.get('body')?.includes('Environment and assets to assess:'), page.route + ': missing scoped email enquiry');
+    check(html.includes('data-booking-open') === Boolean(settings.booking?.calendlyUrl?.trim()), page.route + ': booking activation does not match configuration');
+    if (page.serviceId) {
+      check(schemas.some(schema => schema['@type'] === 'Service' && schema.serviceType === page.serviceType && schema.url === canonical), page.route + ': missing or incorrect service structured data');
+      check(schemas.some(schema => schema['@type'] === 'BreadcrumbList' && schema.itemListElement.some(item => item.item === origin + '/services/')), page.route + ': missing parent services breadcrumb');
+      check(enquiry?.searchParams.get('subject') === page.serviceType + ' enquiry', page.route + ': enquiry loses service context');
+    }
+  }
   if (page.entry) {
     check(schemas.some(schema => schema.headline === page.entry.title), page.route + ': incorrect content structured data');
     check(html.includes('name="robots" content="noindex,nofollow"') === page.entry.draft, page.route + ': incorrect draft indexing');

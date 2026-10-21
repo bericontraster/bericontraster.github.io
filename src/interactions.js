@@ -2,6 +2,7 @@ import { setupFooterHands } from './footer-hands.js';
 import { setupArticleToc } from './article-toc.js';
 import { setupArticleShare } from './article-share.js';
 import { setupArticleBackToTop } from './article-back-to-top.js';
+import { setupServiceBooking } from './service-booking.js';
 
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
@@ -275,6 +276,67 @@ function setupBlogSearch() {
   filter();
 }
 
+function setupServiceFaq() {
+  document.querySelectorAll('.services-questions details').forEach(details => {
+    const summary = details.querySelector('summary');
+    const answer = details.querySelector('p');
+    if (!summary || !answer) return;
+    let expanded = details.open;
+    let heightAnimation = null;
+    let answerAnimation = null;
+
+    function syncState() {
+      details.dataset.expanded = String(expanded);
+      summary.setAttribute('aria-expanded', String(expanded));
+    }
+    function settle() {
+      heightAnimation?.cancel();
+      answerAnimation?.cancel();
+      heightAnimation = null;
+      answerAnimation = null;
+      details.open = expanded;
+      details.style.overflow = '';
+      syncState();
+    }
+    syncState();
+    summary.addEventListener('click', event => {
+      event.preventDefault();
+      const startHeight = details.getBoundingClientRect().height;
+      const wasOpen = details.open;
+      const answerStyle = getComputedStyle(answer);
+      const startOpacity = wasOpen ? answerStyle.opacity : '0';
+      const startTransform = wasOpen ? answerStyle.transform : 'translateY(-6px)';
+      heightAnimation?.cancel();
+      answerAnimation?.cancel();
+      expanded = !expanded;
+      syncState();
+      if (reducedMotion.matches || typeof details.animate !== 'function') {
+        settle();
+        return;
+      }
+      // Keep the native disclosure open until the closing animation completes.
+      details.open = true;
+      const border = parseFloat(getComputedStyle(details).borderBottomWidth) || 0;
+      const endHeight = expanded ? details.getBoundingClientRect().height : summary.getBoundingClientRect().height + border;
+      details.style.overflow = 'hidden';
+      const timing = { duration: 320, easing: 'cubic-bezier(.22, 1, .36, 1)' };
+      heightAnimation = details.animate([{ height: `${startHeight}px` }, { height: `${endHeight}px` }], timing);
+      answerAnimation = answer.animate([
+        { opacity: startOpacity, transform: startTransform },
+        { opacity: expanded ? 1 : 0, transform: expanded ? 'translateY(0)' : 'translateY(-6px)' }
+      ], timing);
+      heightAnimation.onfinish = settle;
+    });
+    // Preserve native behavior for browser-driven or programmatic changes.
+    details.addEventListener('toggle', () => {
+      if (!heightAnimation) { expanded = details.open; syncState(); }
+    });
+    reducedMotion.addEventListener('change', () => { if (reducedMotion.matches) settle(); });
+  });
+}
+
+setupServiceFaq();
+setupServiceBooking();
 setupReadingHeader();
 setupBlogSearch();
 setupArticleToc();

@@ -15,6 +15,64 @@
     ]
   },
   {
+    "route": "/services",
+    "slug": "services",
+    "template": "services",
+    "style": "services",
+    "title": "Penetration Testing & Security Assessment Services",
+    "description": "Independent web, API, cloud, Active Directory, and network security testing by Muhammad Zubair. Clear scope, validated findings, and practical remediation.",
+    "components": ["home--7--phone"],
+    "sharedFooter": true
+  },
+  {
+    "route": "/services/web-api-testing",
+    "slug": "service-web-api",
+    "template": "services",
+    "style": "services",
+    "serviceId": "web-api",
+    "serviceType": "Web & API Testing",
+    "title": "Web Application & API Penetration Testing",
+    "description": "Assess authentication, authorization, tenant isolation, and business logic in your web applications and APIs. Manual testing with evidence and remediation guidance.",
+    "components": ["home--7--phone"],
+    "sharedFooter": true
+  },
+  {
+    "route": "/services/cloud-security-testing",
+    "slug": "service-cloud",
+    "template": "services",
+    "style": "services",
+    "serviceId": "cloud",
+    "serviceType": "Cloud Security Testing",
+    "title": "Cloud Security Testing & IAM Assessment",
+    "description": "Investigate cloud IAM permissions, exposed resources, configuration weaknesses, and attack paths. Get a scoped assessment and prioritized hardening guidance.",
+    "components": ["home--7--phone"],
+    "sharedFooter": true
+  },
+  {
+    "route": "/services/active-directory-testing",
+    "slug": "service-active-directory",
+    "template": "services",
+    "style": "services",
+    "serviceId": "active-directory",
+    "serviceType": "Active Directory Testing",
+    "title": "Active Directory Penetration Testing",
+    "description": "Find privilege escalation and lateral movement paths across your Active Directory environment. Assess permissions, trusts, and identity controls with clear evidence.",
+    "components": ["home--7--phone"],
+    "sharedFooter": true
+  },
+  {
+    "route": "/services/network-security-testing",
+    "slug": "service-network",
+    "template": "services",
+    "style": "services",
+    "serviceId": "network",
+    "serviceType": "Network Security Testing",
+    "title": "Internal & External Network Penetration Testing",
+    "description": "Assess external exposure, internal infrastructure, and network segmentation. Validate exploitable weaknesses and understand the attack paths to critical systems.",
+    "components": ["home--7--phone"],
+    "sharedFooter": true
+  },
+  {
     "route": "/about",
     "slug": "about",
     "title": "About Muhammad Zubair",

@@ -5,6 +5,12 @@
   "googleSiteVerification": "TtIUoL98GEiT6_K75hD5VJH-Rp97JrXHCbRz1GP_Isk",
   "googleAnalyticsId": "G-NJ0NQRZ3JV",
   "contactEmail": "contact@bericontraster.com",
+  "sampleReportUrl": "https://drive.google.com/drive/folders/1KXz2ln8eYm3i9BESXjc1a1eT0pvmtAu2?usp=sharing",
+  "booking": {
+    "calendlyUrl": "https://calendly.com/bericontraster/security-discovery",
+    "eventName": "Security Discovery Call",
+    "durationMinutes": 30
+  },
   "copyrightYear": "2022",
   "quote": "Security testing that goes beyond scanner output. Every engagement ends with proven attack paths, clear risk ratings, and remediation your team can act on.",
   "contactEndpoint": "",
@@ -23,7 +29,7 @@
   "navigation": [
     {
       "label": "Services",
-      "href": "/#services"
+      "href": "/services"
     },
     {
       "label": "Blogs",

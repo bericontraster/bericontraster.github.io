@@ -18,7 +18,7 @@ body .about-page .about-eyebrow {
 .about-prose a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 4px; }
 .about-prose a:hover { color: #fff; }
 .about-section-links { display: flex; flex-wrap: wrap; gap: 12px 28px; margin-top: 32px; }
-.about-section-links a, .about-resume-actions a {
+.about-section-links a {
   font: 400 var(--label-font-size)/1.5 var(--portfolio-label-font);
   letter-spacing: .08em; text-transform: uppercase;
 }
@@ -40,13 +40,7 @@ body .about-page .about-eyebrow {
 .about-credential > span:first-child { min-width: 0; }
 .about-credential:hover { color: #b7dfd8; }
 .about-external-arrow { font: 400 22px/1 var(--portfolio-font); color: var(--cyber-muted); flex: none; }
-.about-resume-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 20px 28px; margin-top: 28px; }
-.about-resume-actions .about-resume-button {
-  display: inline-flex; align-items: center; gap: 20px; min-height: 48px; padding: 14px 20px;
-  background: var(--cyber-text); color: var(--cyber-bg); border-radius: 10px; text-decoration: none;
-}
-.about-resume-actions .about-resume-button:hover { background: #fff; color: var(--cyber-bg); }
-.about-resume-view { padding: 12px 0; }
+.about-resume-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-top: 28px; }
 
 @media (max-width: 1279px) {
   .about-page { max-width: 840px; padding-top: 160px; padding-bottom: 100px; }

@@ -6,6 +6,7 @@ import { highlightCodeBlocks } from './highlight-code.mjs';
 import { renderNotFound } from './error-page.mjs';
 import { loadSiteContent, renderContentPage, renderPostCard, renderProjectCard } from './content.mjs';
 import { canonicalRoute, localPageUrl, canonicalPageUrl, pageMetadata, renderPageSeo, sitemapPages } from './seo.mjs';
+import { renderServicesPage, serviceBooking } from './services.mjs';
 const {pages,posts,projects}=loadSiteContent({includeDrafts:process.argv.includes('--drafts')});
 const content=JSON.parse(fs.readFileSync('content/portfolio.json','utf8'));
 const settings=JSON.parse(fs.readFileSync('content/settings.json','utf8'));
@@ -23,6 +24,7 @@ if(settings.seo?.defaultImage?.startsWith('/assets/')&&!fs.existsSync(path.join(
 const domain=fs.readFileSync('CNAME','utf8').trim();
 if(new URL(siteUrl).hostname!==domain)throw new Error('CNAME must match settings.siteUrl');
 if(settings.googleAnalyticsId&&!/^G-[A-Z0-9]+$/.test(settings.googleAnalyticsId))throw new Error('Invalid Google Analytics measurement ID');
+const booking = serviceBooking(settings);
 // Keep the former template article paths as aliases; new links use /posts/<slug>/.
 const aliases=new Map(pages.filter(page=>page.slug.startsWith('blog--')).map(page=>['/blog/'+page.route.split('/').filter(Boolean).at(-1),page.route]));
 // Generated files must never survive after their source has been removed.
@@ -34,6 +36,7 @@ fs.writeFileSync('dist/CNAME',domain+'\n');
 fs.writeFileSync('dist/.nojekyll','');
 fs.copyFileSync('src/styles/custom.css','dist/assets/custom.css');
 fs.copyFileSync('src/interactions.js','dist/assets/interactions.js');
+fs.copyFileSync('src/service-booking.js','dist/assets/service-booking.js');
 fs.copyFileSync('src/article-toc.js','dist/assets/article-toc.js');
 fs.copyFileSync('src/article-share.js','dist/assets/article-share.js');
 fs.copyFileSync('src/article-back-to-top.js','dist/assets/article-back-to-top.js');
@@ -51,8 +54,9 @@ function applyContent(html,fields){
  return html;
 }
 for(const page of pages){
- const style=page.entry?'content':page.slug;
- let html=fs.readFileSync('src/pages/'+(page.entry?'content':page.slug)+'.html','utf8');
+ const style=page.entry?'content':page.style||page.slug;
+ let html=fs.readFileSync('src/pages/'+(page.entry?'content':page.template||page.slug)+'.html','utf8');
+ if(page.template==='services')html=html.replace('<!--SERVICES-->',()=>renderServicesPage(page,settings));
  const navigationItems=settings.navigation.map(item=>{
   const target=new URL(item.href,'https://portfolio.local');
   const current=!target.hash&&(target.pathname===page.route||page.route.startsWith(target.pathname+'/')||(page.entry?.kind==='post'&&target.pathname==='/blog')||(page.entry?.kind==='project'&&target.pathname==='/work'));
@@ -94,6 +98,7 @@ for(const page of pages){
   return open+body+'</svg>';
  });
  html=html.replace(/(<footer\b[^>]*>)/g, '$1'+fs.readFileSync('src/components/FooterHands.html','utf8'));
+ html=html.replaceAll('<!--FOOTER-BOOKING-->',booking?`<a class="portfolio-glass-button portfolio-glass-button-secondary portfolio-footer-booking" href="/services/#enquire" aria-label="Book a security call (${booking.duration} minutes)">Book a security call</a>`:'');
  const heroBackground=fs.readFileSync('src/components/HeroBackground.html','utf8');
  html=html.replace(/(<div\b[^>]*class="[^"]*\bframer-zpn31\b[^"]*"[^>]*>)/, '$1'+heroBackground);
  html=html.replaceAll('href="./','href="/');
