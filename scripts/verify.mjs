@@ -94,11 +94,28 @@ for (const page of pages) {
 check(fs.readFileSync('dist/CNAME', 'utf8').trim() === new URL(origin).hostname, 'CNAME does not match the production domain');
 check(fs.existsSync('dist/.nojekyll'), 'Missing .nojekyll');
 check(fs.existsSync('dist/404.html'), 'Missing custom 404 page');
+if (fs.existsSync('dist/404.html')) {
+  const notFound = fs.readFileSync('dist/404.html', 'utf8');
+  check(/<meta name="robots" content="noindex(?:,|\")/.test(notFound), 'The 404 page must not be indexed');
+  inspectLinks(notFound, '/404.html');
+}
 check(fs.readFileSync('dist/robots.txt', 'utf8').includes('Sitemap: ' + origin + '/sitemap.xml'), 'robots.txt must reference the production sitemap');
 check(!/Disallow:\s*\/\s*(?:\r?\n|$)/m.test(fs.readFileSync('dist/robots.txt', 'utf8')), 'robots.txt blocks indexing');
 check(fs.existsSync('dist/sw.min.js'), 'Missing replacement for the old service worker');
 
 const sitemapUrls = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(match => match[1].replaceAll('&amp;', '&'));
+check(sitemap.startsWith('<?xml version="1.0" encoding="UTF-8"?>'), 'Sitemap must declare XML with UTF-8 encoding');
+check(/<urlset xmlns="http:\/\/www\.sitemaps\.org\/schemas\/sitemap\/0\.9">/.test(sitemap) && /<\/urlset>\s*$/.test(sitemap), 'Sitemap is missing its URL set or namespace');
+const sitemapEntries = [...sitemap.matchAll(/<url>([\s\S]*?)<\/url>/g)].map(([, body]) => ({
+  url: body.match(/<loc>([^<]+)<\/loc>/)?.[1].replaceAll('&amp;', '&'),
+  updated: body.match(/<lastmod>([^<]+)<\/lastmod>/)?.[1],
+}));
+check(sitemapEntries.length === sitemapUrls.length, 'Each sitemap URL must have its own complete url element');
+for (const page of sitemapPages(pages, origin)) {
+  const url = localPageUrl(page, origin);
+  const entry = sitemapEntries.find(entry => entry.url === url);
+  check(Boolean(entry) && entry.updated === (page.entry?.updated || undefined), 'Sitemap lastmod differs from content metadata: ' + url);
+}
 check(sitemapUrls.length === new Set(sitemapUrls).size, 'Sitemap contains duplicate URLs');
 check(sitemapUrls.length === expectedSitemap.size, 'Sitemap contains missing or unexpected URLs');
 for (const url of sitemapUrls) {

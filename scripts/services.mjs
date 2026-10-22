@@ -9,6 +9,12 @@ const icons = {
   network: '<circle cx="16" cy="16" r="5"/><circle cx="5" cy="5" r="2"/><circle cx="27" cy="5" r="2"/><circle cx="5" cy="27" r="2"/><circle cx="27" cy="27" r="2"/><path d="m7 7 5 5m8 8 5 5M7 25l5-5m8-8 5-5"/>'
 };
 const icon = id => `<svg class="service-icon" width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${icons[id]}</svg>`;
+const attackPathIcons = [
+  '<circle cx="16.5" cy="7.5" r="4.5"/><path d="M13.3 10.7 3 21m2.5-2.5L3 16m5.5-.5L6 13"/>',
+  '<path d="m18.8 12.2 1.7-1.7a5 5 0 0 0-7-7l-1.7 1.7m-6.6 6.6-1.7 1.7a5 5 0 0 0 7 7l1.7-1.7M8 2v3M2 8h3m11 14v-3m6-3h-3"/>',
+  '<path d="m12 3 8 3v5c0 5-3.4 8.1-8 10-4.6-1.9-8-5-8-10V6l8-3Z"/><path d="M12 8v5"/><circle cx="12" cy="16.5" r=".8" fill="currentColor" stroke="none"/>'
+];
+const attackPathIcon = step => `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">${attackPathIcons[step]}</svg>`;
 const label = text => `<p class="services-label">${e(text)}</p>`;
 const sectionHead = (number, eyebrow, title, text = '') => `<div class="services-section-heading"><div>${label(`${number} / ${eyebrow}`)}<h2>${e(title)}</h2></div>${text ? `<p>${e(text)}</p>` : ''}</div>`;
 const enquiryUrl = (settings, service) => {
@@ -37,10 +43,11 @@ export function serviceBooking(settings, service) {
 
 function diagram(service) {
   const nodes = service?.chain || ['Initial access', 'Connected weaknesses', 'Business impact'];
+  const connector = '<div class="services-path-connector" aria-hidden="true"><svg width="16" height="28" viewBox="0 0 16 28" fill="none" focusable="false"><path d="M8 0v9m0 10v9" stroke="currentColor" stroke-width="1.2"/><circle cx="8" cy="14" r="2.5" fill="currentColor"/></svg></div>';
   return `<figure class="services-diagram" aria-label="Illustrative attack path: ${e(nodes.join(' to '))}">
     <div class="services-diagram-top"><span class="services-label"><span class="services-status-dot"></span> Think in attack paths</span><span class="services-label">${service ? 'ASSESSMENT / ' + e(service.id.toUpperCase()) : 'ASSESSMENT / 01'}</span></div>
-    <div class="services-path">${nodes.map((node, i) => `<div class="services-path-node"><span class="services-node-mark">${i === 2 ? '◎' : i === 1 ? '⌁' : '↳'}</span><div><span class="services-label">${['Entry point', 'Weakness', 'Impact'][i]}</span><strong>${e(node)}</strong></div><span class="services-node-index">0${i + 1}</span></div>`).join('<div class="services-path-connector" aria-hidden="true"><span></span>↓</div>')}</div>
-    <figcaption><span aria-hidden="true">↳</span> ${service ? 'A scenario to investigate. Evidence determines the finding.' : 'Individual findings matter. How they connect matters more.'}<span class="services-label">Illustrative scenario</span></figcaption>
+    <div class="services-path">${nodes.map((node, i) => `<div class="services-path-node"><span class="services-node-mark">${attackPathIcon(i)}</span><div><span class="services-label">${['Entry point', 'Weakness', 'Impact'][i]}</span><strong>${e(node)}</strong></div><span class="services-node-index">0${i + 1}</span></div>`).join(connector)}</div>
+    <figcaption>${service ? 'A scenario to investigate. Evidence determines the finding.' : 'Individual findings matter. How they connect matters more.'}<span class="services-label">Illustrative scenario</span></figcaption>
   </figure>`;
 }
 

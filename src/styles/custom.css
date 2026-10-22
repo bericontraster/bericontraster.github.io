@@ -780,7 +780,7 @@ body .home-blogs-heading h2.framer-text { font-size: clamp(32px, 4vw, 56px) !imp
 @media (prefers-reduced-motion: reduce) { .post-body a.post-link-card { transition: none; } }
 
 /* Inline links gently deepen in color on hover. */
-body :is(p, li, td, figcaption) a[href]:not(:where(nav a, footer a, .portfolio-glass-button, .post-link-card)):not(:has(img, svg)) {
+body :is(p, li, td, figcaption) a[href]:not(:where(nav a, footer a, .portfolio-glass-button, .post-link-card, .about-credential)):not(:has(img, svg)) {
   color: var(--cyber-accent);
   text-decoration-line: underline;
   text-decoration-color: rgb(100 201 148 / 40%);
@@ -788,21 +788,83 @@ body :is(p, li, td, figcaption) a[href]:not(:where(nav a, footer a, .portfolio-g
   text-underline-offset: .2em;
   transition: color 180ms ease;
 }
-body :is(p, li, td, figcaption) a[href]:not(:where(nav a, footer a, .portfolio-glass-button, .post-link-card)):not(:has(img, svg)):is(:hover, :focus-visible) {
+body :is(p, li, td, figcaption) a[href]:not(:where(nav a, footer a, .portfolio-glass-button, .post-link-card, .about-credential)):not(:has(img, svg)):is(:hover, :focus-visible) {
   color: #319b65;
 }
-body :is(p, li, td, figcaption) a[href]:not(:where(nav a, footer a, .portfolio-glass-button, .post-link-card)):not(:has(img, svg)):focus-visible {
+body :is(p, li, td, figcaption) a[href]:not(:where(nav a, footer a, .portfolio-glass-button, .post-link-card, .about-credential)):not(:has(img, svg)):focus-visible {
   outline: 2px solid rgb(100 201 148 / 65%);
   outline-offset: 4px;
   border-radius: 2px;
 }
-.about-credential .about-external-arrow { transition: color 180ms ease; }
-.about-credential:is(:hover, :focus-visible) .about-external-arrow { color: #319b65; }
 @media (prefers-reduced-motion: reduce) {
-  body :is(p, li, td, figcaption) a[href]:not(:where(nav a, footer a, .portfolio-glass-button, .post-link-card)):not(:has(img, svg)),
-  .about-credential .about-external-arrow { transition: none; }
+  body :is(p, li, td, figcaption) a[href]:not(:where(nav a, footer a, .portfolio-glass-button, .post-link-card, .about-credential)):not(:has(img, svg)) { transition: none; }
 }
 
 /* Keep the form spam trap outside the visual and keyboard flow. */
 .contact-honeypot { position: absolute !important; width: 1px !important; height: 1px !important; padding: 0 !important; opacity: 0 !important; overflow: hidden; pointer-events: none; clip-path: inset(50%); }
 .portfolio-form-busy [type="submit"] { cursor: wait; opacity: .65; }
+
+/* Phone layouts use content height instead of the desktop's pinned sections. */
+@media (max-width: 809px) {
+  body .framer-C6ykL .framer-vhlkdt {
+    --phone-portrait-width: clamp(160px, 46vw, 220px);
+    --phone-portrait-height: calc(var(--phone-portrait-width) / .877193);
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    height: auto;
+  }
+  body .framer-C6ykL .framer-5fbs3x { display: contents; }
+  .framer-zpn31:has(.framer-C6ykL) > .hero-photo { height: calc(350px + clamp(160px, 46vw, 220px) / .877193); }
+  body .framer-C6ykL .framer-1n4jd90 {
+    grid-area: 1 / 1;
+    position: relative;
+    height: 100%;
+    min-height: 0;
+    pointer-events: none;
+  }
+  body .framer-C6ykL .framer-1r7lg3i {
+    position: static;
+    box-sizing: border-box;
+    height: 100%;
+    padding: 0 0 72px;
+  }
+  body .framer-C6ykL .framer-ffa4zp {
+    width: var(--phone-portrait-width);
+    height: var(--phone-portrait-height);
+  }
+  body .framer-C6ykL .framer-1dddyte {
+    grid-area: 1 / 1;
+    height: auto;
+    padding: calc(176px + env(safe-area-inset-top, 0px)) 0 calc(var(--phone-portrait-height) + 104px);
+  }
+  body .framer-C6ykL .framer-1w72cst { position: static; height: auto; padding: 0 20px; }
+  body .framer-C6ykL .framer-1ea0khq { width: 100%; max-width: none; }
+  body [data-framer-name="Hero Section"] h1 { --framer-font-size: clamp(26px, 7.6vw, 52px) !important; }
+  body .framer-C6ykL .framer-wk9qvh { bottom: 24px; left: 20px; right: 20px; }
+  body .framer-C6ykL .framer-m00iei { grid-area: 2 / 1; padding-top: 56px; }
+  body .framer-C6ykL .framer-14pqn4d { gap: 20px; max-width: none; }
+  body .framer-C6ykL .framer-1tt85wi { gap: 24px; }
+  body .framer-C6ykL .framer-1q6ictt { height: auto; padding: 64px 20px; }
+  body .framer-C6ykL .framer-108im8w { position: relative; height: auto; top: auto; }
+  [data-framer-name="Quote Section"] { --quote-font-size: clamp(22px, 5.8vw, 28px); }
+  body .framer-C6ykL [data-framer-name="Quote Section"] [data-code-component-plugin-id] > .ssr-variant > div { line-height: 1.5 !important; }
+  body .framer-C6ykL :is(.framer-1ut795m, .framer-141no99) { padding-top: 56px; }
+  body .framer-C6ykL .framer-9u1bc5 { padding-block: 56px; }
+  body .framer-C6ykL :is(.framer-1p4oy0o, .framer-qcqvm6, .framer-m6nc0y, .framer-ahpriv) { gap: 28px; }
+  body .framer-C6ykL section h2.framer-text { font-size: clamp(32px, 8.5vw, 40px) !important; }
+  body [data-framer-name="Services Cards"] h3 { font-size: clamp(24px, 6.5vw, 28px) !important; }
+  body .portfolio-socials { width: 100% !important; max-width: 100%; min-width: 0; gap: 12px !important; }
+  body :is(.about-page, .services-page, .imported-post) { padding-top: calc(176px + env(safe-area-inset-top, 0px)); }
+  body section:is(.framer-feedpn, .framer-1f5wx7y) { padding-top: calc(176px + env(safe-area-inset-top, 0px)) !important; }
+  .portfolio-nav { top: max(16px, env(safe-area-inset-top, 0px)); }
+  .portfolio-nav-link { min-height: 44px; box-sizing: border-box; display: flex; align-items: center; }
+  body footer.framer-soKIl { padding-top: 48px !important; }
+  body footer.framer-soKIl > [data-framer-name="Container"] { gap: 32px !important; padding-inline: 20px; min-width: 0; }
+  body footer [data-framer-name="Columns"] { gap: 32px !important; min-width: 0; }
+  body footer :is([data-framer-name="Quick Links"], [data-framer-name="Contact"]) { gap: 16px !important; max-width: 100%; min-width: 0; }
+  body footer [data-framer-name="Quick Links"] [data-framer-name="Links"] { gap: 10px; }
+  body footer [data-framer-name="Quick Links"] a { min-height: 44px; }
+  body footer a[href^="mailto:"] { overflow-wrap: anywhere; font-size: 16px; }
+  body footer h2.framer-text { font-size: 32px !important; }
+  .home-blogs-link { align-self: flex-start; }
+}

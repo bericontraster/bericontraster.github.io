@@ -8,7 +8,7 @@ const watch = process.argv.includes('--watch');
 const drafts = process.argv.includes('--drafts');
 const port = Number(process.env.PORT || 3000);
 const clients = new Set();
-const types = { '.html': 'text/html; charset=utf-8', '.css': 'text/css', '.js': 'text/javascript', '.json': 'application/json', '.png': 'image/png', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.webp': 'image/webp', '.svg': 'image/svg+xml', '.ico': 'image/x-icon', '.woff2': 'font/woff2', '.pdf': 'application/pdf' };
+const types = { '.html': 'text/html; charset=utf-8', '.css': 'text/css', '.js': 'text/javascript', '.json': 'application/json', '.xml': 'application/xml; charset=utf-8', '.txt': 'text/plain; charset=utf-8', '.png': 'image/png', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.webp': 'image/webp', '.svg': 'image/svg+xml', '.ico': 'image/x-icon', '.woff2': 'font/woff2', '.pdf': 'application/pdf' };
 const reload = '<script>const events=new EventSource("/__dev/events");events.onmessage=()=>location.reload();</script>';
 function build() {
   const result = spawnSync(process.execPath, ['scripts/build.mjs', ...(drafts ? ['--drafts'] : [])], { stdio: 'inherit' });

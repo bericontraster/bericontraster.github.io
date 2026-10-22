@@ -31,3 +31,5 @@ You'll also find **BlackSite**, my collection of vulnerable lab machines built f
 The site uses **HTML, CSS, and vanilla JavaScript**, with a custom **Node.js** build that turns Markdown articles into static pages. **markdown-it** renders the content, **YAML** provides article metadata, and **Prism** adds code highlighting during the build.
 
 **GitHub Actions** builds and validates the site before deployment to **GitHub Pages**. Search, related articles, a floating table of contents, and responsive layouts make the growing collection easier to explore.
+
+For publishing commands, sitemap and SEO maintenance, deployment checks, and remaining migration work, see [MAINTENANCE.md](MAINTENANCE.md).

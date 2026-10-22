@@ -51,6 +51,7 @@ backups/
 *.md
 !content/**/*.md
 !README.md
+!MAINTENANCE.md
 
 # Other Files
 output/
