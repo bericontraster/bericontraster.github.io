@@ -36,20 +36,35 @@ export function renderMarkdown(body, { root = process.cwd(), file = 'Markdown', 
   const originalFence = md.renderer.rules.fence;
   md.renderer.rules.fence = (tokens, index, options, env, renderer) => {
     const language = tokens[index].info.trim().split(/\s+/)[0];
-    const labels = { c: 'C', bash: 'Bash', sh: 'Bash', shell: 'Bash', http: 'HTTP', 'shell-session': 'Terminal' };
+    if (language === 'link-card') {
+      const document = parseDocument(tokens[index].content, { uniqueKeys: true });
+      if (document.errors.length) fail(file, `link-card: ${document.errors[0].message}`);
+      const card = document.toJS({ maxAliasCount: 50 });
+      if (!card || typeof card !== 'object' || Array.isArray(card)) fail(file, 'link-card: use a YAML mapping');
+      for (const field of ['url', 'title']) if (typeof card[field] !== 'string' || !card[field].trim()) fail(file, `link-card: ${field} is required`);
+      for (const field of ['description', 'image', 'imageAlt']) if (card[field] !== undefined && (typeof card[field] !== 'string' || !card[field].trim())) fail(file, `link-card: ${field} must be nonempty text`);
+      const local = /^\/(?:[a-z0-9]+(?:-[a-z0-9]+)*\/)*$/.test(card.url);
+      const url = local ? card.url : webUrl(card.url, file, 'link-card.url');
+      const domain = local ? 'bericontraster.com' : new URL(url).hostname.replace(/^www\./, '');
+      const image = card.image ? `<span class="post-link-card-art"><img src="${escapeHtml(imageUrl(card.image, root, file))}" alt="${escapeHtml(card.imageAlt || '')}" loading="lazy" decoding="async"></span>` : '';
+      return `<a class="post-link-card${image ? ' has-image' : ''}" href="${escapeHtml(url)}"><span class="post-link-card-copy"><span class="post-link-card-title">${escapeHtml(card.title)}</span>${card.description ? `<span class="post-link-card-description">${escapeHtml(card.description)}</span>` : ''}<span class="post-link-card-domain">${escapeHtml(domain)} <span aria-hidden="true">↗</span></span></span>${image}</a>\n`;
+    }
+    const labels = { c: 'C', nasm: 'NASM', bash: 'Bash', sh: 'Bash', shell: 'Bash', http: 'HTTP', 'shell-session': 'Terminal' };
     const block = originalFence(tokens, index, options, env, renderer);
     return language ? block.replace('<pre>', () => `<pre data-language="${escapeHtml(labels[language] || language)}">`) : block;
   };
   const headingIds = new Set(['hero-section', 'article-section']);
-  // Recognize a warning marker only at the start of a blockquote.
-  md.core.ruler.after('inline', 'warning-callouts', state => {
+  // Only explicit first-line markers turn ordinary quotes into callouts.
+  md.core.ruler.after('inline', 'content-callouts', state => {
     for (let i = 0; i < state.tokens.length; i++) {
       const token = state.tokens[i];
       if (token.type !== 'blockquote_open' || state.tokens[i + 1]?.type !== 'paragraph_open') continue;
       const inline = state.tokens[i + 2];
       const first = inline?.children?.[0];
-      if (inline?.type !== 'inline' || first?.type !== 'text' || first.content !== '[!WARNING]') continue;
-      token.attrJoin('class', 'content-callout content-callout-warning');
+      if (inline?.type !== 'inline' || first?.type !== 'text') continue;
+      const kind = { '[!WARNING]': 'warning', '[!TIP]': 'tip', '[!CAUTION]': 'caution' }[first.content];
+      if (!kind) continue;
+      token.attrJoin('class', `content-callout content-callout-${kind}`);
       inline.children.shift();
       if (inline.children[0]?.type === 'softbreak') inline.children.shift();
       if (!inline.children.length) state.tokens.splice(i + 1, 3);
@@ -77,13 +92,13 @@ export function renderMarkdown(body, { root = process.cwd(), file = 'Markdown', 
   let html = md.render(body);
   // Split adjacent images into figures, including legacy italic captions.
   html = html.replace(/<p>([\s\S]*?)<\/p>/g, (paragraph, contents) => {
-    if (!/^(?:\s|<img\b[^>]*>|<em>[\s\S]*?<\/em>|<br\s*\/?>)*$/.test(contents) || !contents.includes('<img')) return paragraph;
-    return contents.replace(/(<img\b[^>]*>)(?:\s*(?:<br\s*\/?>\s*)?<em>([\s\S]*?)<\/em>)?/g, (_, image, legacyCaption) => {
+    if (!/^(?:\s|<img\b[^>]*>|<(?:em|strong)>[\s\S]*?<\/(?:em|strong)>|<br\s*\/?>)*$/.test(contents) || !contents.includes('<img')) return paragraph;
+    return contents.replace(/(<img\b[^>]*>)(?:\s*(?:<br\s*\/?>\s*)?<(em|strong)>([\s\S]*?)<\/\2>)?/g, (_, image, emphasis, legacyCaption) => {
       const caption = legacyCaption || image.match(/\btitle="([^"]*)"/)?.[1];
       return `<figure>${image}${caption ? `<figcaption>${caption}</figcaption>` : ''}</figure>`;
     });
   });
-  html = html.replace(/<\/figure>\s*<p><em>([\s\S]*?)<\/em><\/p>/g, (match, caption) => `<figcaption>${caption}</figcaption></figure>`);
+  html = html.replace(/<\/figure>\s*<p><(em|strong)>([\s\S]*?)<\/\1><\/p>/g, (match, emphasis, caption) => `<figcaption>${caption}</figcaption></figure>`);
   if (labSections.length) {
     const found = new Set();
     html = html.split(/(?=<h2\b)/).map(section => {

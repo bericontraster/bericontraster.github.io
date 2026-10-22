@@ -267,3 +267,56 @@ test('related articles prioritize shared tags and exclude the current post and d
  assert(!related.includes('/posts/oldest/'));
  assert(!renderContentPage({...entry, kind: 'project'}, {posts}).includes('class="related-posts"'));
 });
+
+test('bold image captions use spaced figures rather than sharing a text paragraph', () => {
+  const image = '![Screenshot](https://example.com/image.png)';
+  for (const separator of ['\n', '\n\n']) {
+    const { html } = renderMarkdown(image + separator + '**Reverse Shell**\n\nFollowing explanation.');
+    assert.match(html, /<figure><img[^>]*><figcaption>Reverse Shell<\/figcaption><\/figure>/);
+    assert.match(html, /<p>Following explanation\.<\/p>/);
+    assert.doesNotMatch(html, /<p><img/);
+  }
+});
+
+test('tips and cautions render as distinct callouts while ordinary quotes stay simple', () => {
+  for (const [marker, kind] of [['TIP', 'tip'], ['CAUTION', 'caution'], ['WARNING', 'warning']]) {
+    const {html} = renderMarkdown(`> [!${marker}]\n> **Label:** Message.\n>\n> Another paragraph.\n\n> Ordinary quote.\n\n\`[!${marker}]\``);
+    assert(html.includes(`class="content-callout content-callout-${kind}"`));
+    assert.match(html, /<strong>Label:<\/strong> Message\./);
+    assert.match(html, /<p>Another paragraph\.<\/p>/);
+    assert.match(html, /<blockquote>\n<p>Ordinary quote\.<\/p>/);
+    assert(html.includes(`<code>[!${marker}]</code>`));
+    const separate = renderMarkdown(`> [!${marker}]\n>\n> Separate paragraph.`).html;
+    assert(separate.includes(`content-callout-${kind}`));
+    assert(!separate.includes(`[!${marker}]`));
+  }
+  assert(!renderMarkdown('> [!UNKNOWN]\n> Keep this text.').html.includes('content-callout'));
+});
+
+test('NASM highlighting identifies registers, labels, comments, strings and numbers without changing code', () => {
+  const code = "section .data\nmsg db 'Hello', 0xA\nsection .text\nglobal _start\n_start:\n    mov eax, 4 ; sys_write\n    int 0x80\n";
+  const {html} = renderMarkdown('```nasm\n' + code + '```');
+  const highlighted = highlightCodeBlocks(html);
+  assert.match(highlighted, /data-language="NASM"/);
+  for (const token of ['register variable', 'label function', 'comment', 'string', 'number', 'keyword']) assert(highlighted.includes(`class="token ${token}"`));
+  const text = value => value.replace(/<[^>]*>/g, '').replaceAll('&lt;', '<').replaceAll('&gt;', '>').replaceAll('&quot;', '"').replaceAll('&amp;', '&');
+  assert.equal(text(highlighted), text(html));
+});
+
+test('link cards render safe metadata, optional images and local routes', t => {
+  const root = fixture(t);
+  const fence = fields => '```link-card\n' + fields + '\n```';
+  const html = renderMarkdown(fence('url: https://github.com/starship/starship\ntitle: "Starship <script>"\ndescription: "Fast & flexible"\nimage: /assets/media/test.webp\nimageAlt: "A logo"'), {root}).html;
+  assert.match(html, /class="post-link-card has-image" href="https:\/\/github.com\/starship\/starship"/);
+  assert.match(html, /Starship &lt;script&gt;/);
+  assert.match(html, /Fast &amp; flexible/);
+  assert.match(html, /post-link-card-domain">github\.com/);
+  assert.match(html, /alt="A logo" loading="lazy"/);
+  assert.doesNotMatch(html, /<pre|<script>/);
+  const local = renderMarkdown(fence('url: /blog/\ntitle: More articles'), {root}).html;
+  assert.match(local, /class="post-link-card" href="\/blog\/"/);
+  assert.doesNotMatch(local, /<img/);
+  for (const fields of ['url: javascript:alert(1)\ntitle: Bad', 'url: //evil.example/\ntitle: Bad', 'url: https://example.com\ntitle: One\ntitle: Two', 'url: https://example.com', '[]']) assert.throws(() => renderMarkdown(fence(fields), {root, file: 'card.md'}), /card\.md: link-card/);
+  assert.throws(() => renderMarkdown(fence('url: https://example.com\ntitle: Test\nimage: /assets/missing.png'), {root}), /image not found/);
+  assert.match(renderMarkdown('[Normal link](https://example.com)', {root}).html, /<p><a href="https:\/\/example.com">Normal link<\/a><\/p>/);
+});
