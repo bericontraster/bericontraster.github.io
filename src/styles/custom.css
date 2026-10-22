@@ -458,7 +458,10 @@ form input:not([type="hidden"]), form textarea {
   font-weight: 400 !important; line-height: 1.6 !important;
 }
 form button[type="submit"] { min-height: 44px; }
-.form-feedback { font: 400 var(--body-font-size)/1.6 var(--portfolio-font); margin: 12px 0; color: var(--cyber-text); }
+body .form-feedback { flex: none; align-self: stretch; width: 100%; min-width: 0; box-sizing: border-box; margin: 0; padding: 12px 14px; border: 1px solid var(--cyber-line); border-radius: 8px; font-size: 14px !important; line-height: 1.5 !important; color: var(--cyber-text); overflow-wrap: anywhere; background: rgb(255 255 255 / 3%); }
+.form-feedback[hidden] { display: none; }
+.form-feedback[data-state="error"] { border-color: rgb(231 119 119 / 25%); background: rgb(190 65 65 / 7%); color: #efb2b2; }
+.form-feedback[data-state="success"] { border-color: rgb(100 201 148 / 25%); background: rgb(9 116 65 / 10%); color: #a9e1be; }
 .portfolio-form-busy { opacity: .6; pointer-events: none; }
 
 /* Service titles and descriptions share a row on wider screens. */
@@ -799,3 +802,7 @@ body :is(p, li, td, figcaption) a[href]:not(:where(nav a, footer a, .portfolio-g
   body :is(p, li, td, figcaption) a[href]:not(:where(nav a, footer a, .portfolio-glass-button, .post-link-card)):not(:has(img, svg)),
   .about-credential .about-external-arrow { transition: none; }
 }
+
+/* Keep the form spam trap outside the visual and keyboard flow. */
+.contact-honeypot { position: absolute !important; width: 1px !important; height: 1px !important; padding: 0 !important; opacity: 0 !important; overflow: hidden; pointer-events: none; clip-path: inset(50%); }
+.portfolio-form-busy [type="submit"] { cursor: wait; opacity: .65; }

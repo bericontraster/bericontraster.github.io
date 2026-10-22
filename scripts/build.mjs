@@ -36,6 +36,7 @@ fs.writeFileSync('dist/CNAME',domain+'\n');
 fs.writeFileSync('dist/.nojekyll','');
 fs.copyFileSync('src/styles/custom.css','dist/assets/custom.css');
 fs.copyFileSync('src/interactions.js','dist/assets/interactions.js');
+fs.copyFileSync('src/form-submit.js','dist/assets/form-submit.js');
 fs.copyFileSync('src/service-booking.js','dist/assets/service-booking.js');
 fs.copyFileSync('src/article-toc.js','dist/assets/article-toc.js');
 fs.copyFileSync('src/article-share.js','dist/assets/article-share.js');

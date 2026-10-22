@@ -1,4 +1,5 @@
 import { setupFooterHands } from './footer-hands.js';
+import { submitWebsiteForm, formErrorMessage } from './form-submit.js';
 import { setupArticleToc } from './article-toc.js';
 import { setupArticleShare } from './article-share.js';
 import { setupArticleBackToTop } from './article-back-to-top.js';
@@ -172,15 +173,29 @@ function setupForms(settings) {
     form.removeAttribute('action');
     const newsletter = form.querySelectorAll('input:not([type="hidden"])').length === 1;
     const endpoint = newsletter ? settings.newsletterEndpoint : settings.contactEndpoint;
+    if (!newsletter) {
+      const trap = document.createElement('input');
+      trap.type = 'text'; trap.name = '_honey'; trap.tabIndex = -1;
+      trap.autocomplete = 'off'; trap.className = 'contact-honeypot';
+      trap.setAttribute('aria-hidden', 'true');
+      form.append(trap);
+    }
+    let pending = false;
     const feedback = document.createElement('p');
     feedback.className = 'form-feedback';
     feedback.setAttribute('role', 'status');
-    form.after(feedback);
+    feedback.setAttribute('aria-live', 'polite');
+    feedback.hidden = true;
+    form.append(feedback);
     form.querySelectorAll('input[type="email"]').forEach(input => input.required = true);
     form.addEventListener('submit', async event => {
       event.preventDefault();
+      if (pending) return;
       if (!form.reportValidity()) return;
       const data = Object.fromEntries(new FormData(form));
+      if (data._honey) return;
+      feedback.hidden = false;
+      feedback.dataset.state = 'pending';
       if (!endpoint) {
         if (newsletter) {
           feedback.textContent = 'Newsletter signup is not connected yet.';
@@ -192,15 +207,24 @@ function setupForms(settings) {
         return;
       }
       form.classList.add('portfolio-form-busy');
+      pending = true;
+      form.setAttribute('aria-busy', 'true');
+      const buttons = [...form.querySelectorAll('[type="submit"]')];
+      buttons.forEach(button => button.disabled = true);
+      feedback.textContent = 'Sending your enquiry...';
       try {
-        const response = await fetch(endpoint, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) });
-        if (!response.ok) throw new Error('Submission failed');
-        feedback.textContent = newsletter ? 'You are subscribed.' : 'Thank you. Your enquiry has been sent.';
+        await submitWebsiteForm(endpoint, data, { pageUrl: window.location.href });
+        feedback.textContent = newsletter ? 'You are subscribed.' : 'Thank you. Your enquiry has been submitted.';
+        feedback.dataset.state = 'success';
         form.reset();
-      } catch {
-        feedback.textContent = 'Could not send. Please try again or email ' + settings.contactEmail;
+      } catch (error) {
+        feedback.textContent = formErrorMessage(error, settings.contactEmail);
+        feedback.dataset.state = 'error';
       } finally {
         form.classList.remove('portfolio-form-busy');
+        pending = false;
+        form.removeAttribute('aria-busy');
+        buttons.forEach(button => button.disabled = false);
       }
     });
   });
