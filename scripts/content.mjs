@@ -194,7 +194,6 @@ export function renderContentPage(entry, { shareUrl = '', posts = [] } = {}) {
   const date = entry.date ? `<time datetime="${entry.date}">${dateLabel(entry.date)}</time>` : '';
   const meta = project ? (date ? `<p class="post-meta">${date}</p>` : '') : `<p class="post-meta">${escapeHtml(entry.author)} · ${date} · ${entry.readingMinutes} min read</p>`;
   const metaRow = project ? meta : `<div class="post-meta-row">${meta}${shareUrl ? renderArticleShare(entry.title, shareUrl) : ''}</div>`;
-  const source = entry.sourceUrl ? `<p class="post-source">Originally published on <a href="${escapeHtml(entry.sourceUrl)}">${new URL(entry.sourceUrl).hostname === 'medium.com' ? 'Medium' : 'the original site'}</a>.</p>` : '';
   const jumps = entry.jumpLinks.map(id => {
     const heading = entry.headings.find(item => item.id === id);
     if (!heading) fail(entry.file, `jumpLinks names a missing heading: ${id}`);
@@ -209,7 +208,7 @@ export function renderContentPage(entry, { shareUrl = '', posts = [] } = {}) {
   const recommendations = related.length ? `<section class="related-posts" aria-labelledby="related-posts-title"><header><h2 id="related-posts-title">More to Explore</h2><a href="/blog/">Browse all articles <span aria-hidden="true">↗</span></a></header><div class="related-posts-grid">${related.map(renderPostCard).join('')}</div></section>` : '';
   return `<main class="imported-post${project ? ' blacksite-page' : ''}" id="${project ? 'hero-section' : 'article-section'}">
 ${entry.draft ? '<p class="content-draft">Draft preview — excluded from the production build</p>' : ''}
-<header>${project && entry.category ? `<p class="blacksite-eyebrow">${escapeHtml(entry.category)}</p>` : ''}<h1>${escapeHtml(entry.title)}</h1>${project ? `<p class="blacksite-intro">${escapeHtml(entry.description)}</p>` : ''}${metaRow}${source}${tagList(entry.tags)}${jumps ? `<nav class="blacksite-jump" aria-label="Project sections">${jumps}</nav>` : ''}</header>
+<header>${project && entry.category ? `<p class="blacksite-eyebrow">${escapeHtml(entry.category)}</p>` : ''}<h1>${escapeHtml(entry.title)}</h1>${project ? `<p class="blacksite-intro">${escapeHtml(entry.description)}</p>` : ''}${metaRow}${tagList(entry.tags)}${jumps ? `<nav class="blacksite-jump" aria-label="Project sections">${jumps}</nav>` : ''}</header>
 <div class="post-body">${cover}${entry.html}</div>${recommendations}</main>`;
 }
 

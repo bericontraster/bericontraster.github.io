@@ -775,3 +775,27 @@ body .home-blogs-heading h2.framer-text { font-size: clamp(32px, 4vw, 56px) !imp
   .post-link-card-description { font-size: 14px; }
 }
 @media (prefers-reduced-motion: reduce) { .post-body a.post-link-card { transition: none; } }
+
+/* Inline links gently deepen in color on hover. */
+body :is(p, li, td, figcaption) a[href]:not(:where(nav a, footer a, .portfolio-glass-button, .post-link-card)):not(:has(img, svg)) {
+  color: var(--cyber-accent);
+  text-decoration-line: underline;
+  text-decoration-color: rgb(100 201 148 / 40%);
+  text-decoration-thickness: 1px;
+  text-underline-offset: .2em;
+  transition: color 180ms ease;
+}
+body :is(p, li, td, figcaption) a[href]:not(:where(nav a, footer a, .portfolio-glass-button, .post-link-card)):not(:has(img, svg)):is(:hover, :focus-visible) {
+  color: #319b65;
+}
+body :is(p, li, td, figcaption) a[href]:not(:where(nav a, footer a, .portfolio-glass-button, .post-link-card)):not(:has(img, svg)):focus-visible {
+  outline: 2px solid rgb(100 201 148 / 65%);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+.about-credential .about-external-arrow { transition: color 180ms ease; }
+.about-credential:is(:hover, :focus-visible) .about-external-arrow { color: #319b65; }
+@media (prefers-reduced-motion: reduce) {
+  body :is(p, li, td, figcaption) a[href]:not(:where(nav a, footer a, .portfolio-glass-button, .post-link-card)):not(:has(img, svg)),
+  .about-credential .about-external-arrow { transition: none; }
+}
