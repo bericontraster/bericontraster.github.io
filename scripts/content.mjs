@@ -183,7 +183,7 @@ export function renderContentPage(entry, { shareUrl = '', posts = [] } = {}) {
   const jumps = entry.jumpLinks.map(id => {
     const heading = entry.headings.find(item => item.id === id);
     if (!heading) fail(entry.file, `jumpLinks names a missing heading: ${id}`);
-    return `<a href="#${id}">${escapeHtml(heading.label)}</a>`;
+    return `<a class="portfolio-glass-button portfolio-glass-button-secondary" href="#${id}">${escapeHtml(heading.label)}</a>`;
   }).join('');
   const cover = entry.cover && entry.showCover ? `<figure><img src="${escapeHtml(entry.cover)}" alt="${escapeHtml(entry.coverAlt)}" decoding="async" fetchpriority="high">${entry.coverCaption ? `<figcaption>${escapeHtml(entry.coverCaption)}</figcaption>` : ''}</figure>` : '';
   const tags = new Set(entry.tags.map(tag => tag.toLowerCase()));

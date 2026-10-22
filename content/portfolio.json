@@ -631,7 +631,7 @@
     "certification-2-title": {
       "type": "html",
       "label": "Certification 2 title",
-      "value": "<a class=\"about-credential\" href=\"https://drive.google.com/file/d/1lzzE9Nl5n3X-3bakAo_ObtXl9DG1DILa/view?usp=sharing\" data-edit-link=\"certification-2-link\" target=\"_blank\" rel=\"noopener noreferrer\"><span>Certified Penetration Testing Specialist (CPTS)</span><span class=\"about-external-arrow\" aria-hidden=\"true\">↗</span></a>"
+      "value": "<a class=\"about-credential\" href=\"https://www.credly.com/badges/8df19df4-6b86-4f80-bada-15a13013d986/public_url\" data-edit-link=\"certification-2-link\" target=\"_blank\" rel=\"noopener noreferrer\"><span>Certified Penetration Testing Specialist (CPTS)</span><span class=\"about-external-arrow\" aria-hidden=\"true\">↗</span></a>"
     },
     "certification-2-issuer": {
       "type": "text",
@@ -646,7 +646,7 @@
     "certification-2-link": {
       "type": "link",
       "label": "Certification 2 link",
-      "value": "https://drive.google.com/file/d/1lzzE9Nl5n3X-3bakAo_ObtXl9DG1DILa/view?usp=sharing"
+      "value": "https://www.credly.com/badges/8df19df4-6b86-4f80-bada-15a13013d986/public_url"
     },
     "experience-title": {
       "type": "text",
