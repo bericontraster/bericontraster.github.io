@@ -6,30 +6,30 @@
 
 <h1 align="center">Beri Contraster</h1>
 
-<p align="center">Security research, practical labs, and lessons from breaking things to understand them.</p>
+<p align="center">Offensive security, practical research, and lessons learned by exploring how systems break.</p>
 
 <p align="center">
-  <a href="https://bericontraster.com">Website</a> ?
-  <a href="https://www.linkedin.com/in/mhamd-zubair/">LinkedIn</a> ?
-  <a href="mailto:contact@bericontraster.com">Contact</a>
+  <a href="https://bericontraster.com"><img src="https://img.shields.io/badge/Website-Explore-087443?style=for-the-badge&logo=firefoxbrowser&logoColor=white" alt="Visit my website"></a>
+  <a href="https://www.linkedin.com/in/mhamd-zubair/"><img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="Connect on LinkedIn"></a>
+  <a href="mailto:contact@bericontraster.com"><img src="https://img.shields.io/badge/Email-Contact-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Contact me by email"></a>
 </p>
 
-## The Person Behind the Research
+## Whoami
 
-I'm Muhammad Zubair, known online as **Beri Contraster**. I'm a cybersecurity professional focused on penetration testing and offensive security. I enjoy tracing how small weaknesses connect into larger attack paths, building vulnerable environments to explore those ideas, and turning what I learn into clear, practical explanations.
+I'm Muhammad Zubair, known online as **Beri Contraster**. I work in offensive security and penetration testing, looking for the weaknesses that can connect into real attack paths.
 
-My writing shares the process behind the result: what I enumerated, why a technique worked, where I got stuck, and what the experience taught me.
+I enjoy understanding how systems behave under pressure, building labs to explore security issues safely, and sharing what I learn in clear, practical writeups.
 
-## A Place to Learn, Test, and Build
+## What my website is for
 
-[**bericontraster.com**](https://bericontraster.com) brings together my security research, technical guides, CTF walkthroughs, and projects. Topics range from Active Directory and web application security to reverse engineering, detection labs, and getting started in cybersecurity.
+[**bericontraster.com**](https://bericontraster.com) is where I share my security research, guides, walkthroughs, and projects. It is for people who want to understand how vulnerabilities work, practice offensive security, and learn from real technical investigations.
 
-You'll also find **BlackSite**, my collection of vulnerable lab machines built for hands-on practice. Whether you're following an attack chain or building your first lab, the aim is to help you understand the underlying systems and develop a method you can use yourself.
+You can explore:
 
-## Built for Reading and Exploration
+- Vulnerability research and CVE breakdowns
+- Web, API, Linux, and Active Directory security guides
+- HackTheBox and lab walkthroughs
+- **BlackSite**, my collection of vulnerable environments for hands-on practice
+- Projects, tools, and notes from my security work
 
-The site uses **HTML, CSS, and vanilla JavaScript**, with a custom **Node.js** build that turns Markdown articles into static pages. **markdown-it** renders the content, **YAML** provides article metadata, and **Prism** adds code highlighting during the build.
-
-**GitHub Actions** builds and validates the site before deployment to **GitHub Pages**. Search, related articles, a floating table of contents, and responsive layouts make the growing collection easier to explore.
-
-For publishing commands, sitemap and SEO maintenance, deployment checks, and remaining migration work, see [MAINTENANCE.md](MAINTENANCE.md).
+The aim is to make the reasoning behind an attack path understandable and useful, whether you are building your skills or improving how you defend systems.
