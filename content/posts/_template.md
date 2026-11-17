@@ -8,6 +8,8 @@ tags: ["Security Research"]
 # Copy your image into public/assets/media/ and uncomment these:
 # cover: "/assets/media/my-post/cover.webp"
 # coverAlt: "Describe the cover image"
+# Set to "contain" when cropping would cut off important artwork or text.
+# coverFit: "contain"
 featured: true
 draft: true
 # Optional SEO overrides (otherwise title, description and cover are used):

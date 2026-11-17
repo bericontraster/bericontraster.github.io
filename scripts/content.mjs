@@ -90,6 +90,7 @@ export function renderMarkdown(body, { root = process.cwd(), file = 'Markdown', 
     return originalImage(tokens, index, options, env, renderer);
   };
   let html = md.render(body);
+  html = html.replace(/<table>([\s\S]*?)<\/table>/g, '<div class="post-table-wrap"><table>$1</table></div>');
   // Split adjacent images into figures, including legacy italic captions.
   html = html.replace(/<p>([\s\S]*?)<\/p>/g, (paragraph, contents) => {
     if (!/^(?:\s|<img\b[^>]*>|<(?:em|strong)>[\s\S]*?<\/(?:em|strong)>|<br\s*\/?>)*$/.test(contents) || !contents.includes('<img')) return paragraph;
@@ -132,6 +133,7 @@ export function parseContent(source, { kind, file, root = process.cwd(), include
   if (kind === 'post' && !data.date) fail(file, 'date is required for posts');
   for (const field of ['date', 'updated']) if (data[field] !== undefined) validDate(data[field], file, field);
   for (const field of ['tags', 'labSections', 'jumpLinks']) if (data[field] !== undefined && (!Array.isArray(data[field]) || data[field].some(item => typeof item !== 'string' || !item.trim()))) fail(file, `${field} must be a list of text values`);
+  if (data.coverFit !== undefined && !['cover', 'contain'].includes(data.coverFit)) fail(file, 'coverFit must be either "cover" or "contain"');
   const route = data.permalink || `/${kind === 'post' ? 'posts' : 'work'}/${slug}/`;
   if (typeof route !== 'string' || !/^\/(?:[a-z0-9]+(?:-[a-z0-9]+)*\/)+$/.test(route)) fail(file, 'permalink must be a local path with a trailing slash, such as /blacksite/');
   if (kind === 'post' && route !== `/posts/${slug}/`) fail(file, 'posts use /posts/<slug>/; choose the slug to set the URL');
@@ -150,7 +152,7 @@ export function parseContent(source, { kind, file, root = process.cwd(), include
     kind, file, slug, route, title: data.title.trim(), description: data.description.trim(),
     excerpt: data.excerpt || data.description.trim(), date: data.date || '', updated: data.updated || data.date || '',
     author: data.author || 'Beri Contraster', tags: data.tags || [], draft: data.draft === true,
-    featured: data.featured !== false, cover, coverAlt: data.coverAlt || data.title, coverCaption: data.coverCaption || '',
+    featured: data.featured !== false, cover, coverAlt: data.coverAlt || data.title, coverCaption: data.coverCaption || '', coverFit: data.coverFit || 'cover',
     cardImages, category: data.category || '', cta: data.cta || 'View project', showCover: data.showCover !== false,
     labSections: data.labSections || [], jumpLinks: data.jumpLinks || [],
     seo: { title: seo.title || data.title, description: seo.description || data.description, image: seo.image ? imageUrl(seo.image, root, file) : cover, canonical: webUrl(seo.canonical, file, 'seo.canonical') },
@@ -213,7 +215,7 @@ ${entry.draft ? '<p class="content-draft">Draft preview — excluded from the pr
 }
 
 export function renderPostCard(entry) {
-  return `<a class="featured-blog-card" href="${entry.route}">${entry.cover ? `<img src="${escapeHtml(entry.cover)}" alt="${escapeHtml(entry.coverAlt)}" loading="lazy" decoding="async">` : ''}<div><p class="post-meta">${dateLabel(entry.date)} · ${entry.readingMinutes} min read${entry.draft ? ' · Draft' : ''}</p><h3>${escapeHtml(entry.title)}</h3><p>${escapeHtml(entry.excerpt)}</p></div></a>`;
+  return `<a class="featured-blog-card" href="${entry.route}">${entry.cover ? `<img data-cover-fit="${entry.coverFit}" src="${escapeHtml(entry.cover)}" alt="${escapeHtml(entry.coverAlt)}" loading="lazy" decoding="async">` : ''}<div><p class="post-meta">${dateLabel(entry.date)} · ${entry.readingMinutes} min read${entry.draft ? ' · Draft' : ''}</p><h3>${escapeHtml(entry.title)}</h3><p>${escapeHtml(entry.excerpt)}</p></div></a>`;
 }
 export function renderProjectCard(entry) {
   return `<a class="blacksite-project-card" href="${entry.route}">${entry.cardImages.length ? `<div class="blacksite-project-art${entry.cardImages.length === 1 ? ' is-single' : ''}">${entry.cardImages.slice(0, 2).map((src, index) => `<img src="${escapeHtml(src)}" alt="${escapeHtml(index === 0 ? entry.coverAlt : entry.title + ' artwork')}" loading="lazy" decoding="async">`).join('')}</div>` : ''}<div class="blacksite-project-copy">${entry.category ? `<p class="blacksite-eyebrow">${escapeHtml(entry.category)}${entry.draft ? ' · Draft' : ''}</p>` : ''}<h3>${escapeHtml(entry.title)}</h3><p>${escapeHtml(entry.excerpt)}</p><span class="blacksite-project-link">${escapeHtml(entry.cta)} <span aria-hidden="true">↗</span></span></div></a>`;

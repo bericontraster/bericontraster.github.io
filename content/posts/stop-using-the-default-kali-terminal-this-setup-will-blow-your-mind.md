@@ -12,6 +12,7 @@ tags:
   - Linux Terminal
 sourceUrl: https://medium.com/@bericontraster/stop-using-the-default-kali-terminal-this-setup-will-blow-your-mind-b78f1f71aabe
 cover: "/assets/media/blog/stop-using-the-default-kali-terminal-this-setup-will-blow-your-mind/cover.png"
+coverFit: contain
 coverAlt: "Kali terminal customization article cover"
 author: Beri Contraster
 featured: true

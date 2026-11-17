@@ -99,7 +99,7 @@ for(const page of pages){
   return open+body+'</svg>';
  });
  html=html.replace(/(<footer\b[^>]*>)/g, '$1'+fs.readFileSync('src/components/FooterHands.html','utf8'));
- html=html.replaceAll('<!--FOOTER-BOOKING-->',booking?`<a class="portfolio-glass-button portfolio-glass-button-secondary portfolio-footer-booking" href="/services/#enquire" aria-label="Book a security call (${booking.duration} minutes)">Book a security call</a>`:'');
+ html=html.replaceAll('<!--FOOTER-BOOKING-->',booking?`<a class="portfolio-footer-booking" href="/services/#enquire" aria-label="Book a security call (${booking.duration} minutes)">Book a security call</a>`:'');
  const heroBackground=fs.readFileSync('src/components/HeroBackground.html','utf8');
  html=html.replace(/(<div\b[^>]*class="[^"]*\bframer-zpn31\b[^"]*"[^>]*>)/, '$1'+heroBackground);
  html=html.replaceAll('href="./','href="/');

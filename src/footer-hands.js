@@ -42,8 +42,8 @@ export async function setupFooterHands(options = {}) {
   catch { layers.forEach(layer => layer.hidden = true); return; }
   const reduce = matchMedia('(prefers-reduced-motion: reduce)');
   layers.forEach(layer => {
-    layer.style.setProperty('--hands-color', options.color || '#097441');
-    layer.style.setProperty('--hands-opacity', Math.max(0, Math.min(1, Number(options.opacity ?? .65))));
+    layer.style.setProperty('--hands-color', options.color || '#079b62');
+    layer.style.setProperty('--hands-opacity', Math.max(0, Math.min(1, Number(options.opacity ?? .78))));
     layer.querySelectorAll('pre').forEach((pre, index) => pre.textContent = shapes[index].text);
     layer.dataset.ready = 'true';
   });

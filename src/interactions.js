@@ -44,10 +44,10 @@ function setupNavigation() {
 
 function setupFooter(settings) {
   const footers = document.querySelectorAll('footer');
-  footers.forEach(footer => footer.querySelectorAll('[data-framer-name="Quick Links"] a').forEach(link => {
+  footers.forEach(footer => footer.querySelectorAll('[data-framer-name="Quick Links"] a, .portfolio-footer-booking').forEach(link => {
     const text = link.querySelector('p') || link;
     const label = text.textContent.trim();
-    link.setAttribute('aria-label', label);
+    link.setAttribute('aria-label', link.getAttribute('aria-label') || label);
     text.replaceChildren(rollingLabel(label));
   }));
   const measure = document.createElement('canvas').getContext('2d');
@@ -283,6 +283,8 @@ function setupBlogSearch() {
   const search = document.querySelector('.blog-search');
   if (!search) return;
   const input = search.querySelector('input');
+  const icon = search.querySelector('svg');
+  const resultCount = search.querySelector('.blog-search-count');
   const status = document.querySelector('.blog-search-status');
   const cards = [...document.querySelectorAll('#blog-posts .featured-blog-card')].map(card => ({ card, text: card.textContent.toLocaleLowerCase() }));
   search.hidden = false;
@@ -293,7 +295,11 @@ function setupBlogSearch() {
       card.hidden = !words.every(word => text.includes(word));
       if (!card.hidden) count++;
     }
-    status.hidden = !words.length;
+    const hasQuery = words.length > 0;
+    icon.hidden = hasQuery;
+    resultCount.hidden = !hasQuery;
+    resultCount.textContent = String(count);
+    status.hidden = !hasQuery;
     status.textContent = count ? `${count} ${count === 1 ? 'article' : 'articles'} found` : 'No articles found. Try another search.';
   }
   input.addEventListener('input', filter);
